@@ -1,0 +1,32 @@
+cosine similarity function
+
+cos(d,q) = sum(di * qi)/(sqrt(sum di^2)*sqrt(sum qi^2))
+
+pearson formula
+
+(sum(di - da) * sum(qi - qa))/sqrt(sum (di-da)^2)*sqrt(sum (qi-qa)^2))
+
+Key
+di = score of item reviewed by d
+qi = score of same item reviewed by q
+
+da = average score from d
+qa = average score from q
+
+Recommendation formula
+
+Averages 
+Ken 3
+Lee 2.8
+Meg 3.5
+Nan 3
+
+-4.4 + 1.6 -3.2 -1.8 = -7.8
+
+sqrt(21) * sqrt(53.0336)
+
+-7.8/33.37 = -0.234
+
+ken meg = 0.89
+
+ken nan

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kd}{class} \PYG{n+nc}{Test} \PYG{p}{\PYGZob{}}
+		\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String} \PYG{n}{args}\PYG{o}{[]}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello World!\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

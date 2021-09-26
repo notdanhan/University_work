@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Three random numbers</title>
+	<script>
+		function big(a,b) {
+			if (a > b) {
+				return a;
+			}
+			else {
+				return b;
+			}
+		}
+		function handleClick(){
+			// create 3 random numbers
+			var a = Math.floor(Math.random()*1000);
+			var b = Math.floor(Math.random()*1000);
+			var c = Math.floor(Math.random()*1000);
+			// find the biggest
+			var res ="a = "+a+"<br>b = "+b+"<br>c = "+c;
+			res +="<br>The biggest value is "+ big(big(a,b),big(b,c));
+			res +="<br>The smallest value is " + (-1 * big(big((a*-1),(b*-1)),big((b*-1),(c*-1))));
+			res +="<br>The sum of the numbers is " + (a+b+c);
+			// display the result
+			var p =document.getElementById('myParagraph');
+			p.innerHTML=res;
+		}
+	</script>
+</head>
+<body>
+		<p id='myParagraph'>Results will display here</p>
+		<button onclick='handleClick();'>Demo</button>
+</body>
+</html>

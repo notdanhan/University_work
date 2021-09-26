@@ -1,0 +1,94 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.ArrayList}\PYG{p}{;}
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{ShoppingCart} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}} \PYG{n}{Cart}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{float} \PYG{n}{TotalCost}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{boolean} \PYG{n}{locked}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{time}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kd}{final} \PYG{k+kt}{long} \PYG{n}{cartId}\PYG{p}{;}
+
+	\PYG{c+cm}{/*Initilaisation*/}
+	\PYG{k+kd}{public} \PYG{n+nf}{ShoppingCart}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{TotalCost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{locked} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+		\PYG{c+cm}{/*The time in which the shopping cart is created depends on the time it is called,}
+\PYG{c+cm}{		the customer should have no ability to modify this whatsoever */}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{time} \PYG{o}{=} \PYG{k}{new} \PYG{n}{java}\PYG{p}{.}\PYG{n+na}{text}\PYG{p}{.}\PYG{n+na}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}yyyy\PYGZhy{}MM\PYGZhy{}dd HH:mm\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{format}\PYG{p}{(}\PYG{k}{new} \PYG{n}{java}\PYG{p}{.}\PYG{n+na}{util}\PYG{p}{.}\PYG{n+na}{Date}\PYG{p}{());}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cartId} \PYG{o}{=} \PYG{n}{makeCartID}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Locking Mechanism*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{close}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{locked} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{UnlockCart}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{locked} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*ShoppingCart Interractions*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{addItem}\PYG{p}{(}\PYG{n}{Item} \PYG{n}{newItem}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{locked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{newItem}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{TotalCost} \PYG{o}{+=} \PYG{n}{newItem}\PYG{p}{.}\PYG{n+na}{getCost}\PYG{p}{();}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Item: \PYGZdq{}}\PYG{o}{+}\PYG{n}{newItem}\PYG{p}{.}\PYG{n+na}{getName}\PYG{p}{()}\PYG{o}{+}\PYG{l+s}{\PYGZdq{} Has been added to your cart!\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Sorry the shopping cart is closed\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{removeItem}\PYG{p}{(}\PYG{n}{Item} \PYG{n}{removItem}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{locked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{remove}\PYG{p}{(}\PYG{n}{removItem}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{TotalCost} \PYG{o}{\PYGZhy{}=} \PYG{n}{removItem}\PYG{p}{.}\PYG{n+na}{getCost}\PYG{p}{();}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Item: \PYGZdq{}} \PYG{o}{+} \PYG{n}{removItem}\PYG{p}{.}\PYG{n+na}{getName}\PYG{p}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} Has Been removed!\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Cannot remove item, cart is locked\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Item} \PYG{n+nf}{takeItem}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{()} \PYG{o}{\PYGZlt{}=} \PYG{n}{index}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Item Does not exist\PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{return} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Item} \PYG{n}{temp} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{index}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{remove}\PYG{p}{(}\PYG{n}{index}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{TotalCost} \PYG{o}{\PYGZhy{}=} \PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{getCost}\PYG{p}{();}
+			\PYG{k}{return} \PYG{n}{temp}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getCartSize}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{listShopping}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}|\PYGZbs{}tItem\PYGZbs{}t\PYGZbs{}t|\PYGZbs{}t\PYGZbs{}tCost\PYGZbs{}t|\PYGZdq{}}\PYG{p}{);}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Item} \PYG{n}{temp} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Cart}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}|\PYGZbs{}t\PYGZdq{}}\PYG{o}{+}\PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{getName}\PYG{p}{()}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}t|\PYGZbs{}t\PYGZdq{}}\PYG{o}{+}\PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{getCost}\PYG{p}{()}\PYG{o}{+}
+			\PYG{l+s}{\PYGZdq{}\PYGZbs{}t|\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}|\PYGZbs{}tTotal:\PYGZbs{}t\PYGZbs{}t|\PYGZbs{}t\PYGZbs{}t\PYGZdq{}}\PYG{o}{+}\PYG{n}{TotalCost}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}t|\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Getters*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{float} \PYG{n+nf}{getTotalCost}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{TotalCost}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getTime}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{time}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{long} \PYG{n+nf}{getCartId}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cartId}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Internal methods*/}
+	\PYG{k+kd}{private} \PYG{k+kt}{long} \PYG{n+nf}{makeCartID}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{k+kt}{long}\PYG{p}{)} \PYG{p}{(}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{random}\PYG{p}{()} \PYG{o}{*} \PYG{l+m+mi}{1000000}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

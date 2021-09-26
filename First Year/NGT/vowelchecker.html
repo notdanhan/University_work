@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+
+			function getvowels() {
+				var userinput = document.getElementById("input").value;
+				var check_vowels = ["a","e","i","o","u","A","E","I","O","U"];
+				var vowelnums = 0;
+				for (var i = 0; i < userinput.length;i++) {
+					if (check_vowels.includes(userinput[i])) {
+						vowelnums++;
+					}
+				}
+				document.getElementById("output").innerHTML = "Vowels: " + vowelnums;
+			}
+		</script>
+	</head>
+	<body>
+		<textarea id="input" onkeyup="getvowels();"></textarea>
+		<div id="output"></div>
+	</body>
+</html>

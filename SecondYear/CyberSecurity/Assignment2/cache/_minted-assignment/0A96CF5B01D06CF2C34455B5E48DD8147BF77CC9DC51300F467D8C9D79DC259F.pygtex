@@ -1,0 +1,115 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ *  This class provides functionality to build rainbow tables (with a different reduction function per round) for 8 character long strings, which}
+\PYG{c+cm}{	consist of the symbols \PYGZdq{}a .. z\PYGZdq{}, \PYGZdq{}A .. Z\PYGZdq{}, \PYGZdq{}0 .. 9\PYGZdq{}, \PYGZdq{}!\PYGZdq{} and \PYGZdq{}\PYGZsh{}\PYGZdq{} (64 symbols in total).}
+\PYG{c+cm}{	Properly used, it creates the following value pairs (start value \PYGZhy{} end value) after 10,000 iterations of hashFunction() and reductionFunction():}
+\PYG{c+cm}{		  start value  \PYGZhy{}  end value}
+\PYG{c+cm}{		  Kermit12        lsXcRAuN}
+\PYG{c+cm}{		  Modulus!        L2rEsY8h}
+\PYG{c+cm}{		  Pigtail1        R0NoLf0w}
+\PYG{c+cm}{		  GalwayNo        9PZjwF5c}
+\PYG{c+cm}{		  Trumpets        !oeHRZpK}
+\PYG{c+cm}{		  HelloPat        dkMPG7!U}
+\PYG{c+cm}{		  pinky\PYGZsh{}\PYGZsh{}!        eDx58HRq}
+\PYG{c+cm}{		  01!19!56        vJ90ePjV}
+\PYG{c+cm}{		  aaaaaaaa        rLtVvpQS}
+\PYG{c+cm}{		  036abgH\PYGZsh{}        klQ6IeQJ}
+\PYG{c+cm}{		*}
+\PYG{c+cm}{		* @author Michael Schukat}
+\PYG{c+cm}{		* @version 1.0}
+\PYG{c+cm}{		*/}
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{RainbowTableFind}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	 * Constructor, not needed for this assignment}
+\PYG{c+cm}{	 */}
+	\PYG{k+kd}{public} \PYG{n+nf}{RainbowTableFind}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String} \PYG{n}{args}\PYG{o}{[]}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{long} \PYG{n}{res} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{myindex}\PYG{p}{;}
+		\PYG{n}{String} \PYG{n}{start}\PYG{p}{,} \PYG{n}{current}\PYG{p}{;}
+		\PYG{c+cm}{/*List of Hashes to look for instances of*/}
+		\PYG{k+kt}{long} \PYG{n}{hashes}\PYG{o}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{895210601874431214L}\PYG{p}{,}\PYG{l+m+mi}{750105908431234638L}\PYG{p}{,}\PYG{l+m+mi}{111111111115664932L}\PYG{p}{,}\PYG{l+m+mi}{977984261343652499L}\PYG{p}{\PYGZcb{};}
+		\PYG{c+cm}{/*List of start values for rainbow tables*/}
+		\PYG{n}{String} \PYG{n}{hashchains}\PYG{o}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Kermit12\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Modulus!\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Pigtail1\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}GalwayNo\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Trumpets\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}HelloPat\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}pinky\PYGZsh{}\PYGZsh{}!\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}01!19!56\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}aaaaaaaa\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}036abgH\PYGZsh{}\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{hashchains}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{start} \PYG{o}{=} \PYG{n}{hashchains}\PYG{o}{[}\PYG{n}{j}\PYG{o}{]}\PYG{p}{;} \PYG{c+c1}{//Check jth hashchain}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Start: \PYGZdq{}}\PYG{o}{+}\PYG{n}{start}\PYG{p}{);}
+			\PYG{n}{current} \PYG{o}{=} \PYG{n}{start}\PYG{p}{;}
+			\PYG{c+cm}{/*0th run by doing this, it allows to check the hash of the 10000th string*/}
+			\PYG{n}{res} \PYG{o}{=} \PYG{n}{hashFunction}\PYG{p}{(}\PYG{n}{current}\PYG{p}{);} \PYG{c+c1}{//check Hash}
+				\PYG{n}{myindex} \PYG{o}{=} \PYG{n}{indexOfLongArray}\PYG{p}{(}\PYG{n}{hashes}\PYG{p}{,} \PYG{n}{res}\PYG{p}{);} \PYG{c+cm}{/*Checks for collision here*/}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myindex} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{c+cm}{/*Outputs collision*/}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}String found for \PYGZdq{}} \PYG{o}{+} \PYG{n}{hashes}\PYG{o}{[}\PYG{n}{myindex}\PYG{o}{]} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} : \PYGZdq{}} \PYG{o}{+} \PYG{n}{current} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} in Chain: \PYGZdq{}}\PYG{o}{+}\PYG{n}{start}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{k}{for}\PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10000}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{current} \PYG{o}{=} \PYG{n}{reductionFunction}\PYG{p}{(}\PYG{n}{res}\PYG{p}{,} \PYG{n}{i}\PYG{p}{);}
+				\PYG{n}{res} \PYG{o}{=} \PYG{n}{hashFunction}\PYG{p}{(}\PYG{n}{current}\PYG{p}{);} \PYG{c+c1}{//check Hash}
+				\PYG{n}{myindex} \PYG{o}{=} \PYG{n}{indexOfLongArray}\PYG{p}{(}\PYG{n}{hashes}\PYG{p}{,} \PYG{n}{res}\PYG{p}{);} \PYG{c+cm}{/*Checks for collision here*/}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myindex} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{c+cm}{/*Outputs collision*/}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}String found for \PYGZdq{}} \PYG{o}{+} \PYG{n}{hashes}\PYG{o}{[}\PYG{n}{myindex}\PYG{o}{]} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} : \PYGZdq{}} \PYG{o}{+} \PYG{n}{current} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} in Chain: \PYGZdq{}}\PYG{o}{+}\PYG{n}{start}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}End: \PYGZdq{}} \PYG{o}{+}\PYG{n}{current}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+		
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{long} \PYG{n+nf}{hashFunction}\PYG{p}{(}\PYG{n}{String} \PYG{n}{s}\PYG{p}{)\PYGZob{}}
+		\PYG{k+kt}{long} \PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{;}
+		\PYG{k+kt}{long}\PYG{o}{[]} \PYG{n}{hashA} \PYG{o}{=} \PYG{k}{new} \PYG{k+kt}{long}\PYG{o}{[]}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{};}
+		
+		\PYG{n}{String} \PYG{n}{filler}\PYG{p}{,} \PYG{n}{sIn}\PYG{p}{;}
+		
+		\PYG{k+kt}{int} \PYG{n}{DIV} \PYG{o}{=} \PYG{l+m+mi}{65536}\PYG{p}{;}
+		
+		\PYG{n}{filler} \PYG{o}{=} \PYG{k}{new} \PYG{n}{String}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGH\PYGZdq{}}\PYG{p}{);}
+		
+		\PYG{n}{sIn} \PYG{o}{=} \PYG{n}{s} \PYG{o}{+} \PYG{n}{filler}\PYG{p}{;} \PYG{c+c1}{// Add characters, now have \PYGZdq{}\PYGZlt{}input\PYGZgt{}HABCDEF...\PYGZdq{}}
+		\PYG{n}{sIn} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{64}\PYG{p}{);} \PYG{c+c1}{// // Limit string to first 64 characters}
+
+		\PYG{k}{for} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{char} \PYG{n}{byPos} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);} \PYG{c+c1}{// get i\PYGZsq{}th character}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{l+m+mi}{17111}\PYG{p}{);} \PYG{c+c1}{// Note: A += B means A = A + B}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+} \PYG{n}{byPos} \PYG{o}{*} \PYG{l+m+mi}{31349}\PYG{p}{);}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{byPos} \PYG{o}{*} \PYG{l+m+mi}{101302}\PYG{p}{);}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{l+m+mi}{79001}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} 
+		   
+		\PYG{n}{ret} \PYG{o}{=} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+} \PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{*} \PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{ret} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{ret} \PYG{o}{*=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}} 
+	
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n+nf}{reductionFunction}\PYG{p}{(}\PYG{k+kt}{long} \PYG{n}{val}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{round}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// Note that for the first function call \PYGZdq{}round\PYGZdq{} has to be 0, }
+		\PYG{n}{String} \PYG{n}{car}\PYG{p}{,} \PYG{n}{out}\PYG{p}{;}                                            \PYG{c+c1}{// and has to be incremented by one with every subsequent call. }
+		\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{;}                                                      \PYG{c+c1}{// I.e. \PYGZdq{}round\PYGZdq{} created variations of the reduction function.}
+		\PYG{k+kt}{char} \PYG{n}{dat}\PYG{p}{;}                                                  
+		
+		\PYG{n}{car} \PYG{o}{=} \PYG{k}{new} \PYG{n}{String}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}0123456789ABCDEFGHIJKLMNOPQRSTUNVXYZabcdefghijklmnopqrstuvwxyz!\PYGZsh{}\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{out} \PYG{o}{=} \PYG{k}{new} \PYG{n}{String}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+	  
+		\PYG{k}{for} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{8}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{val} \PYG{o}{\PYGZhy{}=} \PYG{n}{round}\PYG{p}{;}
+			\PYG{n}{dat} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{)} \PYG{p}{(}\PYG{n}{val} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{63}\PYG{p}{);}
+			\PYG{n}{val} \PYG{o}{=} \PYG{n}{val} \PYG{o}{/} \PYG{l+m+mi}{83}\PYG{p}{;}
+			\PYG{n}{out} \PYG{o}{=} \PYG{n}{out} \PYG{o}{+} \PYG{n}{car}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{dat}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+		
+		\PYG{k}{return} \PYG{n}{out}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+cm}{/*Made this so I can find check if the hash is in the array of hashes */}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{int} \PYG{n+nf}{indexOfLongArray}\PYG{p}{(}\PYG{k+kt}{long} \PYG{n}{longArray}\PYG{o}{[]}\PYG{p}{,}\PYG{k+kt}{long} \PYG{n}{number}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{returnValue} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+			\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{longArray}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{longArray}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]} \PYG{o}{==} \PYG{n}{number}\PYG{p}{)} \PYG{k}{return} \PYG{n}{i}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{returnValue}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

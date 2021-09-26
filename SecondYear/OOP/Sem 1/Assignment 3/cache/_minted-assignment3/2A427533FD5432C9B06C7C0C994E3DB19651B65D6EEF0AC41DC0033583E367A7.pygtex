@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Animaltester} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{public} \PYG{n+nf}{Animaltester}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Constructor that does nothing}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String} \PYG{n}{args}\PYG{o}{[]}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Animaltester} \PYG{n}{tests} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Animaltester}\PYG{p}{();}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Running test 1\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{tests}\PYG{p}{.}\PYG{n+na}{test1}\PYG{p}{();}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nRunning test 2\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{tests}\PYG{p}{.}\PYG{n+na}{test2}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{test1}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Animal}\PYG{o}{[]} \PYG{n}{animals} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Animal}\PYG{o}{[}\PYG{l+m+mi}{4}\PYG{o}{]}\PYG{p}{;}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Canary}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Jeff\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Ostritch}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Paul\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Shark}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Crikey\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Trout}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Steve\PYGZdq{}}\PYG{p}{);}
+		\PYG{c+c1}{//Loops through and prints everything toString() method call is redundant}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{animals}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{n}{animals}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{test2}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Animal}\PYG{o}{[]} \PYG{n}{animals} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Animal}\PYG{o}{[}\PYG{l+m+mi}{4}\PYG{o}{]}\PYG{p}{;}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Canary}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Jeff\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Ostritch}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Paul\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Shark}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Crikey\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{animals}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Trout}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Steve\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Checking for equivalent animals\PYGZdq{}}\PYG{p}{);}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{animals}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Animal \PYGZdq{}} \PYG{o}{+} \PYG{n}{i} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{animals}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{//Prints the values of the equals methods()}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{o}{+} \PYG{n}{animals}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{animals}\PYG{o}{[}\PYG{n}{j}\PYG{o}{]}\PYG{p}{));}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+cm}{/*Proof of ostritch*/}
+		\PYG{n}{Ostritch} \PYG{n}{jeff} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Ostritch}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Jeff\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{jeff}\PYG{p}{.}\PYG{n+na}{move}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{TestTransaction}  \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{public} \PYG{n+nf}{TestTransaction}\PYG{p}{()\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Test Transaction created!\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{};}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{TestTransaction} \PYG{n}{one} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TestTransaction}\PYG{p}{();}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Test Transaction 1\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{one}\PYG{p}{.}\PYG{n+na}{transaction1}\PYG{p}{();}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}******************\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Test Transaction 2\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{one}\PYG{p}{.}\PYG{n+na}{transaction2}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{transaction1}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Customer} \PYG{n}{customer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Customer}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Robert\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Paulson\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}t.durden1998@email.com\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{ShoppingCart} \PYG{n}{cart} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ShoppingCart}\PYG{p}{();}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Soap\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{3.24f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Spray Paint\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{5.50f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ikea Furniture\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{19.99f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{listShopping}\PYG{p}{();}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+		\PYG{n}{Order} \PYG{n}{order} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Order}\PYG{p}{(}\PYG{n}{customer}\PYG{p}{,}\PYG{n}{cart}\PYG{p}{);}
+		\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{processOrder}\PYG{p}{();}
+		\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{addAddress}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Address}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}34\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Memory Lane\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Churchill Road\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}F42XYXY\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Croydon\PYGZdq{}}\PYG{p}{));}
+		\PYG{n}{Payment} \PYG{n}{payment} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Payment}\PYG{p}{(}\PYG{n}{order}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Visa\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{4319000000000000L}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}12/21\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{payment}\PYG{p}{.}\PYG{n+na}{validate}\PYG{p}{();}
+		\PYG{n}{payment}\PYG{p}{.}\PYG{n+na}{Confirm}\PYG{p}{();}
+
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{transaction2}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Customer} \PYG{n}{customer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Customer}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Luigi\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Mario\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Luigi@mariobros.com\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{ShoppingCart} \PYG{n}{cart} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ShoppingCart}\PYG{p}{();}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Plumbers hat\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{23.45f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Powerup\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{19.86f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{addItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Movie\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{19.93f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{removeItem}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Item}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Star\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mf}{19.93f}\PYG{p}{));}
+		\PYG{n}{cart}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+		\PYG{n}{Order} \PYG{n}{order} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Order}\PYG{p}{(}\PYG{n}{customer}\PYG{p}{,}\PYG{n}{cart}\PYG{p}{);}
+		\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{processOrder}\PYG{p}{();}
+		\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{addAddress}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Address}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Mushroom Kingdom\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Street\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Mario Luigi\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Mario\PYGZdq{}}\PYG{p}{));}
+		\PYG{n}{Payment} \PYG{n}{myPayment} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Payment}\PYG{p}{(}\PYG{n}{order}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Pizza\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{4319999999999999L}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}11/12\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{myPayment}\PYG{p}{.}\PYG{n+na}{validate}\PYG{p}{();}
+		\PYG{n}{myPayment}\PYG{p}{.}\PYG{n+na}{Confirm}\PYG{p}{();}
+		
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

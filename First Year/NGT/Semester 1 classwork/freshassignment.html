@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script>
+	  	function updateOutput() {
+	  		var txt = document.getElementById("txtUserInput").value; // text typed by user
+	  		var numchars = txt.length;
+	  		var txtOutput = "";
+			var wordcount = 1;
+	  		for (var i=0; i<numchars; i++) {
+	  			var currLetter = txt.substr(i,1);
+				var nextLetter = txt.substr((i+1),1);
+	  			if (currLetter==" ") { // end current word and start next one
+				  if (nextLetter != " ") {
+					  wordcount++;
+				  }
+	  			}
+	  		}
+			txtOutput += "Characters: "+numchars+"<br>Words: "+wordcount;
+	  		if (numchars>0) // deal with any remaining word that didn't end with a space
+	  		document.getElementById("pOutput").innerHTML = txtOutput; // show result to user
+	  	}
+  	</script>
+  </head>
+  <body>
+  	<textarea id='txtUserInput' onkeyup="updateOutput();" value="Type your text here."></textarea><br>
+  	<p id='pOutput'>
+  		Your output will be shown here.
+  	</p>
+  </body>
+</html>

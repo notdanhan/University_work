@@ -1,0 +1,23 @@
+Data Structures
+
+Closest thing in C to an Object
+
+Defining a structure
+
+struct StrucName {
+  //Types go Here
+};
+
+using a struct
+
+struct StructName struct1, struct2, struct3;
+
+appending to data in a specific struct
+
+struct1.datapoint = newdata;
+
+Uses: Databases
+
+Can be stored in arrays in the following way
+
+struct StructName foo[array_size];

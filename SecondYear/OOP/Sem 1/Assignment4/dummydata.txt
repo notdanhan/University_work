@@ -1,0 +1,10 @@
+journeys.add(new Trip(4501,13.36f,"Ballyjamesduff","Maynooth","24/04/21","18:50","24/04/21","22:11"));
+journeys.add(new Trip(68,20.75f,"Ballybofey","Longford","12/09/21","23:21","13/09/21","02:23"));
+journeys.add(new Trip(8726,20.42f,"Kill","Leixlip","15/06/21","03:24","15/06/21","08:41"));
+journeys.add(new Trip(5619,5.09f,"Ballyjamesduff","Boyle","14/08/21","17:10","14/08/21","21:51"));
+journeys.add(new Trip(6403,17.72f,"Athlone","Athenry","12/05/21","02:43","12/05/21","08:35"));
+journeys.add(new Trip(4357,15.01f,"Maynooth","Dublin","31/01/21","08:40","31/01/21","15:03"));
+journeys.add(new Trip(9246,23.13f,"Garryowen","New Ross","28/10/21","18:15","28/10/21","21:09"));
+journeys.add(new Trip(9305,29.07f,"Letterfrack","Dundalk","05/06/21","19:34","05/06/21","21:27"));
+journeys.add(new Trip(141,23.36f,"Cork","Castlebar","09/01/21","11:11","09/01/21","14:42"));
+journeys.add(new Trip(6506,15.42f,"Athenry","Athlone","17/12/21","04:45","17/12/21","09:01"));

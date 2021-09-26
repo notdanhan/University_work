@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table {
+				margin: auto;
+				width:600px;
+				height:400px;
+				table-layout:initial;
+			}
+			table tr:nth-child(2n-1) {
+				margin: auto;
+				height:80px;
+			}
+			table tr:nth-child(2) {
+				margin: auto;
+				height:240px;
+			}
+			th {
+				text-align: center;
+				background: #FF00FF;
+			}
+			tr {
+				margin:0px;
+				padding:0px;
+			}
+			td {
+				top:0px;
+				margin:0px;
+				padding:0px;
+			}
+			td ul {
+				padding-left: 20px;
+			}
+			#content_main td {
+				vertical-align: 0px;
+			}
+			#content_main td h3{
+				position: relative;
+				margin: auto;
+				top:10px;
+			}
+			#content_main td:nth-child(odd) {
+				width:75px;
+			}
+			#content_main td:nth-child(2) {
+				width:450px;
+			}
+			#footfoot {
+				background:#FE990B;
+			}
+			#footfoot td {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<th colspan="3">
+				<h1>The Header</h1>
+			</th>
+			<tr id = "content_main">
+				<td style="background: #00FA0F;">
+					<h3>Nav</h3>
+					<ul>
+						<li>
+							<a href="https://www.google.com">Link 1</a>
+						</li>
+						<li>
+							<a href="https://www.github.com">Link 2</a>
+						</li>
+						<li>
+							<a href="https://www.lastfm.com">Link 3</a>
+						</li>
+						<li>
+							<a href="https://en.wikipedia.org/wiki/Tractor">Link 4</a>
+						</li>
+					</ul>
+				</td>
+				<td style="background: #FEA700;">
+					<h3>Main Content</h3>
+					<p>A tractor is an engineering vehicle specifically designed to deliver a high tractive effort (or torque) at slow speeds, for the purposes of hauling a trailer or machinery such as that used in agriculture or construction. Most commonly, the term is used to describe a farm vehicle that provides the power and traction to mechanize agricultural tasks, especially (and originally) tillage, but nowadays a great variety of tasks. Agricultural implements may be towed behind or mounted on the tractor, and the tractor may also provide a source of power if the implement is mechanised.  </p>
+				</td>
+				<td style="background: #A76542;">
+					<h5>Content</h5>
+					<p>A tractor.  </p>
+				</td>
+			</tr>
+			<tr id="footfoot">
+				<td colspan="3">
+					<h1>Footer Area</h1>
+				</td>
+				
+			</tr>
+		</table>
+	</body>
+</html>

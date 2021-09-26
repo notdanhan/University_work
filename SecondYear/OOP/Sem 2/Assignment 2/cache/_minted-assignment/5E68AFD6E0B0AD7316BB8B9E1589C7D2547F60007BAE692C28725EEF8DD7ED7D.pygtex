@@ -1,0 +1,228 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{javax.swing.JOptionPane}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.StringTokenizer}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Main} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{ArrayStack} \PYG{n}{stack}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{input}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{output}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{boolean} \PYG{n}{looping}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{boolean} \PYG{n}{valid}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{int} \PYG{n}{bracketsDepth} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{char}\PYG{o}{[]} \PYG{n}{precidence} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}\PYGZca{}\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}*\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}+\PYGZsq{}}\PYG{p}{\PYGZcb{};}
+
+	\PYG{k+kd}{public} \PYG{n+nf}{Main}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{stack} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayStack}\PYG{p}{();}
+		\PYG{n}{input} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{looping} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getPriority}\PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{value}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{val} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{precidence}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{precidence}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]} \PYG{o}{==} \PYG{n}{value}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{val} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+				\PYG{k}{break}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{n}{val} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{validate}\PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{value}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{value} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{})\PYGZsq{}} \PYG{o}{||} \PYG{n}{value} \PYG{o}{==}\PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{precidence}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{precidence}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]} \PYG{o}{==} \PYG{n}{value}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{evaluate}\PYG{p}{(}\PYG{n}{String} \PYG{n}{inputString}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{double} \PYG{n}{val1} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{double} \PYG{n}{val2} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{boolean} \PYG{n}{prevsum} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+			\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{StringTokenizer} \PYG{n}{st} \PYG{o}{=} \PYG{k}{new} \PYG{n}{StringTokenizer}\PYG{p}{(}\PYG{n}{inputString}\PYG{p}{);}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{st}\PYG{p}{.}\PYG{n+na}{hasMoreTokens}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+			\PYG{n}{String} \PYG{n}{temp} \PYG{o}{=} \PYG{n}{st}\PYG{p}{.}\PYG{n+na}{nextToken}\PYG{p}{();}
+			\PYG{c+c1}{//Check if it\PYGZsq{}s an expression or a number}
+			\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{validate}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)))} \PYG{p}{\PYGZob{}}
+				\PYG{k}{try} \PYG{p}{\PYGZob{}}
+					\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{Double}\PYG{p}{.}\PYG{n+na}{parseDouble}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{));}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{c+c1}{//This executes If value is something like \PYGZdq{}.\PYGZdq{} or \PYGZdq{}...\PYGZdq{} etc.}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Not a Number!\PYGZdq{}}\PYG{p}{);}
+					\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showMessageDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Not a Valid Number!\PYGZbs{}nPlease Check inputs.\PYGZdq{}}\PYG{p}{);}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{e}\PYG{p}{);}
+					\PYG{c+c1}{//Returns so the program doesn\PYGZsq{}t crash}
+					\PYG{k}{return} \PYG{n}{Double}\PYG{p}{.}\PYG{n+na}{MAX\PYGZus{}VALUE}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{k}{try} \PYG{p}{\PYGZob{}}
+					\PYG{n}{val2} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+					\PYG{n}{val1} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Too many operators!\PYGZdq{}}\PYG{p}{);}
+					\PYG{k}{return} \PYG{n}{Double}\PYG{p}{.}\PYG{n+na}{MAX\PYGZus{}VALUE}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+				\PYG{k+kt}{double} \PYG{n}{eval} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+				\PYG{k}{switch}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}+\PYGZsq{}}\PYG{p}{:}
+						\PYG{n}{eval} \PYG{o}{=} \PYG{n}{val1} \PYG{o}{+} \PYG{n}{val2}\PYG{p}{;}
+						\PYG{k}{break}\PYG{p}{;}
+					\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{:}
+						\PYG{n}{eval} \PYG{o}{=} \PYG{n}{val1} \PYG{o}{\PYGZhy{}} \PYG{n}{val2}\PYG{p}{;}
+						\PYG{k}{break}\PYG{p}{;}
+					\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{:}
+						\PYG{n}{eval} \PYG{o}{=} \PYG{n}{val1} \PYG{o}{/} \PYG{n}{val2}\PYG{p}{;}
+						\PYG{k}{break}\PYG{p}{;}
+					\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}*\PYGZsq{}}\PYG{p}{:}
+						\PYG{n}{eval} \PYG{o}{=} \PYG{n}{val1} \PYG{o}{*} \PYG{n}{val2}\PYG{p}{;}
+						\PYG{k}{break}\PYG{p}{;}
+					\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZca{}\PYGZsq{}}\PYG{p}{:}
+						\PYG{n}{eval} \PYG{o}{=} \PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{pow}\PYG{p}{(}\PYG{n}{val1}\PYG{p}{,}\PYG{n}{val2}\PYG{p}{);}
+						\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+				\PYG{n}{prevsum} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}f \PYGZpc{}c \PYGZpc{}f = \PYGZpc{}f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{n}{val1}\PYG{p}{,}\PYG{n}{temp}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{),}\PYG{n}{val2}\PYG{p}{,}\PYG{n}{eval}\PYG{p}{);}
+				\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{eval}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{loop}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{while}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{looping}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{valid} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+			\PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+			\PYG{n}{input} \PYG{o}{=} \PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showInputDialog}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Please input an infix expression between 3 and 20 Characters\PYGZdq{}}\PYG{p}{);}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{input} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{looping}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+				\PYG{k}{break}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{input}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3} \PYG{o}{||} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{20}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showMessageDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Expression is not of valid length please enter a value between 3 and 20 characters\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Alert\PYGZdq{}}\PYG{p}{,}\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{ERROR\PYGZus{}MESSAGE}\PYG{p}{);}
+				\PYG{k}{continue}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k+kt}{char} \PYG{n}{val} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+				\PYG{k}{if} \PYG{p}{((}\PYG{n}{val} \PYG{o}{\PYGZgt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{val} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}9\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{val} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}.\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{k+kt}{int} \PYG{n}{start} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+					\PYG{k}{while}\PYG{p}{((}\PYG{n}{input}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}9\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}.\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{n}{i}\PYG{o}{++}\PYG{p}{;}
+						\PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{o}{\PYGZgt{}=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{())} \PYG{k}{break}\PYG{p}{;}
+					\PYG{p}{\PYGZcb{}}
+					\PYG{n}{output} \PYG{o}{+=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{n}{start}\PYG{p}{,}\PYG{n}{i}\PYG{p}{);}
+					\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+					\PYG{n}{i}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{k}{if} \PYG{p}{(}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+						\PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{validate}\PYG{p}{(}\PYG{n}{val}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+							\PYG{c+c1}{//Ignore bracket errors}
+							\PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{})\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+								\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+							\PYG{p}{\PYGZcb{}}
+							\PYG{c+cm}{/*Ignore Spaces*/}
+							\PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+								\PYG{n}{bracketsDepth}\PYG{o}{++}\PYG{p}{;}
+							\PYG{p}{\PYGZcb{}}
+						\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{val} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+							\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showMessageDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Only the following characters are valid: (,),*,+,/,\PYGZhy{},\PYGZca{} and numbers 0\PYGZhy{}9\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Invalid Character!\PYGZdq{}}\PYG{p}{,}\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{ERROR\PYGZus{}MESSAGE}\PYG{p}{);}
+							\PYG{n}{valid}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+							\PYG{k}{break}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+					\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isFull}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+						\PYG{c+cm}{/*Ignore spaces*/}
+						\PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+							\PYG{k}{continue}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+						\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{validate}\PYG{p}{(}\PYG{n}{val}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+							\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showMessageDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Only the following characters are valid: (,),*,+,/,\PYGZhy{},\PYGZca{} and numbers 0\PYGZhy{}9\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Invalid Character!\PYGZdq{}}\PYG{p}{,}\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{ERROR\PYGZus{}MESSAGE}\PYG{p}{);}
+							\PYG{n}{valid}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+							\PYG{k}{break}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+							\PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{})\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{bracketsDepth} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+								\PYG{k+kt}{char} \PYG{n}{temp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{)} \PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+									\PYG{k}{while}\PYG{p}{(}\PYG{n}{temp} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+										\PYG{n}{output} \PYG{o}{+=} \PYG{n}{String}\PYG{p}{.}\PYG{n+na}{valueOf}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{);}
+										\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+										\PYG{n}{temp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{)} \PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+									\PYG{p}{\PYGZcb{}}
+									\PYG{n}{bracketsDepth} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{1}\PYG{p}{;}
+							\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+								\PYG{k}{if}\PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{top}\PYG{p}{()} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+									\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+									\PYG{n}{bracketsDepth}\PYG{o}{++}\PYG{p}{;}
+								\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+									\PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{getPriority}\PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{top}\PYG{p}{())} \PYG{o}{\PYGZgt{}=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{getPriority}\PYG{p}{(}\PYG{n}{val}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+										\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+									\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+										\PYG{n}{ArrayStack} \PYG{n}{tempStack} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayStack}\PYG{p}{();}
+										\PYG{n}{tempStack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)} \PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{());}
+										\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+											\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{getPriority}\PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{top}\PYG{p}{())} \PYG{o}{\PYGZgt{}=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{getPriority}\PYG{p}{(}\PYG{n}{val}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+												\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+												\PYG{k}{break}\PYG{p}{;}
+											\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+												\PYG{n}{tempStack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{());}
+											\PYG{p}{\PYGZcb{}}
+										\PYG{p}{\PYGZcb{}}
+										\PYG{k}{if} \PYG{p}{(}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+											\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+										\PYG{p}{\PYGZcb{}}
+										\PYG{c+cm}{/*Unload temp stack*/}
+										\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{tempStack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+											\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{tempStack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{());}
+										\PYG{p}{\PYGZcb{}}
+									\PYG{p}{\PYGZcb{}}
+								\PYG{p}{\PYGZcb{}}
+							\PYG{p}{\PYGZcb{}}
+						\PYG{p}{\PYGZcb{}}
+					\PYG{p}{\PYGZcb{}}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+c1}{//Drain Stack to output string}
+			\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{k+kt}{char} \PYG{n}{temp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{)} \PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+				\PYG{k}{if} \PYG{p}{(}\PYG{n}{temp} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{})\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{temp} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{output} \PYG{o}{+=} \PYG{n}{String}\PYG{p}{.}\PYG{n+na}{valueOf}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{);}
+					\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{output}\PYG{p}{);}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{valid}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k+kt}{double} \PYG{n}{result} \PYG{o}{=} \PYG{n}{evaluate}\PYG{p}{(}\PYG{n}{output}\PYG{p}{);}
+				\PYG{n}{String} \PYG{n}{messageBox} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}The result of the expression is:\PYGZbs{}ninfix: \PYGZdq{}} \PYG{o}{+} \PYG{n}{input} \PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nPostfix: \PYGZdq{}} \PYG{o}{+} \PYG{n}{output} \PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nResult: \PYGZdq{}} \PYG{o}{+} \PYG{n}{result}\PYG{p}{;}
+				\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showMessageDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{n}{messageBox}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{k}{continue}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+cm}{/*Yes: 0 No: 1 Cancel: 2*/}
+			\PYG{k}{switch}\PYG{p}{(}\PYG{n}{JOptionPane}\PYG{p}{.}\PYG{n+na}{showConfirmDialog}\PYG{p}{(}\PYG{k+kc}{null}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Would you like to run again?\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+				\PYG{k}{case} \PYG{l+m+mi}{0}\PYG{p}{:}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Running again\PYGZdq{}}\PYG{p}{);}
+					\PYG{k}{break}\PYG{p}{;}
+					\PYG{k}{default}\PYG{p}{:}
+					\PYG{n}{looping} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+					\PYG{k}{break}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+c1}{//Flush stack to avoid typecasting errors in the next run through}
+			\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String} \PYG{n}{args}\PYG{o}{[]}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Main} \PYG{n}{application} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Main}\PYG{p}{();}
+		\PYG{n}{application}\PYG{p}{.}\PYG{n+na}{loop}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

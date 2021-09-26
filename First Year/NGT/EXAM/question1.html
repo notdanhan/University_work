@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script>
+			function playGame() {
+				var secretNumber = Math.floor(Math.random()*100)+1;
+				var attempts = 0;
+				while(1) {
+					attempts++;
+					var guess = parseInt(prompt("What number am I thinking of (1-100)?"));
+					if(guess==secretNumber) {
+						alert("That's right! it took you " + attempts + " Attempts!");
+						break;
+					}
+					else {
+						alert("That's wrong!");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="playGame();">
+	</body>
+</html>

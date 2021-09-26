@@ -1,0 +1,153 @@
+Instruction pointer = Program Counter
+the program counter keeps track of the instructions in which the computer must perform and in what order they should be performed in.
+
+memory locations can contain operands or instructions hence, when the program counter runs if it were to perform a task such as MOV AX 0 it would skip from 100 to 102 as 101 holds the value of 0
+
+Constant cycle of read interpret and increment instruction cpounter. 
+
+RWE cycle
+
+program counter uses address Bus to send value of instruction counter to check content in Memory locations
+Content in memory location is sent to the instruction register
+it is then decoded in the decode unit
+then it is implimented in the execute unit
+
+program counter adjusts by (Number of operands + 1)
+
+
+Operating Systems
+
+history of operating systems
+operating system archetecture
+Coordinating the Machine's Activities - Avoiding Deadlock
+
+OS Functions
+
+Oversee operations of computer
+Storing/Retrieving Files
+Program Scheduling/Task Management
+Coordinate Execution
+
+Evolution of shared computing
+
+Batch Processing
+Interactive Processing - Real Time Processing
+Time Sharing - Multiprogramming
+Multiprocessor Machines 
+
+Batch Processing
+Jobs are put in a queue, executed and return results
+1st in/1st out
+pros
+faster computation
+flaws 
+once in once out
+
+Interactive processing
+Data constantly go between user and Machine in real time allowing more dynamic use of the processor
+
+Time Sharing/Multitasking
+
+each process is given a specific window of time to be executed, allowing more dynamic use of a system and having multiple users on the same machine eg web server.
+provides illusion of concurrent operations
+
+
+Multiprocessor Operating Systems
+-Using multiple CPUs in a single system
+Provide time sharing and multi tasking capabilities by assigning different tasks to different processors as well as sharing the time of one processor
+
+Embedded Operating Systems
+
+Used in handheld devices (PDAs), Mobile phones, cars, etc....
+Limited data storage and issues with powers
+
+Examples Android, Windows Phone OS, IOS
+
+Types of software
+
+Application software
+  Performs specific tasks for users: spreadsheets database systems, desktop publishing etc...
+  
+System Software
+    Provides infrastructure for application software
+    consists of Operating System and utility software
+    Operating System Software
+        Shell
+        Kernel
+    
+
+Operating System Components
+Shell: communicates with users usually a CLI or GUI
+
+Kernel: Provides basic functions such as file management, device management, memory management, and process management
+    File Manager
+        ROle - Coordinate use of mass storage facilities
+        
+        Organisation - Directories a User created bundle of files and othe Directories
+        Directory Path - A sequence of Directories within Directories
+        
+        Access/modification done using a descriptor
+        
+    Device Manager
+        Dealing with specific controllers that the device needs to interact with eg displays, Keyboards, speakers, etc.
+        
+        Each driver is specifically designed for its type of device and translates generic requests into device specific sequence of operations.
+        
+    Memory manager
+        Has the task of Coordinating the use of main memory - allocates/deallocates space in main memory
+        
+        When the total required memory exceeds the physical available space
+            May create the illusion that the machine has more memory than it actually does by playing a "shell game" where blocks of data (Pages) are shifted back and forth between main memory and mass storage (This is called Paging)
+            
+        
+    Processes
+        The Activity of executing a program
+            Program - static set of directions (instructions)
+            
+            Process - dynamic entity whose properties change as time progresses. It is an instance in execution of a program
+            
+            
+Program
+    Executable file residing on disk
+    instructions to carry out a specific Job/Task 
+    Read into primary memory and executed by the kernel
+    "Passive entity" - Still exists in storage after system reboots
+    
+Process
+    Executing instance of a program
+    sometimes called tasks
+    "Active entity" - No longer exists after reboot - Always stored in Main Memory (RAM)
+    Several Processes can be associated with a single program
+    
+    Process State
+        Program Counter
+        General Purpose Registers
+        Related portion of main memory
+        
+
+        
+Process Manager
+    Scheduler - The part of the kernel in charge with the strategy for allocation/de-allocation of the CPU to each competing process
+        Maintains a record of all processes in the OS (via a process table), introduces new processes to this pool and removes the ones completed
+        
+    Dispatcher is the component of the kernel that oversees the execution of the scheduled program
+
+Dispatcher
+    Dispatcher controls the allocation of the CPU (in time slots)
+    
+    
+Handling competition for Resources
+    Important task of OS is to allocate resources to the processes
+    
+    Semaphore: A "Control flag"
+    
+    Critical Region: A group of instructions that should be executed by only one process at a time (every day example would be printing, has to print entire specified document without stopping)
+    
+    Mutual Exclusion: Requirement for proper implementation of a critical region so that only one process at a time will execute the sequence specified
+    
+Deadlock
+    
+    Conditions needed for deadlock
+        competition for shared resources
+        resources requested on a partial basis
+        an allocated resource can not be forcibly retrieved

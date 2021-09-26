@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var pos_left = 200;
+			var pos_top = 200;
+			var left_direction = 3;
+			var top_direction = 3;
+			var left_change = 3;
+			var top_change = 3;
+			var angle = 0;
+			function moveball() {
+				if ( pos_left >= 560 || pos_left <= 0) {
+					left_direction = left_direction * -1;
+					angle = ((Math.random() * Math.PI) + Math.PI) / 6;
+					left_change = Math.sin(angle) * left_direction;
+				}
+				if (pos_top >= 560 || pos_top <= 0) {
+					top_direction = top_direction * -1;
+					angle = ((Math.random() * Math.PI) + Math.PI) / 6;
+					top_change = Math.cos(angle) * top_direction;
+				}
+				pos_left+=left_change;
+				pos_top+=top_change;
+				document.getElementById("theBall").style.left = pos_left + "px";
+				document.getElementById("theBall").style.top = pos_top + "px";
+				setTimeout(moveball,20);
+			}
+		</script>
+	</head>
+	<body onload="moveball();">
+		<div style='position:absolute; left:0px; top:0px; width:600px; height:600px; background:#00FF00'>
+			<div style='position:absolute; left:100px; top:100px;'id='theBall'>
+				<img src='ball.png'>
+			</div>
+		</div>
+	</body>
+</html>

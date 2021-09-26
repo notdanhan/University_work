@@ -1,0 +1,135 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Skeleton code for Steganography assignment.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * @author Michael Schukat}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ */}
+
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.BufferedReader}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.BufferedWriter}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.FileReader}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.FileWriter}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.IOException}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Stegano2}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	 * Constructor for objects of class Stegano2}
+\PYG{c+cm}{	 */}
+	 \PYG{k+kd}{public} \PYG{n+nf}{Stegano2}\PYG{p}{()}
+	 \PYG{p}{\PYGZob{}}
+	 \PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{arg1}\PYG{p}{,} \PYG{n}{arg2}\PYG{p}{,} \PYG{n}{arg3}\PYG{p}{,} \PYG{n}{arg4}\PYG{p}{;}
+		\PYG{n}{Boolean} \PYG{n}{err} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{args} \PYG{o}{!=} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{args}\PYG{p}{.}\PYG{n+na}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// Check for minimum number of arguments}
+			\PYG{n}{arg1} \PYG{o}{=} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]}\PYG{p}{;}
+			\PYG{n}{arg2} \PYG{o}{=} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]}\PYG{p}{;}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{arg2} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{err} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{arg1}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{65}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{args}\PYG{p}{.}\PYG{n+na}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{3}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{// Get other arguments}
+				\PYG{n}{arg3} \PYG{o}{=} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]}\PYG{p}{;}
+				\PYG{n}{arg4} \PYG{o}{=} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]}\PYG{p}{;}
+				\PYG{k}{if} \PYG{p}{(}\PYG{n}{arg3} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}\PYGZdq{}} \PYG{o}{||} \PYG{n}{arg4} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{err} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+				\PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{c+c1}{// Hide bitstring}
+					\PYG{n}{hide}\PYG{p}{(}\PYG{n}{arg2}\PYG{p}{,} \PYG{n}{arg3}\PYG{p}{,} \PYG{n}{arg4}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{arg1}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{69}\PYG{p}{)\PYGZob{}}
+				\PYG{c+c1}{// Extract bitstring from text}
+				\PYG{n}{retrieve}\PYG{p}{(}\PYG{n}{arg2}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{err} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{err} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{err} \PYG{o}{==} \PYG{k+kc}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{();}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Use: Stegano1 \PYGZlt{}A:E\PYGZgt{}\PYGZlt{}Input File\PYGZgt{}\PYGZlt{}OutputFile\PYGZgt{}\PYGZlt{}Bitstring\PYGZgt{}\PYGZdq{}}\PYG{p}{);}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Example: Stegano1 A inp.txt out.txt 0010101\PYGZdq{}}\PYG{p}{);}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Example: Stegano1 E inp.txt\PYGZdq{}}\PYG{p}{);}
+
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{hide}\PYG{p}{(}\PYG{n}{String} \PYG{n}{inpFile}\PYG{p}{,} \PYG{n}{String} \PYG{n}{outFile}\PYG{p}{,} \PYG{n}{String} \PYG{n}{binString}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Perform this check immediately}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{binString}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{2} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Check if the binary string has an odd length, appends an extra digit */}
+			\PYG{n}{binString}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{BufferedReader} \PYG{n}{reader}\PYG{p}{;}
+		\PYG{n}{BufferedWriter} \PYG{n}{writer}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{strLength} \PYG{o}{=} \PYG{n}{binString}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();}
+		\PYG{k+kt}{int} \PYG{n}{stringPos} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{reader} \PYG{o}{=} \PYG{k}{new} \PYG{n}{BufferedReader}\PYG{p}{(}\PYG{k}{new} \PYG{n}{FileReader}\PYG{p}{(}\PYG{n}{inpFile}\PYG{p}{));}
+			\PYG{n}{writer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{BufferedWriter}\PYG{p}{(}\PYG{k}{new} \PYG{n}{FileWriter}\PYG{p}{(}\PYG{n}{outFile}\PYG{p}{));}
+			\PYG{n}{String} \PYG{n}{line} \PYG{o}{=} \PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{readLine}\PYG{p}{();}
+			\PYG{k}{while} \PYG{p}{(}\PYG{n}{line} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{for}\PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{2}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{k}{if}\PYG{p}{(}\PYG{n}{stringPos} \PYG{o}{\PYGZlt{}} \PYG{n}{strLength}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{k}{if}\PYG{p}{(}\PYG{n}{binString}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{stringPos}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{48}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*0*/}
+							\PYG{n}{line} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+						\PYG{k}{if}\PYG{p}{(}\PYG{n}{binString}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{stringPos}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{49}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*1*/}
+							\PYG{n}{line} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}t\PYGZdq{}}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+					\PYG{p}{\PYGZcb{}}
+					\PYG{n}{stringPos}\PYG{o}{++}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+				\PYG{c+c1}{// Store amended line in output file}
+				\PYG{n}{writer}\PYG{p}{.}\PYG{n+na}{write}\PYG{p}{(}\PYG{n}{line}\PYG{p}{);}
+				\PYG{n}{writer}\PYG{p}{.}\PYG{n+na}{newLine}\PYG{p}{();}
+				\PYG{c+c1}{// read next line}
+				\PYG{n}{line} \PYG{o}{=} \PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{readLine}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+			\PYG{n}{writer}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{e}\PYG{p}{.}\PYG{n+na}{printStackTrace}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{retrieve}\PYG{p}{(}\PYG{n}{String} \PYG{n}{inpFile}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{BufferedReader} \PYG{n}{reader}\PYG{p}{;}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{;}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{reader} \PYG{o}{=} \PYG{k}{new} \PYG{n}{BufferedReader}\PYG{p}{(}\PYG{k}{new} \PYG{n}{FileReader}\PYG{p}{(}\PYG{n}{inpFile}\PYG{p}{));}
+			\PYG{n}{String} \PYG{n}{line} \PYG{o}{=} \PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{readLine}\PYG{p}{();}
+			\PYG{k}{while} \PYG{p}{(}\PYG{n}{line} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Make sure there\PYGZsq{}s a point in reading the line*/}
+					\PYG{k}{for}\PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{k}{if}\PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{32}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Space*/}
+							\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+						\PYG{k}{if}\PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{9}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Tab*/}
+							\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+					\PYG{p}{\PYGZcb{}}
+				\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{// read next line}
+		\PYG{n}{line} \PYG{o}{=} \PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{readLine}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{output}\PYG{p}{);}
+			\PYG{n}{reader}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{e}\PYG{p}{.}\PYG{n+na}{printStackTrace}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

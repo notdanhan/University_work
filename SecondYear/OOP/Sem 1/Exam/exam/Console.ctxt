@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Console
+comment0.text=\n\ Abstract\ class\ Console\ -\ write\ a\ description\ of\ the\ class\ here\n\n\ @author\ Daniel\ Hannon\ 19484286\n\ @version\ Final\n
+comment1.params=name\ description\ color\ price
+comment1.target=Console(java.lang.String,\ java.lang.String,\ java.lang.String,\ float)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment4.params=
+comment4.target=java.lang.String\ getColor()
+comment5.params=
+comment5.target=float\ getCost()
+numComments=6

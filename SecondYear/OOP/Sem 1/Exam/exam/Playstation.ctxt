@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Playstation
+comment0.text=\n\ Write\ a\ description\ of\ class\ Playstation\ here.\n\n\ @author\ Daniel\ Hannon\ 19484286\n\ @version\ Final\n
+comment1.params=edition\ generation\ hasDiskDrive\ description\ color\ price\ isAvailable
+comment1.target=Playstation(java.lang.String,\ int,\ boolean,\ java.lang.String,\ java.lang.String,\ float,\ boolean)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Playstation\n
+comment2.params=
+comment2.target=int\ getNumber()
+comment3.params=
+comment3.target=java.lang.String\ getEdition()
+comment4.params=
+comment4.target=boolean\ getAvailability()
+comment5.params=isAvailable
+comment5.target=void\ setAvailability(boolean)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

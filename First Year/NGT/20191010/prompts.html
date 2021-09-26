@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<head>
+		<script>
+			function get_name() {
+				var name = prompt("What is your name? ");
+				var text = document.getElementById("changingtext");
+				if (name!= null) {
+					text.innerHTML = "Welcome " + name;
+				}
+				else {
+					text.innerHTML = "undefined";
+				}
+			}
+		</script>
+	</head>
+	<body onload="get_name();">
+		<p id="changingtext"></p>
+	</body>
+</html>

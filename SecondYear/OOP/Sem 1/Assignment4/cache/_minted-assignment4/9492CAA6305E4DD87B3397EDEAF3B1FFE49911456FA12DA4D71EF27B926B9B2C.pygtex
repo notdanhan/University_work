@@ -1,0 +1,93 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Date}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.text.SimpleDateFormat}\PYG{p}{;}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{*	As this is an end user class, IE \PYGZhy{} not controlled by the bus company}
+\PYG{c+cm}{*	It does not require any setters beyond the initalization of a trip ID}
+\PYG{c+cm}{*	And the ability to modify the amount of Available seats due to seats being}
+\PYG{c+cm}{*	Purchased}
+\PYG{c+cm}{*/}
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Trip}\PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{k+kt}{int} \PYG{n}{ID}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{int} \PYG{n}{seats}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{float} \PYG{n}{cost}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{startingLocation}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{destination}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Date} \PYG{n}{dateOfDeparture}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Date} \PYG{n}{timeOfDeparture}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Date} \PYG{n}{dateOfArrival}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Date} \PYG{n}{timeOfArrival}\PYG{p}{;}
+
+	\PYG{k+kd}{public} \PYG{n+nf}{Trip}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{ID}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{cost}\PYG{p}{,} \PYG{n}{String} \PYG{n}{start}\PYG{p}{,} \PYG{n}{String} \PYG{n}{destination}\PYG{p}{,} \PYG{n}{String} \PYG{n}{departureDate}\PYG{p}{,} \PYG{n}{String} \PYG{n}{departureTime}\PYG{p}{,} \PYG{n}{String} \PYG{n}{arrivalDate}\PYG{p}{,} \PYG{n}{String} \PYG{n}{arrivalTime}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats} \PYG{o}{=} \PYG{l+m+mi}{60}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ID} \PYG{o}{=} \PYG{n}{ID}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{startingLocation} \PYG{o}{=} \PYG{n}{start}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{destination} \PYG{o}{=} \PYG{n}{destination}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cost} \PYG{o}{=} \PYG{n}{cost}\PYG{p}{;}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{c+cm}{/*Dates are stored as Date Objects as they occupy less space than a String*/}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{dateOfDeparture} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dd/MM/yyyy\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{parse}\PYG{p}{(}\PYG{n}{departureDate}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{timeOfDeparture} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}HH:mm\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{parse}\PYG{p}{(}\PYG{n}{departureTime}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{dateOfArrival} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dd/MM/yyyy\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{parse}\PYG{p}{(}\PYG{n}{arrivalDate}\PYG{p}{);}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{timeOfArrival} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}HH:mm\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{parse}\PYG{p}{(}\PYG{n}{arrivalTime}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Parse Error\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getID}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ID}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getSeats}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{float} \PYG{n+nf}{getCost}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cost}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getStartingLocation}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{startingLocation}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getDestination}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{destination}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Date} \PYG{n+nf}{getDateOfDeparture}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{dateOfDeparture}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Date} \PYG{n+nf}{getTimeOfDeparture}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{timeOfDeparture}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Date} \PYG{n+nf}{getDateOfArrival}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{dateOfArrival}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Date} \PYG{n+nf}{getTimeOfArrival}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{timeOfArrival}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setSeats}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{newSeats}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats} \PYG{o}{=} \PYG{n}{newSeats}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+cm}{/*It did not make sense not to override toString*/}
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}Trip ID: \PYGZdq{}} \PYG{o}{+} \PYG{n}{ID}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nOrigin: \PYGZdq{}} \PYG{o}{+} \PYG{n}{startingLocation}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nDestination: \PYGZdq{}} \PYG{o}{+} \PYG{n}{destination}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nDeparture Date: \PYGZdq{}} \PYG{o}{+} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dd/MM/yyyy\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{format}\PYG{p}{(}\PYG{n}{dateOfDeparture}\PYG{p}{);}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nDeparture Time: \PYGZdq{}} \PYG{o}{+} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}HH:mm\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{format}\PYG{p}{(}\PYG{n}{timeOfDeparture}\PYG{p}{);}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nArrival Date: \PYGZdq{}} \PYG{o}{+} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dd/MM/yyyy\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{format}\PYG{p}{(}\PYG{n}{dateOfArrival}\PYG{p}{);}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nArrival Time: \PYGZdq{}} \PYG{o}{+} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}HH:mm\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{format}\PYG{p}{(}\PYG{n}{timeOfArrival}\PYG{p}{);}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nFare: €\PYGZdq{}} \PYG{o}{+} \PYG{n}{cost} \PYG{o}{+}\PYG{l+s}{\PYGZdq{} per passenger\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nCurrently Available Seats: \PYGZdq{}} \PYG{o}{+} \PYG{n}{seats}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

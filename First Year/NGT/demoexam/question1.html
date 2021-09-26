@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			//We need to store these outside of the function as we need to store this information
+			var current_image = 1;
+			var left_pos = 200;
+
+			function move_goblin() {
+				current_image++;
+				//There's only six immages so we have to send it back to the start of the loop
+				if (current_image == 7) {
+					current_image = 1;
+				}
+				//Move it right by 50px 
+				left_pos += 50;
+				//Update the image by concatinating a string
+				//On the first time this function is ran it will be 'http://psychicsoftware.com/ct1113/goblin_2.png' 
+				document.getElementById("theImage").src = 'http://psychicsoftware.com/ct1113/goblin_'+ current_image +'.png';
+				//Move the Goblin to the right
+				document.getElementById("theGoblin").style.left = left_pos+'px';
+				//We were told to update the goblin 50 times a second so we use this to do it 1000/50 is 20
+				setTimeout(move_goblin(),20);
+			}
+		</script>
+	</head>
+	<body onload="move_goblin()">
+		<div style='position:absolute; left:200px; top:200px;' id='theGoblin'>
+			<img id='theImage' src='http://psychicsoftware.com/ct1113/goblin_1.png'>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+PWD /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.tex
+OUTPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.log
+INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/share/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+INPUT /usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/share/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT /usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/share/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texmf/tex/latex/minted/minted.sty
+INPUT /usr/share/texmf/tex/latex/minted/minted.sty
+INPUT /usr/share/texmf/tex/latex/fvextra/fvextra.sty
+INPUT /usr/share/texmf/tex/latex/fvextra/fvextra.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+INPUT /usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+INPUT /usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+INPUT /usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+INPUT /usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+INPUT /usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+INPUT /usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+INPUT /usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+INPUT /usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+INPUT /usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /dev/null
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.w18
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.w18
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+INPUT /usr/share/texmf-dist/tex/latex/framed/framed.sty
+INPUT /usr/share/texmf-dist/tex/latex/framed/framed.sty
+INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/titling/titling.sty
+INPUT /usr/share/texmf-dist/tex/latex/titling/titling.sty
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aex
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aux
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aux
+OUTPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aux
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+OUTPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.pdf
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+OUTPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/default-pyg-prefix.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/default-pyg-prefix.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/default-pyg-prefix.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/default-pyg-prefix.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/fruity.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/fruity.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/fruity.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/fruity.pygstyle
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/Car.java
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/C796C2FAB675BAEE7775C776C3EF375922B2E9AD8772332B41C515DB39E0178F.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/C796C2FAB675BAEE7775C776C3EF375922B2E9AD8772332B41C515DB39E0178F.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/C796C2FAB675BAEE7775C776C3EF375922B2E9AD8772332B41C515DB39E0178F.pygtex
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/Engine.java
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/BF09B02ACE403179155702412C3FA21B47EAFC624900D6538EF6B47B50B313CF.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/BF09B02ACE403179155702412C3FA21B47EAFC624900D6538EF6B47B50B313CF.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/BF09B02ACE403179155702412C3FA21B47EAFC624900D6538EF6B47B50B313CF.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/Wheel.java
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/4676115058238EC024AAA000610C6D565E4379BC4A17E4C77781626A02890BA7.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/4676115058238EC024AAA000610C6D565E4379BC4A17E4C77781626A02890BA7.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/4676115058238EC024AAA000610C6D565E4379BC4A17E4C77781626A02890BA7.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/TestCar.java
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/209D1D51259F53320BE06626D00700D2722DD8056C3377FACD7E6A6525F20E74.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/209D1D51259F53320BE06626D00700D2722DD8056C3377FACD7E6A6525F20E74.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/cache/_minted-assignment1/209D1D51259F53320BE06626D00700D2722DD8056C3377FACD7E6A6525F20E74.pygtex
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/./images/testoutput.png
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/./images/testoutput.png
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/./images/testoutput.png
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.aux
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /home/daniel/Documents/Uni/Second Year/OOP/Assignment 1/assignment1.out
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb

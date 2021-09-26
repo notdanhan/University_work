@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			async function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve,ms));
+			}
+			var leftPos=800;
+			var running = 0;
+			async function moveTheVan(clicked) {
+				if (clicked) {
+					if (running) {
+						running = 0;
+					}
+					else {
+						running = 1;
+					}
+				}
+				if (running) {
+					leftPos-= 2;
+					document.getElementById("divVan").style.left = leftPos+"px";
+					if (leftPos>0) {
+						await sleep(20);
+						moveTheVan(0);
+					}
+				}
+			}
+			var clicks = 0;
+			var dclicks = 0;
+			var hover = 0;
+			var outoffocus = 0;
+			function udisplay(job) {
+				console.log("Clicc");
+				if (job == 1) {
+					clicks++;
+				}
+				if (job == 2) {
+					dclicks++;
+				}
+				if (job == 3) {
+					hover++;
+				}
+				if (job == 4) {
+					outoffocus++;
+				}
+				document.getElementById("text").innerHTML = "<p>Clicks: "+clicks+"\nDouble Clicks: "+dclicks+"\nHovers: "+hover+"\nOut of Focus: "+outoffocus+"</p>";
+			
+			}
+		</script>
+	</head>
+	<body>
+		<div id='divVan' style='position:absolute; left:800px; top:100px' onclick="moveTheVan(1);udisplay(1)" ondblclick="udisplay(2)" onfocus="udisplay(3)" onblur="udisplay(4)"><img src='mysteryMachine.png'></div>
+		<p id="text" ">
+		</p>
+	</body>
+</html>

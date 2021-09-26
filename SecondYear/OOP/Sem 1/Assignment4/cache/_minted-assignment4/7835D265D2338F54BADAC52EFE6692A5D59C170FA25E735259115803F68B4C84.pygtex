@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Booking} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{Trip} \PYG{n}{myTrip}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{int} \PYG{n}{seats}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{float} \PYG{n}{cost}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{n+nf}{Booking}\PYG{p}{(}\PYG{n}{Trip} \PYG{n}{newTrip}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{newSeats}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{myTrip} \PYG{o}{=} \PYG{n}{newTrip}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats} \PYG{o}{=} \PYG{n}{newSeats}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cost} \PYG{o}{=} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n}{Trip} \PYG{n+nf}{getTrip}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{myTrip}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getSeats}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{float} \PYG{n+nf}{getCost}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cost}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setTrip}\PYG{p}{(}\PYG{n}{Trip} \PYG{n}{trip}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{myTrip} \PYG{o}{=} \PYG{n}{trip}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setSeats}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{newSeats}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{seats} \PYG{o}{=} \PYG{n}{newSeats}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCost}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{newCost}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cost} \PYG{o}{=} \PYG{n}{newCost}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

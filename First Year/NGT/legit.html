@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			let count = 1;
+			let left = 200;
+			function move() {
+				let goblin_pos = document.getElementById("theGoblin");
+				let goblin_frame = document.getElementById("theGoblinImage");
+				left += 5;
+				count++;
+				if (count == 7) {
+					count = 1;
+				}
+				goblin_frame.src = "http://www.psychicsoftware.com/goblin_run_"+ count + ".png";
+				goblin_pos.style.left = left + "px";
+				setTimeout(move(),200);
+			}
+		</script>
+	</head>
+	<body onload="move()">
+		<div style="position:absolute; left:200px; top:200px;" id="theGoblin" >
+			<img id="theGoblinImage" src="http://www.psychicsoftware.com/goblin_run_1.png" >
+		</div>
+	</body>
+</html>

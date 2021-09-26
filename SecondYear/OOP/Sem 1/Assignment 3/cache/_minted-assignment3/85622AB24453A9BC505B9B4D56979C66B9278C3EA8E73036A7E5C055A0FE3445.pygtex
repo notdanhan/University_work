@@ -1,0 +1,55 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Trout} \PYG{k+kd}{extends} \PYG{n}{Fish}\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{boolean} \PYG{n}{hasSpikes}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{isEdible}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{swimsUpstreamToLayEggs}\PYG{p}{;}
+	\PYG{n}{String} \PYG{n}{name}\PYG{p}{;}
+	
+	\PYG{k+kd}{public} \PYG{n+nf}{Trout}\PYG{p}{(}\PYG{n}{String} \PYG{n}{name}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name} \PYG{o}{=} \PYG{n}{name}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasSpikes} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Brown\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isEdible} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{swimsUpstreamToLayEggs} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasSpikes}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasSpikes}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{isEdible}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isEdible}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{swimsUpstreamToLayEggs}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{swimsUpstreamToLayEggs}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Trout\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} Name: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Color: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Spikes: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasSpikes}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Is Edible: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isEdible}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Swims Upstream to lay eggs: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{swimsUpstreamToLayEggs}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Gills: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasGills}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Fins: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFins}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Can Swim: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canSwim}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Breathes: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{breathes}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{equals}\PYG{p}{(}\PYG{n}{Object} \PYG{n}{o}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{o} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Trout}\PYG{p}{)}\PYG{n}{o}\PYG{p}{;}
+			\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{().}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{o}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{());}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

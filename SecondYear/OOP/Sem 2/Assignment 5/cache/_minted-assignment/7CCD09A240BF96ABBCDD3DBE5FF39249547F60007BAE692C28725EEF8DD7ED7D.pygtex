@@ -1,0 +1,176 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Scanner}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Stack}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.*}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Main} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n+nf}{createTree}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Create a demo question tree}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{answer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Penguin\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{answer2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Parrot\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{question1} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Can it fly?\PYGZdq{}}\PYG{p}{,} \PYG{n}{answer2}\PYG{p}{,} \PYG{n}{answer}\PYG{p}{);}
+		\PYG{n}{answer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Lion\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{answer2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Dog\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{question2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Does it live in the Jungle? \PYGZdq{}}\PYG{p}{,}\PYG{n}{answer}\PYG{p}{,}\PYG{n}{answer2}\PYG{p}{);}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{n}{question3} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Is it a bird?\PYGZdq{}}\PYG{p}{,} \PYG{n}{question1}\PYG{p}{,} \PYG{n}{question2}\PYG{p}{);}
+
+		\PYG{n}{answer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Shark\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{answer2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Crocodile\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{question1} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Does it have Scales?\PYGZdq{}}\PYG{p}{,}\PYG{n}{answer2}\PYG{p}{,}\PYG{n}{answer}\PYG{p}{);}
+		\PYG{n}{question2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Is it a mammal?\PYGZdq{}}\PYG{p}{,}\PYG{n}{question3}\PYG{p}{,}\PYG{n}{question1}\PYG{p}{);}
+		\PYG{k}{return} \PYG{n}{question2}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n+nf}{loadTree}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{myBinaryTree} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{File} \PYG{n}{myFile} \PYG{o}{=} \PYG{k}{new} \PYG{n}{File}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}saveFile.txt\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{output} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{n}{Stack}\PYG{o}{\PYGZlt{}}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{myStack} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Stack}\PYG{o}{\PYGZlt{}}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{p}{();}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Scanner} \PYG{n}{fileScanner} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Scanner}\PYG{p}{(}\PYG{n}{myFile}\PYG{p}{);}
+			\PYG{k}{while}\PYG{p}{(}\PYG{n}{fileScanner}\PYG{p}{.}\PYG{n+na}{hasNextLine}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{n}{myBinaryTree} \PYG{o}{+=} \PYG{n}{fileScanner}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{fileScanner}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{myBinaryTree}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Empty file returning default file\PYGZdq{}}\PYG{p}{);}
+				\PYG{k}{return} \PYG{n}{createTree}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{String}\PYG{o}{[]} \PYG{n}{myArray} \PYG{o}{=} \PYG{n}{myBinaryTree}\PYG{p}{.}\PYG{n+na}{split}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{myArray}\PYG{p}{.}\PYG{n+na}{length} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{//Since each node either has two children or no children this works}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myArray}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{myArray}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{c+c1}{//If both children are null it creates a new node and pushes it to the stack}
+					\PYG{n}{myStack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{myArray}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{]}\PYG{p}{,}\PYG{k+kc}{null}\PYG{p}{,}\PYG{k+kc}{null}\PYG{p}{));}
+					\PYG{n}{i}\PYG{o}{\PYGZhy{}=}\PYG{l+m+mi}{2}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{c+c1}{//Create a question and it\PYGZsq{}s answers using two child nodes}
+					\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{left}  \PYG{o}{=} \PYG{n}{myStack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+					\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{right} \PYG{o}{=} \PYG{n}{myStack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+					\PYG{n}{myStack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{myArray}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{,}\PYG{n}{left}\PYG{p}{,}\PYG{n}{right}\PYG{p}{));}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}No Save file exists! returning the default tree\PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{return} \PYG{n}{createTree}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//Pop top of stack as it is the first question}
+		\PYG{n}{output} \PYG{o}{=} \PYG{n}{myStack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{();}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{saveTree}\PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{myTree}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Create File Writer}
+		\PYG{n}{File} \PYG{n}{myFile} \PYG{o}{=} \PYG{k}{new} \PYG{n}{File}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}saveFile.txt\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{FileWriter} \PYG{n}{fileOutput}\PYG{p}{;}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{myFile}\PYG{p}{.}\PYG{n+na}{createNewFile}\PYG{p}{();}
+			\PYG{n}{fileOutput} \PYG{o}{=} \PYG{k}{new} \PYG{n}{FileWriter}\PYG{p}{(}\PYG{n}{myFile}\PYG{p}{);}
+			\PYG{n}{fileOutput}\PYG{p}{.}\PYG{n+na}{write}\PYG{p}{(}\PYG{n}{myTree}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{());}
+			\PYG{n}{fileOutput}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{n}{e}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Scanner} \PYG{n}{input} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Scanner}\PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{in}\PYG{p}{);}
+		\PYG{n}{String} \PYG{n}{myGuess} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k+kt}{boolean} \PYG{n}{isRunning} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{questionTree} \PYG{o}{=} \PYG{n}{createTree}\PYG{p}{();}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{currentNode} \PYG{o}{=} \PYG{n}{questionTree}\PYG{p}{;}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{previous} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{path} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{isRunning}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{isLeaf}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{getData}\PYG{p}{()}\PYG{o}{+}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{);}
+				\PYG{n}{myGuess} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{toLowerCase}\PYG{p}{();}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}yes\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}y\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{previous} \PYG{o}{=} \PYG{n}{currentNode}\PYG{p}{;}
+					\PYG{n}{currentNode} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{getLeftChild}\PYG{p}{();}
+					\PYG{n}{path} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}no\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{))\PYGZob{}}
+					\PYG{n}{previous} \PYG{o}{=} \PYG{n}{currentNode}\PYG{p}{;}
+					\PYG{n}{currentNode} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{getRightChild}\PYG{p}{();}
+					\PYG{n}{path} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{while}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Is it a \PYGZdq{}}\PYG{o}{+}\PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{getData}\PYG{p}{()} \PYG{o}{+}\PYG{l+s}{\PYGZdq{}? \PYGZdq{}}\PYG{p}{);}
+				\PYG{n}{myGuess} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{toLowerCase}\PYG{p}{();}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}yes\PYGZdq{}}\PYG{p}{)}\PYG{o}{||}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}y\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}I won!\PYGZdq{}}\PYG{p}{);}
+					\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}no\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}I Don\PYGZsq{}t know, what\PYGZsq{}s the correct answer? \PYGZdq{}}\PYG{p}{);}
+					\PYG{n}{String} \PYG{n}{answer} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+					\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{newAnswerNode} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{answer}\PYG{p}{);}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Distinguishing Question: \PYGZdq{}}\PYG{p}{);}
+					\PYG{c+c1}{//Input sanitisation for saving the tree later}
+					\PYG{n}{String} \PYG{n}{newQuestion} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+					\PYG{k}{while}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Correct Answer for \PYGZdq{}} \PYG{o}{+} \PYG{n}{currentNode}\PYG{p}{.}\PYG{n+na}{getData}\PYG{p}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}: \PYGZdq{}}\PYG{p}{);}
+						\PYG{n}{String} \PYG{n}{option} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{toLowerCase}\PYG{p}{();}
+						\PYG{k}{if}\PYG{p}{(}\PYG{n}{option}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}yes\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{option}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}y\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+							\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{newQuestionNode} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{newQuestion}\PYG{p}{,}\PYG{n}{currentNode}\PYG{p}{,}\PYG{n}{newAnswerNode}\PYG{p}{);}
+							\PYG{k}{if}\PYG{p}{(}\PYG{n}{previous} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+								\PYG{k}{if}\PYG{p}{(}\PYG{n}{path} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+									\PYG{c+c1}{//Yes}
+									\PYG{n}{previous}\PYG{p}{.}\PYG{n+na}{setLeftChild}\PYG{p}{(}\PYG{n}{newQuestionNode}\PYG{p}{);}
+								\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+									\PYG{n}{previous}\PYG{p}{.}\PYG{n+na}{setRightChild}\PYG{p}{(}\PYG{n}{newQuestionNode}\PYG{p}{);}
+								\PYG{p}{\PYGZcb{}}
+							\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+								\PYG{n}{questionTree} \PYG{o}{=} \PYG{n}{newQuestionNode}\PYG{p}{;}
+							\PYG{p}{\PYGZcb{}}
+							\PYG{k}{break}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{option}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}no\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{n}{option}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+							\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}} \PYG{n}{newQuestionNode} \PYG{o}{=} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{newQuestion}\PYG{p}{,}\PYG{n}{newAnswerNode}\PYG{p}{,}\PYG{n}{currentNode}\PYG{p}{);}
+							\PYG{k}{if}\PYG{p}{(}\PYG{n}{previous} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+								\PYG{k}{if}\PYG{p}{(}\PYG{n}{path} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+									\PYG{c+c1}{//Yes}
+									\PYG{n}{previous}\PYG{p}{.}\PYG{n+na}{setLeftChild}\PYG{p}{(}\PYG{n}{newQuestionNode}\PYG{p}{);}
+								\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+									\PYG{c+c1}{//No}
+									\PYG{n}{previous}\PYG{p}{.}\PYG{n+na}{setRightChild}\PYG{p}{(}\PYG{n}{newQuestionNode}\PYG{p}{);}
+								\PYG{p}{\PYGZcb{}}
+							\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+								\PYG{c+c1}{//Accounting for a tree with a single leaf and nothing else}
+								\PYG{n}{questionTree} \PYG{o}{=} \PYG{n}{newQuestionNode}\PYG{p}{;}
+							\PYG{p}{\PYGZcb{}}
+							\PYG{k}{break}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+							\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Please Input a valid response!\PYGZdq{}}\PYG{p}{);}
+						\PYG{p}{\PYGZcb{}}
+					\PYG{p}{\PYGZcb{}}
+					\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Please enter a valid response!\PYGZdq{}}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{while}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Would you like to:\PYGZbs{}n a) Play Again?\PYGZbs{}n b) Save the Tree?\PYGZbs{}n c) Load another Tree?\PYGZbs{}n d) Quit?\PYGZdq{}}\PYG{p}{);}
+				\PYG{n}{myGuess} \PYG{o}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{().}\PYG{n+na}{toLowerCase}\PYG{p}{();}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}a\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{c+c1}{//Play Again}
+					\PYG{n}{previous} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+					\PYG{n}{currentNode} \PYG{o}{=} \PYG{n}{questionTree}\PYG{p}{;}
+					\PYG{n}{path} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+					\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}b\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{saveTree}\PYG{p}{(}\PYG{n}{questionTree}\PYG{p}{);}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Tree Saved!\PYGZdq{}}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}c\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Loading Tree\PYGZdq{}}\PYG{p}{);}
+					\PYG{n}{questionTree} \PYG{o}{=} \PYG{n}{loadTree}\PYG{p}{();}
+
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{myGuess}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}d\PYGZdq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+					\PYG{n}{isRunning} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+					\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{input}\PYG{p}{.}\PYG{n+na}{close}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

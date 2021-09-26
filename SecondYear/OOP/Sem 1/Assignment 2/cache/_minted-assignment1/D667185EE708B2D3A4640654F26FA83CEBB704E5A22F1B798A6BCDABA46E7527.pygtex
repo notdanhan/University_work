@@ -1,0 +1,79 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Address} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{HouseNumber}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{StreetName}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{City}\PYG{p}{;}
+	\PYG{c+cm}{/*Set to string to allow for British and Irish Postcodes*/}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{ZipCode}\PYG{p}{;} 
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{Country}\PYG{p}{;}
+
+	\PYG{n}{Address}\PYG{p}{(}\PYG{n}{String} \PYG{n}{StreetName}\PYG{p}{,} \PYG{n}{String} \PYG{n}{City}\PYG{p}{,} \PYG{n}{String} \PYG{n}{ZipCode}\PYG{p}{,} \PYG{n}{String} \PYG{n}{Country}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{HouseNumber} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{StreetName} \PYG{o}{=} \PYG{n}{StreetName}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{City} \PYG{o}{=} \PYG{n}{City}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ZipCode} \PYG{o}{=} \PYG{n}{ZipCode}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Country} \PYG{o}{=} \PYG{n}{Country}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n}{Address}\PYG{p}{(}\PYG{n}{String} \PYG{n}{HouseNumber}\PYG{p}{,} \PYG{n}{String} \PYG{n}{StreetName}\PYG{p}{,} \PYG{n}{String} \PYG{n}{City}\PYG{p}{,} \PYG{n}{String} \PYG{n}{ZipCode}\PYG{p}{,} \PYG{n}{String} \PYG{n}{Country}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{HouseNumber} \PYG{o}{=} \PYG{n}{HouseNumber}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{City} \PYG{o}{=} \PYG{n}{City}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{StreetName} \PYG{o}{=} \PYG{n}{StreetName}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ZipCode} \PYG{o}{=} \PYG{n}{ZipCode}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Country} \PYG{o}{=} \PYG{n}{Country}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{stringify}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{HouseNumber}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()}\PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{output}\PYG{o}{+=}\PYG{n}{HouseNumber}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{output}\PYG{o}{+=}\PYG{n}{StreetName}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output}\PYG{o}{+=}\PYG{n}{City}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output}\PYG{o}{+=}\PYG{n}{ZipCode}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output}\PYG{o}{+=}\PYG{n}{Country}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getHouseNumber}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{HouseNumber}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getStreetName}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{StreetName}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getCity}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{City}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getZipCode}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ZipCode}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getCountry}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Country}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setHouseNumber}\PYG{p}{(}\PYG{n}{String} \PYG{n}{HouseNumber}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{HouseNumber} \PYG{o}{=} \PYG{n}{HouseNumber}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setStreetName}\PYG{p}{(}\PYG{n}{String} \PYG{n}{StreetName}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{StreetName} \PYG{o}{=} \PYG{n}{StreetName}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCity}\PYG{p}{(}\PYG{n}{String} \PYG{n}{City}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{City} \PYG{o}{=} \PYG{n}{City}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setZipCode}\PYG{p}{(}\PYG{n}{String} \PYG{n}{Zip}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{ZipCode} \PYG{o}{=} \PYG{n}{Zip}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCountry}\PYG{p}{(}\PYG{n}{String} \PYG{n}{Country}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{Country} \PYG{o}{=} \PYG{n}{Country}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

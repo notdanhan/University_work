@@ -1,0 +1,98 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * @author Michael Schukat, 2019 Modified by Daniel Hannon}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Date}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{CT255\PYGZus{}HashFunction2} \PYG{p}{\PYGZob{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{res} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{res1} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{collisions\PYGZus{}found} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{args} \PYG{o}{!=} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{args}\PYG{p}{.}\PYG{n+na}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// Check for \PYGZlt{}input\PYGZgt{} value}
+			\PYG{n}{res} \PYG{o}{=} \PYG{n}{hashF2}\PYG{p}{(}\PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]}\PYG{p}{);} \PYG{c+c1}{// call hash function with \PYGZlt{}input\PYGZgt{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{res} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// Error}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Error: \PYGZlt{}input\PYGZgt{} must be 1 to 64 characters long.\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}input = \PYGZdq{}} \PYG{o}{+} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} : Hash = \PYGZdq{}} \PYG{o}{+} \PYG{n}{res}\PYG{p}{);}
+				\PYG{c+cm}{/*Added time it takes to compare Algorithms*/}
+				\PYG{n}{Date} \PYG{n}{time} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Date}\PYG{p}{();}
+				\PYG{k+kt}{long} \PYG{n}{timeStart} \PYG{o}{=} \PYG{n}{time}\PYG{p}{.}\PYG{n+na}{getTime}\PYG{p}{();}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Start searching for collisions\PYGZdq{}}\PYG{p}{);}
+				\PYG{k}{while}\PYG{p}{(}\PYG{n}{collisions\PYGZus{}found} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{String} \PYG{n}{test} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+					\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Length 5 string*/}
+						\PYG{n}{test}\PYG{o}{+=}\PYG{n}{Character}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)(} \PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{random}\PYG{p}{()} \PYG{o}{*} \PYG{l+m+mi}{78}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{48}\PYG{p}{);} \PYG{c+cm}{/*ASCII value \PYGZdq{}0\PYGZdq{} is 48}
+\PYG{c+cm}{						and \PYGZdq{}\PYGZti{}\PYGZdq{} is 126*/} 
+					\PYG{p}{\PYGZcb{}}
+					\PYG{n}{res1} \PYG{o}{=} \PYG{n}{hashF2}\PYG{p}{(}\PYG{n}{test}\PYG{p}{);}
+					\PYG{k}{if}\PYG{p}{(}\PYG{n}{res} \PYG{o}{==} \PYG{n}{res1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{args}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{test}\PYG{p}{)} \PYG{o}{==} \PYG{k+kc}{false}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+cm}{/*Compares hashes and strings to }
+\PYG{c+cm}{					make sure that it is not the exact same string if there\PYGZsq{}s a duplicate*/}
+						\PYG{n}{time} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Date}\PYG{p}{();}
+						\PYG{c+cm}{/*Get Time of collision relative to program start*/}
+						\PYG{k+kt}{long} \PYG{n}{timecurr} \PYG{o}{=} \PYG{n}{time}\PYG{p}{.}\PYG{n+na}{getTime}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timeStart}\PYG{p}{;}
+						\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{timecurr}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}ms: Collision Found! \PYGZdq{}} \PYG{o}{+} \PYG{n}{test}\PYG{p}{);}
+						\PYG{n}{collisions\PYGZus{}found}\PYG{o}{++}\PYG{p}{;}
+					\PYG{p}{\PYGZcb{}}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// No \PYGZlt{}input\PYGZgt{} }
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Use: CT255\PYGZus{}HashFunction1 \PYGZlt{}Input\PYGZgt{}\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{int} \PYG{n+nf}{hashF2}\PYG{p}{(}\PYG{n}{String} \PYG{n}{s}\PYG{p}{)\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{i}\PYG{p}{;}
+		\PYG{k+kt}{int}\PYG{o}{[]} \PYG{n}{hashA} \PYG{o}{=} \PYG{k}{new} \PYG{k+kt}{int}\PYG{o}{[]}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{};}
+
+		\PYG{n}{String} \PYG{n}{filler}\PYG{p}{,} \PYG{n}{sIn}\PYG{p}{;}
+		\PYG{k+kt}{char} \PYG{n}{space1}\PYG{p}{,}\PYG{n}{space2}\PYG{p}{,}\PYG{n}{space3}\PYG{p}{;}
+		\PYG{c+cm}{/* By swapping around one AB in this I have completely removed several duplicates */}
+		\PYG{n}{filler} \PYG{o}{=} \PYG{k}{new} \PYG{n}{String}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ABCDEFGHBACDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGHABCDEFGH\PYGZdq{}}\PYG{p}{);}
+		\PYG{k+kt}{char}\PYG{o}{[]} \PYG{n}{primes} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{17}\PYG{p}{,}\PYG{l+m+mi}{79}\PYG{p}{,}\PYG{l+m+mi}{91}\PYG{p}{,}\PYG{l+m+mi}{103}\PYG{p}{,}\PYG{l+m+mi}{83}\PYG{p}{,}\PYG{l+m+mi}{67}\PYG{p}{,}\PYG{l+m+mi}{101}\PYG{p}{,}\PYG{l+m+mi}{47}\PYG{p}{,}\PYG{l+m+mi}{89}\PYG{p}{,}\PYG{l+m+mi}{107}\PYG{p}{,}\PYG{l+m+mi}{19}\PYG{p}{,}\PYG{l+m+mi}{41}\PYG{p}{\PYGZcb{};} \PYG{c+cm}{/*Random primes in a random order*/}
+		\PYG{k+kt}{char}\PYG{o}{[]} \PYG{n}{primes2} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{91}\PYG{p}{,}\PYG{l+m+mi}{19}\PYG{p}{,}\PYG{l+m+mi}{107}\PYG{p}{,}\PYG{l+m+mi}{101}\PYG{p}{,}\PYG{l+m+mi}{83}\PYG{p}{,}\PYG{l+m+mi}{89}\PYG{p}{,}\PYG{l+m+mi}{41}\PYG{p}{,}\PYG{l+m+mi}{17}\PYG{p}{,}\PYG{l+m+mi}{103}\PYG{p}{,}\PYG{l+m+mi}{79}\PYG{p}{,}\PYG{l+m+mi}{67}\PYG{p}{,}\PYG{l+m+mi}{47}\PYG{p}{\PYGZcb{};} \PYG{c+cm}{/*Different Order of the same primes*/}
+
+		\PYG{k}{if} \PYG{p}{((}\PYG{n}{s}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{64}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{s}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{))} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// String does not have required length}
+			\PYG{n}{ret} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{sIn} \PYG{o}{=} \PYG{n}{s} \PYG{o}{+} \PYG{n}{filler}\PYG{p}{;} \PYG{c+c1}{// Add characters, now have \PYGZdq{}\PYGZlt{}input\PYGZgt{}HABCDEF...\PYGZdq{}}
+			\PYG{n}{sIn} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{64}\PYG{p}{);} \PYG{c+c1}{// // Limit string to first 64 characters}
+			\PYG{n}{space1} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{);}
+			\PYG{n}{space2} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{);}
+			\PYG{n}{space3} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{43}\PYG{p}{);}
+			
+			\PYG{c+c1}{// System.out.println(sIn); // FYI}
+			\PYG{k}{for} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+				\PYG{k+kt}{char} \PYG{n}{byPos} \PYG{o}{=} \PYG{n}{sIn}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);} \PYG{c+c1}{// get i\PYGZsq{}th character}
+			\PYG{c+cm}{/*This works like a somewhat Primitive Enigma Device wherein the number}
+\PYG{c+cm}{			that the value is changed by depends heavily on the position of the letter}
+\PYG{c+cm}{			within the string, to introduce some extra challenge to crack it}
+\PYG{c+cm}{			the displacement of the 2nd through 4th rotors depends on the values}
+\PYG{c+cm}{			held at fixed arbitrary positions within the string, not only this, the length}
+\PYG{c+cm}{			of the rotor which is operated is staggered.}
+\PYG{c+cm}{			To reduce the amount of collisions I also changed the filler text to include}
+\PYG{c+cm}{			\PYGZdq{}BACDEFGFH\PYGZdq{} in one location so duplicates like STRINGABCDEFGH would no longer}
+\PYG{c+cm}{			exist.*/}
+				\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{p}{(}\PYG{n}{primes}\PYG{o}{[}\PYG{n}{i} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{12}\PYG{o}{]}\PYG{p}{));}
+				\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{p}{(}\PYG{n}{primes}\PYG{o}{[}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{n}{space1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{11}\PYG{o}{]}\PYG{p}{));}
+				\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{p}{(}\PYG{n}{primes2}\PYG{o}{[}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{n}{space2}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{12}\PYG{o}{]}\PYG{p}{));}
+				\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{byPos} \PYG{o}{*} \PYG{p}{(}\PYG{n}{primes2}\PYG{o}{[}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{n}{space3}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{11}\PYG{o}{]}\PYG{p}{));}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{\PYGZpc{}=} \PYG{l+m+mi}{255}\PYG{p}{;}  \PYG{c+c1}{// \PYGZpc{} is the modulus operation, i.e. division with rest}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{\PYGZpc{}=} \PYG{l+m+mi}{255}\PYG{p}{;}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{\PYGZpc{}=} \PYG{l+m+mi}{255}\PYG{p}{;}
+			\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{\PYGZpc{}=} \PYG{l+m+mi}{255}\PYG{p}{;}
+
+			\PYG{n}{ret} \PYG{o}{=} \PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{+} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{*} \PYG{l+m+mi}{256}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{2}\PYG{o}{]} \PYG{o}{*} \PYG{l+m+mi}{256} \PYG{o}{*} \PYG{l+m+mi}{256}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{hashA}\PYG{o}{[}\PYG{l+m+mi}{3}\PYG{o}{]} \PYG{o}{*} \PYG{l+m+mi}{256} \PYG{o}{*} \PYG{l+m+mi}{256} \PYG{o}{*} \PYG{l+m+mi}{256}\PYG{p}{);}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{ret} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{ret} \PYG{o}{*=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

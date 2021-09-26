@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Wheel} \PYG{p}{\PYGZob{}}
+	\PYG{c+cm}{/*Private variables*/}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{brand}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{radius}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{circumference}\PYG{p}{;}
+
+	\PYG{c+cm}{/*Initilization*/}
+	\PYG{k+kd}{public} \PYG{n+nf}{Wheel}\PYG{p}{(}\PYG{n}{String} \PYG{n}{nbrand}\PYG{p}{,} \PYG{k+kt}{double} \PYG{n}{nradius}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{nradius} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{nradius} \PYG{o}{*=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{brand} \PYG{o}{=} \PYG{n}{nbrand}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{radius} \PYG{o}{=} \PYG{n}{nradius}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{circumference} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{PI} \PYG{o}{*} \PYG{n}{radius}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Getters*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{getRadius}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{radius}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getBrand}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{brand}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+cm}{/*As engine calls turn(), I called getCircumference() turn() instead*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{turn}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{circumference}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Realisitcally this would not have any}
+\PYG{c+cm}{	setters beyond the initilisation as it is a tyre*/}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Status
+comment0.text=\n\ Write\ a\ description\ of\ interface\ Status\ here.\n\n\ @author\ Daniel\ Hannon\n\ @version\ Final\n
+comment1.params=
+comment1.target=boolean\ getAvailability()
+comment2.params=isAvailable
+comment2.target=void\ setAvailability(boolean)
+numComments=3

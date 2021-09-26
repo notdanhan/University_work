@@ -1,0 +1,77 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Car} \PYG{p}{\PYGZob{}}
+		\PYG{c+cm}{/*Private variables*/}
+		\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{name}\PYG{p}{;}
+		\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{distance}\PYG{p}{;}
+		\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{totalKm}\PYG{p}{;}
+		\PYG{k+kd}{private} \PYG{n}{Engine} \PYG{n}{engine}\PYG{p}{;}
+
+		\PYG{c+cm}{/*Initialization*/}
+		\PYG{k+kd}{public} \PYG{n+nf}{Car}\PYG{p}{(}\PYG{n}{String} \PYG{n}{cname}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name} \PYG{o}{=} \PYG{n}{cname}\PYG{p}{;}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{distance} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalKm} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{engine} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{c+cm}{/*Functions of the Car*/}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{add}\PYG{p}{(}\PYG{n}{Engine} \PYG{n}{nengine}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{engine} \PYG{o}{=} \PYG{n}{nengine}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+cm}{/* Overloading is used to avoid typechecking */}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{add}\PYG{p}{(}\PYG{n}{Wheel} \PYG{n}{nwheel}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{setWheel}\PYG{p}{(}\PYG{n}{nwheel}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: No Engine\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{drive}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{distance} \PYG{o}{=} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{move}\PYG{p}{();}
+				\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalKm}\PYG{o}{+=}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{distance}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: No Engine\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{printState}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+			\PYG{c+cm}{/*copies instance of wheel from engine to reduce total amount of lines of code*/}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{n}{Wheel} \PYG{n}{tempWheel} \PYG{o}{=} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getWheel}\PYG{p}{();}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Configuration: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{);}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Engine name: \PYGZdq{}} \PYG{o}{+} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getEnginemodel}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Engine turns per liter: \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getTpl}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Engine Total turn count: \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getTotalturns}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Wheel name: \PYGZdq{}} \PYG{o}{+} \PYG{n}{tempWheel}\PYG{p}{.}\PYG{n+na}{getBrand}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Wheel radius: \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{tempWheel}\PYG{p}{.}\PYG{n+na}{getRadius}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Wheel circumference (distance per turn): \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{tempWheel}\PYG{p}{.}\PYG{n+na}{turn}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Distance this trip: \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{distance}\PYG{p}{);}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Total distance Travelled: \PYGZpc{}.2f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalKm}\PYG{p}{);}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Current fuel Status: \PYGZpc{}.2f\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getFuel}\PYG{p}{());}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: No Engine\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{c+cm}{/*Setters*/}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setDistance}\PYG{p}{(}\PYG{k+kt}{double} \PYG{n}{dist}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{distance} \PYG{o}{=} \PYG{n}{dist}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setFuel}\PYG{p}{(}\PYG{k+kt}{double} \PYG{n}{nfuel}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{k}{if} \PYG{p}{(}\PYG{n}{nfuel} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{setFuel}\PYG{p}{(}\PYG{n}{nfuel}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}You Cannot take Fuel Out!\PYGZdq{}}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: No Engine\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{getFuel}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n}{engine}\PYG{p}{.}\PYG{n+na}{getFuel}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

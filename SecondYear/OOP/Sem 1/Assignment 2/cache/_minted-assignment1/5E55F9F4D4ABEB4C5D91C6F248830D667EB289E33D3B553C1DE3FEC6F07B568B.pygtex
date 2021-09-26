@@ -1,0 +1,75 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Calendar}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Date}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.GregorianCalendar}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.text.SimpleDateFormat}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Payment} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{k+kt}{long} \PYG{n}{cardNumber}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Date} \PYG{n}{date}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{cardType}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Boolean} \PYG{n}{isValid}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Order} \PYG{n}{order}\PYG{p}{;}
+
+	\PYG{n}{Payment}\PYG{p}{(}\PYG{n}{Order} \PYG{n}{order}\PYG{p}{,} \PYG{n}{String} \PYG{n}{cardType}\PYG{p}{,} \PYG{k+kt}{long} \PYG{n}{cardNumber}\PYG{p}{,} \PYG{n}{String} \PYG{n}{Date}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{order} \PYG{o}{=} \PYG{n}{order}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardType} \PYG{o}{=} \PYG{n}{cardType}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardNumber} \PYG{o}{=} \PYG{n}{cardNumber}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isValid} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{n}{verifyDate}\PYG{p}{(}\PYG{n}{Date}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{private} \PYG{k+kt}{void} \PYG{n+nf}{verifyDate}\PYG{p}{(}\PYG{n}{String} \PYG{n}{date}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{date} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MM/yy\PYGZdq{}}\PYG{p}{).}\PYG{n+na}{parse}\PYG{p}{(}\PYG{n}{date}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+cm}{/*Set to UNIX epoch if the date could not be processed solely }
+\PYG{c+cm}{			for validation purposes*/}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{date} \PYG{o}{=} \PYG{k}{new} \PYG{n}{GregorianCalendar}\PYG{p}{(}\PYG{l+m+mi}{1970}\PYG{p}{,}\PYG{n}{Calendar}\PYG{p}{.}\PYG{n+na}{JANUARY}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{).}\PYG{n+na}{getTime}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{validate}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardType} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}Visa\PYGZdq{}} \PYG{o}{||} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardType} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}MasterCard\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{cardNumber} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1000000000000000L} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{cardNumber} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{9999999999999999L}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{Date} \PYG{n}{today} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Date}\PYG{p}{();}
+				\PYG{k}{if}\PYG{p}{(}\PYG{n}{today}\PYG{p}{.}\PYG{n+na}{compareTo}\PYG{p}{(}\PYG{n}{date}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isValid} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+					\PYG{k}{return}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isValid} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{Confirm}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isValid}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{confirmOrder}\PYG{p}{();}
+			\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{sendEmail}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{c+cm}{/*Just to check if it wasn\PYGZsq{}t validated*/}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{validate}\PYG{p}{();}
+			\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isValid}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{confirmOrder}\PYG{p}{();}
+				\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{sendEmail}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{order}\PYG{p}{.}\PYG{n+na}{sendEmail}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setDate}\PYG{p}{(}\PYG{n}{String} \PYG{n}{Date}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{verifyDate}\PYG{p}{(}\PYG{n}{Date}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCardNumber}\PYG{p}{(}\PYG{k+kt}{long} \PYG{n}{CardNumber}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardNumber} \PYG{o}{=} \PYG{n}{CardNumber}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCardType}\PYG{p}{(}\PYG{n}{String} \PYG{n}{cardType}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{cardType} \PYG{o}{=} \PYG{n}{cardType}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

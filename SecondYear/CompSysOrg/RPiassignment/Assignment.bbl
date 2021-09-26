@@ -1,0 +1,96 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Anthony}{2016}{anthony}
+Anthony, S.  \harvardyearleft 2016\harvardyearright .
+\newline\harvardurl{https://arstechnica.com/information-technology/2016/12/raspberry-pi-pixel-pc-download-details/}
+
+\harvarditem{ArchLinux}{2020}{archlinux}
+ArchLinux  \harvardyearleft 2020\harvardyearright .
+\newline\harvardurl{https://archlinuxarm.org/}
+
+\harvarditem{BestBuy}{2018}{bestbuy}
+BestBuy  \harvardyearleft 2018\harvardyearright , {\em Raspberry Pi 3 Model
+  B+}.
+\newline\harvardurl{https://bestbuy.com}
+
+\harvarditem{Bisson}{2020}{bisson}
+Bisson, S.  \harvardyearleft 2020\harvardyearright , `Raspberry pi 4: How i
+  built a software-defined radio system to track passing planes'.
+\newline\harvardurl{https://www.zdnet.com/article/raspberry-pi-4-how-i-built-a-software-defined-radio-system-to-track-passing-planes/}
+
+\harvarditem{Boardmaster \harvardand\
+  Instructables}{2017}{boardmasterinstructables}
+Boardmaster \harvardand\ Instructables  \harvardyearleft 2017\harvardyearright
+  , `Raspberry pi and wiimote controlled robot arm'.
+\newline\harvardurl{https://www.instructables.com/Raspberry-Pi-and-Wiimote-controlled-Robot-Arm/}
+
+\harvarditem{Burch}{n.d.}{burch}
+Burch, C.  \harvardyearleft n.d.\harvardyearright , `Arm cheat sheet'.
+\newline\harvardurl{http://www.cburch.com/cs/230/arm-ref.pdf}
+
+\harvarditem{CBurnett}{2007}{cburnett}
+CBurnett  \harvardyearleft 2007\harvardyearright , {\em System on a Chip}.
+\newline\harvardurl{https://commons.wikimedia.org/wiki/File:ARMSoCBlockDiagram.svg}
+
+\harvarditem{cn0xroot}{2017}{cnxroot}
+cn0xroot  \harvardyearleft 2017\harvardyearright , `cn0xroot/rfsec-toolkit'.
+\newline\harvardurl{https://github.com/cn0xroot/RFSec-ToolKit}
+
+\harvarditem{DavidS}{2016}{davids}
+DavidS  \harvardyearleft 2016\harvardyearright , `Porting? writing yes.'.
+\newline\harvardurl{https://www.raspberrypi.org/forums/viewtopic.php?t=158703}
+
+\harvarditem{Heath}{2018}{heath}
+Heath, N.  \harvardyearleft 2018\harvardyearright , `Inside the raspberry pi:
+  The story of the \$35 computer that changed the world'.
+\newline\harvardurl{https://www.techrepublic.com/article/inside-the-raspberry-pi-the-story-of-the-35-computer-that-changed-the-world/}
+
+\harvarditem{Okdo}{2020}{okdo}
+Okdo  \harvardyearleft 2020\harvardyearright , `Pi shop'.
+\newline\harvardurl{https://www.okdo.com/c/pi-shop/}
+
+\harvarditem{OSMCTeam}{2020}{osmcteam}
+OSMCTeam  \harvardyearleft 2020\harvardyearright , `About'.
+\newline\harvardurl{https://osmc.tv/about/}
+
+\harvarditem{RaspberryPi-Foundation}{2020}{rpi}
+RaspberryPi-Foundation  \harvardyearleft 2020\harvardyearright , `Buy a
+  raspberry pi 4 model b'.
+\newline\harvardurl{https://www.raspberrypi.org/products/raspberry-pi-4-model-b/}
+
+\harvarditem{RaspberryPiFoundation}{2018}{raspberrypithree}
+RaspberryPiFoundation  \harvardyearleft 2018\harvardyearright , `Buy a
+  raspberry pi 3 model b+'.
+\newline\harvardurl{https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/}
+
+\harvarditem{RaspberryPiFoundation}{2020}{raspberrypifourspecs}
+RaspberryPiFoundation  \harvardyearleft 2020\harvardyearright , `Raspberry pi 4
+  model b specifications'.
+\newline\harvardurl{https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/}
+
+\harvarditem{RiscOSTeam}{n.d.}{riscosteam}
+RiscOSTeam  \harvardyearleft n.d.\harvardyearright , `Welcome'.
+\newline\harvardurl{https://www.riscosopen.org/content/}
+
+\harvarditem{Team}{2020}{team}
+Team, U.~M.  \harvardyearleft 2020\harvardyearright , `Raspberry pi'.
+\newline\harvardurl{https://ubuntu-mate.org/ports/raspberry-pi/}
+
+\harvarditem{TerryWarwick}{2018}{terrywarwick}
+TerryWarwick  \harvardyearleft 2018\harvardyearright , `Overview of windows 10
+  iot core - windows iot'.
+\newline\harvardurl{https://docs.microsoft.com/en-us/windows/iot-core/windows-iot-core}
+
+\harvarditem[Tulloch et~al.]{Tulloch, Vas, CNXSoft, Loweel, Yeo, Max, Miguel,
+  Technical, Young, Violante \harvardand\ et~al.}{2020}{tuletal}
+Tulloch, B., Vas, CNXSoft, Loweel, Yeo, C., Max, Miguel, Technical, S., Young,
+  J., Violante, F. \harvardand\ et~al.  \harvardyearleft 2020\harvardyearright
+  , `8gb raspberry pi 4 on sale now at \$75'.
+\newline\harvardurl{https://www.raspberrypi.org/blog/8gb-raspberry-pi-4-on-sale-now-at-75/}
+
+\harvarditem{Zaliva}{2010}{zaliva}
+Zaliva, V.  \harvardyearleft 2010\harvardyearright , `Owi robotic arm edge
+  protocol'.
+\newline\harvardurl{https://notbrainsurgery.livejournal.com/38622.html}
+
+\end{thebibliography}

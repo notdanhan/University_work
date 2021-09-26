@@ -1,0 +1,113 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{k+kd}{implements} \PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{T} \PYG{n}{data}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{left}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{right}\PYG{p}{;}
+
+	\PYG{k+kd}{public} \PYG{n+nf}{TreeNode}\PYG{p}{(}\PYG{n}{T} \PYG{n}{inputData}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data} \PYG{o}{=} \PYG{n}{inputData}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n+nf}{TreeNode}\PYG{p}{(}\PYG{n}{T} \PYG{n}{inputData}\PYG{p}{,} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{leftNode}\PYG{p}{,} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{rightNode}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data} \PYG{o}{=} \PYG{n}{inputData}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{=} \PYG{n}{leftNode}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{=} \PYG{n}{rightNode}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{T} \PYG{n+nf}{getData}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setData}\PYG{p}{(}\PYG{n}{T} \PYG{n}{newData}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data} \PYG{o}{=} \PYG{n}{newData}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n+nf}{getLeftChild}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n+nf}{getRightChild}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setLeftChild}\PYG{p}{(}\PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{leftChild}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{leftChild}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setRightChild}\PYG{p}{(}\PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{rightChild}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{rightChild}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasLeftChild}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{o}{?} \PYG{k+kc}{false} \PYG{p}{:} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasRightChild}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{o}{?} \PYG{k+kc}{false} \PYG{p}{:} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{isLeaf}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{==} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{o}{?} \PYG{k+kc}{true} \PYG{p}{:} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getNumberOfNodes}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{==} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{total} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+			\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{o}{!=}\PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{total}\PYG{o}{+=}\PYG{l+m+mi}{1}\PYG{p}{;}
+				\PYG{n}{total} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{p}{.}\PYG{n+na}{getNumberOfNodes}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right}\PYG{o}{!=}\PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{total}\PYG{o}{+=}\PYG{l+m+mi}{1}\PYG{p}{;}
+				\PYG{n}{total} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right}\PYG{p}{.}\PYG{n+na}{getNumberOfNodes}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{return} \PYG{n}{total}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{int} \PYG{n+nf}{getHeight}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Returns the largest height}
+		\PYG{k+kt}{int} \PYG{n}{templeft} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{tempright} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{templeft} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{p}{.}\PYG{n+na}{getHeight}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{tempright} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right}\PYG{p}{.}\PYG{n+na}{getHeight}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{templeft} \PYG{o}{\PYGZgt{}} \PYG{n}{tempright}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n}{templeft}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n}{tempright}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{BinaryNodeInterface}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n+nf}{copy}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{leftCopy} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}} \PYG{n}{rightCopy} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{leftCopy} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{left}\PYG{p}{.}\PYG{n+na}{copy}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{rightCopy} \PYG{o}{=} \PYG{p}{(}\PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{)}\PYG{n}{right}\PYG{p}{.}\PYG{n+na}{copy}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k}{new} \PYG{n}{TreeNode}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data}\PYG{p}{,}\PYG{n}{leftCopy}\PYG{p}{,}\PYG{n}{rightCopy}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{leftString} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{String} \PYG{n}{rightString} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{leftString} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{left}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{rightString} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{right}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{data} \PYG{o}{+}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{o}{+}\PYG{n}{leftString}\PYG{o}{+}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{o}{+}\PYG{n}{rightString}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

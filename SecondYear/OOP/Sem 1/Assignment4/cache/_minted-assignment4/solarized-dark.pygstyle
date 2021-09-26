@@ -1,0 +1,111 @@
+
+\makeatletter
+\def\PYGsolarized-dark@reset{\let\PYGsolarized-dark@it=\relax \let\PYGsolarized-dark@bf=\relax%
+    \let\PYGsolarized-dark@ul=\relax \let\PYGsolarized-dark@tc=\relax%
+    \let\PYGsolarized-dark@bc=\relax \let\PYGsolarized-dark@ff=\relax}
+\def\PYGsolarized-dark@tok#1{\csname PYGsolarized-dark@tok@#1\endcsname}
+\def\PYGsolarized-dark@toks#1+{\ifx\relax#1\empty\else%
+    \PYGsolarized-dark@tok{#1}\expandafter\PYGsolarized-dark@toks\fi}
+\def\PYGsolarized-dark@do#1{\PYGsolarized-dark@bc{\PYGsolarized-dark@tc{\PYGsolarized-dark@ul{%
+    \PYGsolarized-dark@it{\PYGsolarized-dark@bf{\PYGsolarized-dark@ff{#1}}}}}}}
+\def\PYGsolarized-dark#1#2{\PYGsolarized-dark@reset\PYGsolarized-dark@toks#1+\relax+\PYGsolarized-dark@do{#2}}
+
+\expandafter\def\csname PYGsolarized-dark@tok@\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@c\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ch\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@cm\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@cp\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.83,0.21,0.51}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@cpf\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@k\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.52,0.60,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kc\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kd\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kn\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.80,0.29,0.09}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kt\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.71,0.54,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@o\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ow\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.52,0.60,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@n\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nb\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@bp\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nc\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@no\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nd\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ni\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ne\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nf\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@fm\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nl\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nn\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nt\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nv\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@vg\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@vm\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@l\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@s\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sd\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sr\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.80,0.29,0.09}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@m\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@g\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gd\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.86,0.20,0.18}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ge\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gr\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.86,0.20,0.18}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gh\endcsname{\let\PYGsolarized-dark@bf=\textbf\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gu\endcsname{\let\PYGsolarized-dark@ul=\underline\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gi\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.52,0.60,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gs\endcsname{\let\PYGsolarized-dark@bf=\textbf\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gt\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@err\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}\def\PYGsolarized-dark@bc##1{\setlength{\fboxsep}{0pt}\colorbox[rgb]{0.86,0.20,0.18}{\strut ##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@w\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@esc\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@x\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kp\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.52,0.60,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@kr\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.52,0.60,0.00}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@na\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@py\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@nx\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@vc\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@vi\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.15,0.55,0.82}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ld\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sa\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sb\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sc\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@dl\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@s2\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@se\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sh\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@si\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@sx\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@s1\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@ss\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@mb\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@mf\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@mh\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@mi\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@il\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@mo\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.16,0.63,0.60}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@p\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@c1\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@cs\endcsname{\let\PYGsolarized-dark@it=\textit\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.35,0.43,0.46}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@go\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+\expandafter\def\csname PYGsolarized-dark@tok@gp\endcsname{\def\PYGsolarized-dark@tc##1{\textcolor[rgb]{0.51,0.58,0.59}{##1}}}
+
+\def\PYGsolarized-darkZbs{\char`\\}
+\def\PYGsolarized-darkZus{\char`\_}
+\def\PYGsolarized-darkZob{\char`\{}
+\def\PYGsolarized-darkZcb{\char`\}}
+\def\PYGsolarized-darkZca{\char`\^}
+\def\PYGsolarized-darkZam{\char`\&}
+\def\PYGsolarized-darkZlt{\char`\<}
+\def\PYGsolarized-darkZgt{\char`\>}
+\def\PYGsolarized-darkZsh{\char`\#}
+\def\PYGsolarized-darkZpc{\char`\%}
+\def\PYGsolarized-darkZdl{\char`\$}
+\def\PYGsolarized-darkZhy{\char`\-}
+\def\PYGsolarized-darkZsq{\char`\'}
+\def\PYGsolarized-darkZdq{\char`\"}
+\def\PYGsolarized-darkZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGsolarized-darkZat{@}
+\def\PYGsolarized-darkZlb{[}
+\def\PYGsolarized-darkZrb{]}
+\makeatother
+

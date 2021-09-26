@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Email} \PYG{p}{\PYGZob{}}
+	\PYG{c+cm}{/*Test class for email as I do not have to implement actual email*/}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{emailAddress}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{fname}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{n+nf}{Email}\PYG{p}{(}\PYG{n}{String} \PYG{n}{emailAddress}\PYG{p}{,} \PYG{n}{String} \PYG{n}{fname}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{emailAddress} \PYG{o}{=} \PYG{n}{emailAddress}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{fname} \PYG{o}{=} \PYG{n}{fname}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{SendSuccess}\PYG{p}{(}\PYG{k+kt}{long} \PYG{n}{orderno}\PYG{p}{,} \PYG{n}{String} \PYG{n}{content}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{tcost}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{address}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{bAddress}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{String} \PYG{n}{temp1} \PYG{o}{=} \PYG{n}{address}\PYG{p}{.}\PYG{n+na}{stringify}\PYG{p}{();}
+			\PYG{n}{String} \PYG{n}{temp2} \PYG{o}{=} \PYG{n}{bAddress}\PYG{p}{.}\PYG{n+na}{stringify}\PYG{p}{();}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Email to \PYGZdq{}}\PYG{o}{+} \PYG{n}{emailAddress} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} with content:\PYGZbs{}n\PYGZdq{}}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}Hey \PYGZdq{}}\PYG{o}{+}\PYG{n}{fname}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}, Your order: \PYGZdq{}}\PYG{o}{+}\PYG{n}{orderno}\PYG{o}{+}\PYG{l+s}{\PYGZdq{} With content:\PYGZbs{}n\PYGZdq{}} \PYG{o}{+} \PYG{n}{content} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nTotalling: \PYGZdq{}}\PYG{o}{+}\PYG{n}{tcost}\PYG{o}{+}\PYG{l+s}{\PYGZdq{} has been Sent to \PYGZdq{}}\PYG{o}{+} \PYG{n}{temp1} \PYG{o}{+}\PYG{l+s}{\PYGZdq{}With billing details sent to \PYGZdq{}} \PYG{o}{+} \PYG{n}{temp2} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nThank You for your Custom!\PYGZdq{}}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Something went wrong!\PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{content}\PYG{p}{);}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{tcost}\PYG{p}{);}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{address}\PYG{p}{.}\PYG{n+na}{stringify}\PYG{p}{());}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{bAddress}\PYG{p}{.}\PYG{n+na}{stringify}\PYG{p}{());}
+			\PYG{p}{\PYGZcb{}}\PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception} \PYG{n}{a}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Whoops!\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{SendFailure}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Email sent to: \PYGZdq{}} \PYG{o}{+} \PYG{n}{emailAddress}\PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}nHey \PYGZdq{}}\PYG{o}{+}\PYG{n}{fname}\PYG{o}{+}\PYG{l+s}{\PYGZdq{},\PYGZbs{}nWe regret to inform you that your transaction was not processed\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

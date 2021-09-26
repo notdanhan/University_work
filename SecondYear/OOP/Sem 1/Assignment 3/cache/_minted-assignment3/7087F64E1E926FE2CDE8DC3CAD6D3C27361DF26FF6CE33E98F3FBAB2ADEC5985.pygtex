@@ -1,0 +1,74 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Canary} \PYG{k+kd}{extends} \PYG{n}{Bird}
+\PYG{p}{\PYGZob{}}
+
+	\PYG{n}{String} \PYG{n}{name}\PYG{p}{;} \PYG{c+c1}{// the name of this Canary}
+
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	* Constructor for objects of class Canary}
+\PYG{c+cm}{	*/}
+	\PYG{k+kd}{public} \PYG{n+nf}{Canary}\PYG{p}{(}\PYG{n}{String} \PYG{n}{name}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{p}{();} \PYG{c+c1}{// call the constructor of the superclass Bird}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name} \PYG{o}{=} \PYG{n}{name}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}yellow\PYGZdq{}}\PYG{p}{;} \PYG{c+c1}{// this overrides the value inherited from Bird}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getName}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	 * Sing method overrides the sing method}
+\PYG{c+cm}{	 * inherited from superclass Bird}
+\PYG{c+cm}{	 */}
+	\PYG{n+nd}{@Override} \PYG{c+c1}{// good programming practice to use @Override to denote overridden methods}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{sing}\PYG{p}{()\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}tweet tweet tweet\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	 * toString method returns a String representation of the bird}
+\PYG{c+cm}{	 * What superclass has Canary inherited this method from? }
+\PYG{c+cm}{	 */}
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{strng} \PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}Canary; \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}name: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}colour: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{} has Feathers; \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFeathers}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has wings: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasWings}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Flies: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{flies}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; breathes: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{breathes}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; has skin: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasSkin}\PYG{p}{;}
+		\PYG{n}{strng}\PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{strng}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+
+	\PYG{c+cm}{/**}
+\PYG{c+cm}{	 * equals method defines how equality is defined between }
+\PYG{c+cm}{	 * the instances of the Canary class}
+\PYG{c+cm}{	 * param Object}
+\PYG{c+cm}{	 * return true or false depending on whether the input object is }
+\PYG{c+cm}{	 * equal to this Canary object}
+\PYG{c+cm}{	 */}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{equals}\PYG{p}{(}\PYG{n}{Object} \PYG{n}{obj}\PYG{p}{)\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{obj} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Canary}\PYG{p}{)}\PYG{n}{obj}\PYG{p}{;} \PYG{c+cm}{/*Gets rid of passing a string in*/}
+			\PYG{k}{return} \PYG{n}{obj}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{().}\PYG{n+na}{equals}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{());} \PYG{c+cm}{/*Converts to strings and compares both strings*/}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

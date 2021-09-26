@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Xbox
+comment0.text=\n\ Write\ a\ description\ of\ class\ Xbox\ here.\n\n\ @author\ Daniel\ Hannon\ 19484286\n\ @version\ Final\n
+comment1.params=series\ generation\ hasDiskDrive\ description\ color\ price\ isAvailable
+comment1.target=Xbox(java.lang.String,\ int,\ boolean,\ java.lang.String,\ java.lang.String,\ float,\ boolean)
+comment2.params=
+comment2.target=java.lang.String\ getSeries()
+comment3.params=
+comment3.target=boolean\ getAvailability()
+comment4.params=isAvailable
+comment4.target=void\ setAvailability(boolean)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

@@ -1,0 +1,29 @@
+no arduino qs on exam
+
+4/11/2019
+Analog electronics device
+Transistors - Enable digital systems
+made of semiconductors (moores law)
+
+Moores law - Number of Transistors that can be put on a chip doubles roughly every two years
+
+two types of semiconductor 
+
+pnp and npn
+
+extra pos or neg charge
+
+The diode is two types of semiconductor material
+
+converting analog to digital, use an ADC (Analog to digital convertor)
+
+Sample waveform periodically
+depending on waveform, it will need a high or low sampling frequency
+
+1hz = once per second
+
+music sampling frequency 44100 Hz = 44KHz
+
+AM - Amplitude modulated
+
+FM - Frequency Modulated

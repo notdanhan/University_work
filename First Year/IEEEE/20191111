@@ -1,0 +1,58 @@
+11/11/2019
+slide 25 onwards is not on the exam
+
+Boolean variables
+
++ -> OR
+. -> AND
+
+Truth Table for !A +B + !C
+
+A B C X
+0 0 0 1
+0 0 1 1
+0 1 1 1
+1 1 1 1
+1 0 1 0
+0 1 0 1
+1 0 0 1
+
+Boolean Multiplication (The AND operation)
+
+!A.!B.C = 1 Truth table
+
+A B C X
+0 0 0 0
+0 0 1 1
+0 1 0 0
+0 1 1 0
+1 0 0 0
+1 0 1 0
+1 1 0 0 
+1 1 1 0
+
+Commutative Laws
+Rules that apply regardless of the order that they are written (AND / OR operations)
+
+Associative Laws 
+
+When ORing more than two variables, order of variables does not matter
+
+Distributive Law
+the distributive law is the factoring law. a common variable can be factored from an expression jusy as in ordinary algebra. That is AB + AC = A(B+C)
+
+
+A B C    B+C  A(B+C)  AB  AC  AB+AC
+0 0 0     0      0     0   0    0
+0 0 1     1      0     0   0    0
+0 1 0     1      0     0   0    0
+0 1 1     1      0     0   0    0
+1 0 0     0      0     0   0    0
+1 0 1     1      1     0   1    1
+1 1 0     1      1     1   0    1
+1 1 1     1      1     1   1    1
+
+A.A + A.C + A.B + B.C
+
+A + B.C
+ 

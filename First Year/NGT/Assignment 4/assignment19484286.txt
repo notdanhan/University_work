@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment - 19484286</title>
+		<script>
+			function relocate() {
+				var x_pos = (Math.random() * 600) + "px";
+				var y_pos = (Math.random() * 300) + "px";
+				document.getElementById("image").style.left = x_pos;
+				document.getElementById("image").style.top = y_pos;
+			}
+		</script>
+	</head>
+	<body onload="relocate();">
+		<div id="image" style="position:absolute" onclick="relocate();">
+			<img src="https://www.irishtimes.com/polopoly_fs/1.2482614.1451683828!/image/image.jpg_gen/derivatives/landscape_620/image.jpg">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 7 - 19484286</title>
+		<script>
+			function validate() {
+				const question = document.getElementById("question").value;
+				const name = document.getElementById("name").value;
+				const email = document.getElementById("email").value;
+				if(question.length == 0 || name.length == 0 || email.length == 0) {
+					confirm("You must enter data in all fields!");
+					return 0;
+				}
+				if (!(email.includes("@") && email.includes("."))) {
+					confirm("Invalid Email!");
+					return 0;
+				}
+			}
+		</script>
+		<style>
+			textarea {
+				resize: none;
+			}
+			table {
+				background:#4f5250;
+				color:#FFFFFF;
+			}
+			td {
+				border: 1px solid #5A6660;
+			}
+			button {
+				width:100%;
+				height: 4em;
+			}
+			input {
+				box-sizing: border-box;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="form">
+			<table>
+				<tr>
+					<td>
+						Question Category:
+					</td>
+					<td>
+						<select>
+							<option value="0">Goods for Sale</option>
+							<option value="1">Complaints</option>
+							<option value="2">Support</option>
+						</select>
+					</td> 
+				</tr>
+				<tr>
+					<td>
+						Question:
+					</td>
+					<td>
+						<textarea rows="10" cols="50" id="question"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>Name: </td>
+					<td>
+						<input type="text" name="Name" id="name">
+					</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td>
+						<input type="text" name="email" id="email">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit" onclick="validate();">Submit!</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

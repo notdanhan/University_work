@@ -1,0 +1,495 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.9)  13 NOV 2020 14:30
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.tex"
+(/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-03> (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+) (/usr/share/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/05/10 v3.4j Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/05/10 v1.11 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen135
+\captionmargin@=\dimen136
+\captionwidth=\dimen137
+\caption@tempdima=\dimen138
+\caption@indent=\dimen139
+\caption@parindent=\dimen140
+\caption@hangindent=\dimen141
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count175
+\c@continuedfloat=\count176
+)
+\c@KVtest=\count177
+\sf@farskip=\skip49
+\sf@captopadj=\dimen142
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
+\c@subfigure=\count178
+\c@subfigure@save=\count179
+\c@lofdepth=\count180
+\c@subtable=\count181
+\c@subtable@save=\count182
+\c@lotdepth=\count183
+\sf@top=\skip52
+\sf@bottom=\skip53
+) (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count184
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texmf/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+ (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texmf/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count185
+) (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count186
+\FV@InFile=\read2
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count187
+\FV@StepNumber=\count188
+\FV@OutFile=\write3
+) (/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count189
+\output=\toks18
+\linenoprevgraf=\count190
+\linenumbersep=\dimen143
+\linenumberwidth=\dimen144
+\c@linenumber=\count191
+\c@pagewiselinenumber=\count192
+\c@LN@truepage=\count193
+\c@internallinenumber=\count194
+\c@internallinenumbers=\count195
+\quotelinenumbersep=\dimen145
+\bframerule=\dimen146
+\bframesep=\dimen147
+\bframebox=\box46
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count196
+\c@FV@TrueTabCounter=\count197
+\FV@TabBox@Group=\box47
+\FV@TmpLength=\skip56
+\c@FV@HighlightLinesStart=\count198
+\c@FV@HighlightLinesStop=\count199
+\FV@LoopCount=\count266
+\FV@NCharsBox=\box48
+\FV@BreakIndent=\dimen148
+\FV@BreakIndentNChars=\count267
+\FV@BreakSymbolSepLeft=\dimen149
+\FV@BreakSymbolSepLeftNChars=\count268
+\FV@BreakSymbolSepRight=\dimen150
+\FV@BreakSymbolSepRightNChars=\count269
+\FV@BreakSymbolIndentLeft=\dimen151
+\FV@BreakSymbolIndentLeftNChars=\count270
+\FV@BreakSymbolIndentRight=\dimen152
+\FV@BreakSymbolIndentRightNChars=\count271
+\c@FancyVerbLineBreakLast=\count272
+\FV@LineBox=\box49
+\FV@LineIndentBox=\box50
+\FV@LineWidth=\dimen153
+) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count273
+\calc@Bcount=\count274
+\calc@Adimen=\dimen154
+\calc@Bdimen=\dimen155
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count275
+\calc@Cskip=\skip59
+) (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/usr/share/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "Assignment.w18")...executed.
+
+ (/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.w18)
+runsystem(rm -- "Assignment.w18")...executed.
+
+) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count276
+\decimalpart=\count277
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+) (/usr/share/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip60
+\fb@frw=\dimen156
+\fb@frh=\dimen157
+\FrameRule=\dimen158
+\FrameSep=\dimen159
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks19
+\float@box=\box51
+\@float@everytoks=\toks20
+\@floatcapt=\box52
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box53
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count279
+\c@minted@pygmentizecounter=\count280
+\@float@every@listing=\toks21
+\c@listing=\count281
+)
+runsystem(mkdir -p cache/_minted-Assignment)...executed.
+
+ (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count282
+\Gm@cntv=\count283
+\c@Gm@tempcnt=\count284
+\Gm@bindingoffset=\dimen160
+\Gm@wd@mp=\dimen161
+\Gm@odd@mp=\dimen162
+\Gm@even@mp=\dimen163
+\Gm@layoutwidth=\dimen164
+\Gm@layoutheight=\dimen165
+\Gm@layouthoffset=\dimen166
+\Gm@layoutvoffset=\dimen167
+\Gm@dimlist=\toks22
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen168
+\Gin@req@width=\dimen169
+) (/usr/share/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip61
+\thanksmargin=\skip62
+\droptitle=\skip63
+)
+runsystem(which pygmentize && touch Assignment.aex)...executed.
+
+runsystem(rm Assignment.aex)...executed.
+
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count285
+\l__pdf_internal_box=\box54
+) (/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count286
+\scratchdimen=\dimen170
+\scratchbox=\box55
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen171
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
+* v-part:(T,H,B)=(45.52438pt, 731.23582pt, 68.28664pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-63.7456pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 46.
+<images/rpi4.jpg, id=1, 602.25pt x 401.5pt>
+File: images/rpi4.jpg Graphic file (type jpg)
+<use images/rpi4.jpg>
+Package pdftex.def Info: images/rpi4.jpg  used on input line 50.
+(pdftex.def)             Requested size: 142.26378pt x 94.84262pt.
+<images/atmel11.jpg, id=2, 772.8875pt x 580.1675pt>
+File: images/atmel11.jpg Graphic file (type jpg)
+<use images/atmel11.jpg>
+Package pdftex.def Info: images/atmel11.jpg  used on input line 52.
+(pdftex.def)             Requested size: 142.26378pt x 106.78929pt.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/rpi4.jpg> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/atmel11.jpg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 69.
+<images/rpi3.jpg, id=14, 3433.82875pt x 2266.4675pt>
+File: images/rpi3.jpg Graphic file (type jpg)
+<use images/rpi3.jpg>
+Package pdftex.def Info: images/rpi3.jpg  used on input line 71.
+(pdftex.def)             Requested size: 169.29684pt x 111.73917pt.
+File: images/rpi4.jpg Graphic file (type jpg)
+<use images/rpi4.jpg>
+Package pdftex.def Info: images/rpi4.jpg  used on input line 72.
+(pdftex.def)             Requested size: 169.29684pt x 112.86646pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+[]\OT1/cmr/m/n/10 Broadcom BCM2837B0, Cortex-A53
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]\OT1/cmr/bx/n/10 Additional
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 92--93
+[]\OT1/cmr/m/n/10 34.07GBP - 53.22GBP (De-pend-ing on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
+
+ []
+
+[2 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/rpi3.jpg>]
+<images/ARMSoCBlockDiagram.png, id=19, 803.0pt x 963.6pt>
+File: images/ARMSoCBlockDiagram.png Graphic file (type png)
+<use images/ARMSoCBlockDiagram.png>
+Package pdftex.def Info: images/ARMSoCBlockDiagram.png  used on input line 110.
+(pdftex.def)             Requested size: 145.11052pt x 174.13158pt.
+ [3 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/ARMSoCBlockDiagram.png>]
+<images/robopi.png, id=25, 676.33812pt x 507.25359pt>
+File: images/robopi.png Graphic file (type png)
+<use images/robopi.png>
+Package pdftex.def Info: images/robopi.png  used on input line 123.
+(pdftex.def)             Requested size: 241.84842pt x 181.38821pt.
+<images/remotecontrols.png, id=26, 1120.185pt x 1493.58pt>
+File: images/remotecontrols.png Graphic file (type png)
+<use images/remotecontrols.png>
+Package pdftex.def Info: images/remotecontrols.png  used on input line 126.
+(pdftex.def)             Requested size: 145.11052pt x 193.46571pt.
+ [4 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/robopi.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/remotecontrols.png>]
+<images/flighttracker.png, id=30, 903.375pt x 542.025pt>
+File: images/flighttracker.png Graphic file (type png)
+<use images/flighttracker.png>
+Package pdftex.def Info: images/flighttracker.png  used on input line 140.
+(pdftex.def)             Requested size: 290.22105pt x 174.138pt.
+ [5 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/flighttracker.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]\OT1/cmr/bx/n/10 Operating Sys-
+ []
+
+<images/Raspi.png, id=35, 1003.75pt x 893.3375pt>
+File: images/Raspi.png Graphic file (type png)
+<use images/Raspi.png>
+Package pdftex.def Info: images/Raspi.png  used on input line 164.
+(pdftex.def)             Requested size: 85.12816pt x 75.76228pt.
+<images/Arch_Linux_ARM_logo.png, id=36, 803.0pt x 166.6225pt>
+File: images/Arch_Linux_ARM_logo.png Graphic file (type png)
+<use images/Arch_Linux_ARM_logo.png>
+Package pdftex.def Info: images/Arch_Linux_ARM_logo.png  used on input line 166.
+(pdftex.def)             Requested size: 85.12816pt x 17.6624pt.
+<images/osmc.png, id=37, 283.0575pt x 283.0575pt>
+File: images/osmc.png Graphic file (type png)
+<use images/osmc.png>
+Package pdftex.def Info: images/osmc.png  used on input line 168.
+(pdftex.def)             Requested size: 85.12816pt x 85.12521pt.
+<images/riscos.png, id=38, 1204.5pt x 1204.5pt>
+File: images/riscos.png Graphic file (type png)
+<use images/riscos.png>
+Package pdftex.def Info: images/riscos.png  used on input line 170.
+(pdftex.def)             Requested size: 85.12816pt x 85.1139pt.
+<images/ubuntumate.png, id=39, 216.81pt x 216.81pt>
+File: images/ubuntumate.png Graphic file (type png)
+<use images/ubuntumate.png>
+Package pdftex.def Info: images/ubuntumate.png  used on input line 172.
+(pdftex.def)             Requested size: 85.12816pt x 85.12788pt.
+<images/winiot.png, id=40, 501.875pt x 501.875pt>
+File: images/winiot.png Graphic file (type png)
+<use images/winiot.png>
+Package pdftex.def Info: images/winiot.png  used on input line 174.
+(pdftex.def)             Requested size: 85.12816pt x 85.12616pt.
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 160--177
+[] 
+ []
+
+[6 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/Raspi.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/Arch_Linux_ARM_logo.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/osmc.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/riscos.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/ubuntumate.png> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/winiot.png>]
+<images/pixel.png, id=50, 770.88pt x 578.16pt>
+File: images/pixel.png Graphic file (type png)
+<use images/pixel.png>
+Package pdftex.def Info: images/pixel.png  used on input line 186.
+(pdftex.def)             Requested size: 193.47577pt x 145.10425pt.
+<images/lxde.jpg, id=51, 1927.2pt x 1084.05pt>
+File: images/lxde.jpg Graphic file (type jpg)
+<use images/lxde.jpg>
+Package pdftex.def Info: images/lxde.jpg  used on input line 189.
+(pdftex.def)             Requested size: 193.47577pt x 108.82487pt.
+<images/updatesudorpi.png, id=52, 670.505pt x 265.99374pt>
+File: images/updatesudorpi.png Graphic file (type png)
+<use images/updatesudorpi.png>
+Package pdftex.def Info: images/updatesudorpi.png  used on input line 197.
+(pdftex.def)             Requested size: 290.22105pt x 115.12999pt.
+ [7 </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/pixel.png (PNG copy)> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/lxde.jpg> </home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/images/updatesudorpi.png>] [8] (/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+\OT1/cmr/bx/n/10 URL: \OT1/cmr/m/it/10 https://www.zdnet.com/article/raspberry-pi-4-how-i-built-a-software-defined-radio-system-to-track-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+\OT1/cmr/bx/n/10 URL: \OT1/cmr/m/it/10 https://www.techrepublic.com/article/inside-the-raspberry-pi-the-story-of-the-35-computer-that-
+ []
+
+) [9] (/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.aux) ) 
+Here is how much of TeX's memory you used:
+ 7440 strings out of 480478
+ 129726 string characters out of 5905959
+ 425557 words of memory out of 5000000
+ 23352 multiletter control sequences out of 15000+600000
+ 537274 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 47i,13n,52p,1519b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on "/home/daniel/Documents/Uni/Second Year/CompSysOrg/RPiassignment/Assignment.pdf" (9 pages, 8388009 bytes).
+PDF statistics:
+ 93 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+

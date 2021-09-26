@@ -1,0 +1,64 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Engine} \PYG{p}{\PYGZob{}}
+	\PYG{c+cm}{/*Private variables*/}
+	\PYG{k+kd}{private} \PYG{n}{Wheel} \PYG{n}{wheel}\PYG{p}{;} 
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n}{engineModel}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{tpl}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{totalTurns}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{fuelLevel}\PYG{p}{;}
+
+	\PYG{c+cm}{/*Initialization*/}
+	\PYG{k+kd}{public} \PYG{n+nf}{Engine}\PYG{p}{(}\PYG{n}{String} \PYG{n}{nenginemodel}\PYG{p}{,} \PYG{k+kt}{double} \PYG{n}{ntpl}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{ntpl} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{ntpl} \PYG{o}{*=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{engineModel} \PYG{o}{=} \PYG{n}{nenginemodel}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{tpl} \PYG{o}{=} \PYG{n}{ntpl}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalTurns} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{fuelLevel} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{wheel} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Methods*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{move}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{double} \PYG{n}{distance} \PYG{o}{=} \PYG{p}{(}\PYG{n}{tpl} \PYG{o}{*} \PYG{n}{fuelLevel}\PYG{p}{)} \PYG{o}{*} \PYG{n}{wheel}\PYG{p}{.}\PYG{n+na}{turn}\PYG{p}{();}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalTurns} \PYG{o}{+=} \PYG{n}{tpl} \PYG{o}{*} \PYG{n}{fuelLevel}\PYG{p}{;}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{fuelLevel} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+			\PYG{k}{return} \PYG{n}{distance}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: No Wheels!\PYGZdq{}}\PYG{p}{);}
+			\PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Getters*/}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getEnginemodel}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{engineModel}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{n}{Wheel} \PYG{n+nf}{getWheel}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{wheel}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{getTpl}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{tpl}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{getFuel}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{fuelLevel}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{getTotalturns}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalTurns}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*Setters, you cannot individually change tpl }
+\PYG{c+cm}{	or engine model as that would not make sense*/}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setWheel}\PYG{p}{(}\PYG{n}{Wheel} \PYG{n}{nwheel}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{wheel} \PYG{o}{=} \PYG{n}{nwheel}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setFuel}\PYG{p}{(}\PYG{k+kt}{double} \PYG{n}{nfuel}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+cm}{/* This is done to simulate a more realisitc }
+\PYG{c+cm}{		model of a car where you can add fuel more than once */}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{fuelLevel} \PYG{o}{+=} \PYG{n}{nfuel}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

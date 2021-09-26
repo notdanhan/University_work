@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Clock Epic
+		</title>
+		<script>
+			function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+
+			async function get_time() {
+				var clock = document.getElementById("clock");
+				while (true) {
+					date = new Date();
+					var time = date.getHours().toString() + ":" + (date.getMinutes() * 1).toString() + ":" + (date.getSeconds() * 1).toString();
+					clock.innerHTML = time;
+					await sleep(1000);
+				}
+			}
+		</script>
+		<style>
+			p {
+				text-align: center;
+				top:30%;
+				margin: auto;
+				width:20vw;
+				font-size:90px;
+				font-family:"Comic Sans MS";
+				color:#FF0000;
+			}
+		</style>
+	</head>
+	<body onload = "get_time();">
+		<p id="clock">The Time goes here</p>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Poo
+		</title>
+		<script>
+			function smample_text() {
+				let text = document.getElementById("mytext").value;
+				let number = parseInt(text);
+				let output = "";
+				if(!isNaN(number)) {
+					output += "<p>You typed " + number + "</p><br><table>";
+					for (let i = 1; i < 12; i++) {
+						output += "<tr><td>"+ i + " x " + number + " = " + (number * i) + "</td></tr>";
+					}
+					output+="</table";
+					document.getElementById("timestable").innerHTML = output;
+					return;
+				}
+				document.getElementById("timestable").innerHTML = "<p>Please enter a valid number!</p>";
+				return;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="number" id="mytext" onkeyup="smample_text()">
+		<div id="timestable">
+
+		</div>
+	</body>
+</html>

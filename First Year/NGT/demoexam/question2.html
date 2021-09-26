@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function times_tables() {
+				let number = document.getElementById("number_input").value;
+				let output = "<p>"
+				number = parseInt(number);
+				if (isNaN(number)) {
+					return;
+				}
+				for (let i = 1; i < 13; i++) {
+					output += i + " * " + number + " = " + (i * number) +"<br>";
+				}
+				output+="</p>";
+				document.getElementById("table_dump").innerHTML = output;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="number_input" onkeyup="times_tables()">
+		<div id="table_dump">
+		</div>
+	</body>
+</html>

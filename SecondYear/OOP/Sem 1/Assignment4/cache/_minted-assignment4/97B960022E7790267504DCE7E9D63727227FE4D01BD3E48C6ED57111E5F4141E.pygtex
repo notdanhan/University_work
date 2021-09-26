@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.ArrayList}\PYG{p}{;}
+
+\PYG{c+cm}{/*To stay in line with the Design featured in the PDF each bus company is an extension of}
+\PYG{c+cm}{an Abstract class Company*/}
+\PYG{k+kd}{public} \PYG{k+kd}{abstract} \PYG{k+kd}{class} \PYG{n+nc}{Company}  \PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{//Used ArrayList to record journeys as it does not require an initalization value}
+	\PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Trip}\PYG{o}{\PYGZgt{}} \PYG{n}{journeys}\PYG{p}{;}
+	\PYG{n}{String} \PYG{n}{companyName}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{n+nf}{Company}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{journeys} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Trip}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{Trip} \PYG{n+nf}{getTrip}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{ID}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//Iterates through the ArrayList looking for the ID given, returns null if it does not exist}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{i}\PYG{p}{).}\PYG{n+na}{getID}\PYG{p}{()} \PYG{o}{==} \PYG{n}{ID}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{return} \PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k+kc}{null}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{makeBooking}\PYG{p}{(}\PYG{n}{Booking} \PYG{n}{mybooking}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Error handling, make sure the trip exists}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{()} \PYG{o}{==} \PYG{k+kc}{null} \PYG{o}{||} \PYG{o}{!}\PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{contains}\PYG{p}{(}\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{()))} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//Makes sure a valid seat quanitiy is entered}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{().}\PYG{n+na}{getSeats}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getSeats}\PYG{p}{()} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getSeats}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{setCost}\PYG{p}{(}\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{().}\PYG{n+na}{getCost}\PYG{p}{()} \PYG{o}{*} \PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getSeats}\PYG{p}{());}
+			\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{().}\PYG{n+na}{setSeats}\PYG{p}{(}\PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getTrip}\PYG{p}{().}\PYG{n+na}{getSeats}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{mybooking}\PYG{p}{.}\PYG{n+na}{getSeats}\PYG{p}{());}
+			\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getAllAvailableTrips}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{c+cm}{/*This takes advantage of the new toString tht was produced for trip*/}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}Company Name: \PYGZdq{}} \PYG{o}{+} \PYG{n}{companyName} \PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{o}{+}\PYG{n}{journeys}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{i}\PYG{p}{).}\PYG{n+na}{toString}\PYG{p}{()}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

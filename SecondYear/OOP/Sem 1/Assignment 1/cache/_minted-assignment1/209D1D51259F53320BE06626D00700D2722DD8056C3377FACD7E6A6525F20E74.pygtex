@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{TestCar} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Car} \PYG{n}{car} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Car}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Toyota Corolla\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{Engine} \PYG{n}{engine} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Engine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}2ZZ\PYGZhy{}GE\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{57}\PYG{p}{);}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{engine}\PYG{p}{);}
+		\PYG{n}{Wheel} \PYG{n}{wheel} \PYG{o}{=}  \PYG{k}{new} \PYG{n}{Wheel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Michelin Pilot\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{21}\PYG{p}{);}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{wheel}\PYG{p}{);}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{setFuel}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{);}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Current Fuel: \PYGZdq{}} \PYG{o}{+} \PYG{n}{car}\PYG{p}{.}\PYG{n+na}{getFuel}\PYG{p}{());}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{drive}\PYG{p}{();}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{printState}\PYG{p}{();}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{setFuel}\PYG{p}{(}\PYG{l+m+mi}{125}\PYG{p}{);}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Current Fuel: \PYGZdq{}} \PYG{o}{+} \PYG{n}{car}\PYG{p}{.}\PYG{n+na}{getFuel}\PYG{p}{());}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{drive}\PYG{p}{();}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{printState}\PYG{p}{();}
+		\PYG{c+cm}{/*Change tyres for the craic*/}
+		\PYG{n}{wheel} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Wheel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pirelli P1\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{22}\PYG{p}{);}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{wheel}\PYG{p}{);}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{setFuel}\PYG{p}{(}\PYG{l+m+mi}{250}\PYG{p}{);}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Current Fuel: \PYGZdq{}} \PYG{o}{+} \PYG{n}{car}\PYG{p}{.}\PYG{n+na}{getFuel}\PYG{p}{());}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{drive}\PYG{p}{();}
+		\PYG{n}{car}\PYG{p}{.}\PYG{n+na}{printState}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

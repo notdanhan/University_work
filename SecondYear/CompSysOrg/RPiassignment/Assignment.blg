@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Assignment.aux
+The style file: agsm.bst
+Database file #1: references.bib
+Warning--empty title in anthony
+Warning--empty publisher in anthony
+Warning--empty publisher in bestbuy
+Warning--empty publisher in cburnett
+You've used 20 entries,
+            2909 wiz_defined-function locations,
+            736 strings with 7183 characters,
+and the built_in function-call counts, 55051 in all, are:
+= -- 8733
+> -- 717
+< -- 0
++ -- 4049
+- -- 217
+* -- 4461
+:= -- 11642
+add.period$ -- 20
+call.type$ -- 20
+change.case$ -- 276
+chr.to.int$ -- 20
+cite$ -- 24
+duplicate$ -- 239
+empty$ -- 530
+format.name$ -- 262
+if$ -- 9727
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 83
+num.names$ -- 201
+pop$ -- 188
+preamble$ -- 1
+purify$ -- 300
+quote$ -- 0
+skip$ -- 194
+stack$ -- 0
+substring$ -- 12097
+swap$ -- 18
+text.length$ -- 280
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 74
+warning$ -- 4
+while$ -- 420
+width$ -- 0
+write$ -- 242
+(There were 4 warnings)

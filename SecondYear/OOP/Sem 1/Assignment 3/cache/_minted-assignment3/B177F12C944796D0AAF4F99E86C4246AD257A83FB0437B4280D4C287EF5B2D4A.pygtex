@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Fish} \PYG{k+kd}{extends} \PYG{n}{Animal} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{boolean} \PYG{n}{hasFins}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{canSwim}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{hasGills}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{n+nf}{Fish}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFins} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canSwim} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasGills} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{move}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{distance}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}I swim \PYGZpc{}s meters\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasFins}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFins}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{canSwim}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canSwim}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasGills}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasGills}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

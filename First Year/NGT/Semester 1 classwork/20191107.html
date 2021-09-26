@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		function updateOutput(){
+			var vowels = 0;
+			var total = 0;
+			var txt = document.getElementById("txtUserInput").value;// text typed by user
+			var numchars = txt.length;
+			var txtOutput ="";
+			var currWord = "";// initial word
+			for(var i=0;i<numchars;i++){
+				var currLetter = txt.substr(i,1);
+				if(currLetter==" "){// space character => end current word and start next one
+					txtOutput +=currWord+"<br>";
+					currWord ="";
+				} else currWord += currLetter;// add letter to current word 
+				if(currLetter == "a" || currLetter == "e" || currLetter == "i" || currLetter == "o" || currLetter == "u"||currLetter == "A" || currLetter == "E"||currLetter == "I"||currLetter == "O"||currLetter == "U") {
+					vowels++;
+				}
+				var num = parseInt(currLetter);
+				if (!isNaN(num)) {
+					total += num;
+				}
+			} if(currWord.length>0) // deal with any remaining word that didn't end with a space
+				txtOutput += currWord;
+				txtOutput += ("<br>Vowels: "+vowels);
+				txtOutput += ("<br>Sum of numerics: "+total);
+			document.getElementById("pOutput").innerHTML =txtOutput;// show result to user
+		}
+		</script>
+	</head>
+<body>
+	<textarea id='txtUserInput' onkeyup="updateOutput();" value=""></textarea>
+	<br>
+	<p id='pOutput'>Your output will be shown here.</p>
+</body>
+</html>

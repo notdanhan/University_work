@@ -1,0 +1,192 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.lang.Math}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Main} \PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{//private static long Method1Steps,Method2Steps,Method3Steps,Method4Steps = 0;}
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{long} \PYG{n}{Method1Time} \PYG{p}{,}\PYG{n}{Method2Time}\PYG{p}{,} \PYG{n}{Method3Time}\PYG{p}{,} \PYG{n}{Method4Time} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{boolean} \PYG{n+nf}{checkPallindromeLinearStringReverse}\PYG{p}{(}\PYG{n}{String} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{valReversed} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;} \PYG{c+c1}{//Assignment takes 1 Step}
+		\PYG{c+c1}{//Method1Steps++;}
+		\PYG{c+c1}{//Initialization, method call, subtraction, comparison}
+		\PYG{c+c1}{//Method1Steps+=4;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//Comparison, subtraction}
+			\PYG{c+c1}{//Method1Steps+=2;}
+			\PYG{n}{valReversed} \PYG{o}{+=} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{);}
+			\PYG{c+c1}{//Addition Call of Method}
+			\PYG{c+c1}{//Method1Steps+=2;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//Check equals return true/false}
+		\PYG{c+c1}{//Method1Steps +=2;}
+		\PYG{k}{return} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{valReversed}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{boolean} \PYG{n+nf}{checkPallindromeCompareFirstLast}\PYG{p}{(}\PYG{n}{String} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//Two Assignments a Method Call and a subtraction}
+		\PYG{c+c1}{//Method2Steps+=3;}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{j}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//Comparison}
+			\PYG{c+c1}{//Method2Steps++;}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{val}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{!=} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{j}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{//Valid If/else and return}
+				\PYG{c+c1}{//Method2Steps+=4;}
+				\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+c1}{//Two Method calls and a comparison}
+			\PYG{c+c1}{//Method2Steps+=2;}
+			\PYG{n}{i}\PYG{o}{++}\PYG{p}{;}
+			\PYG{n}{j}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+			\PYG{c+c1}{//Two Mathematical operations}
+			\PYG{c+c1}{//Method2Steps+=2;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//return statement}
+		\PYG{c+c1}{//Method2Steps++;}
+		\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{boolean} \PYG{n+nf}{checkPallindromeStackAndQueue}\PYG{p}{(}\PYG{n}{String} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{ArrayStack} \PYG{n}{stack} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayStack}\PYG{p}{(}\PYG{l+m+mi}{1000000}\PYG{p}{);}
+		\PYG{n}{ArrayQueue} \PYG{n}{queue} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayQueue}\PYG{p}{(}\PYG{l+m+mi}{1000000}\PYG{p}{);}
+		\PYG{c+c1}{//Two Initialization calls and two constructor calls}
+		\PYG{c+c1}{//Method3Steps+=3;}
+		\PYG{c+c1}{//Initialization, comparison, method call}
+		\PYG{c+c1}{//Method3Steps+=3;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//Comparison method call, subtraction}
+			\PYG{c+c1}{//Method3Steps+=3;}
+			\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{push}\PYG{p}{(}\PYG{n}{val}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{));}
+			\PYG{n}{queue}\PYG{p}{.}\PYG{n+na}{enqueue}\PYG{p}{(}\PYG{n}{val}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{));}
+			\PYG{c+c1}{// Four method invocations}
+			\PYG{c+c1}{//Method3Steps+=4;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//Method call and invert}
+			\PYG{c+c1}{//Method3Steps+=2;}
+			\PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{char}\PYG{p}{)}\PYG{n}{queue}\PYG{p}{.}\PYG{n+na}{dequeue}\PYG{p}{()} \PYG{o}{!=} \PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{)}\PYG{n}{stack}\PYG{p}{.}\PYG{n+na}{pop}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{//Two Method calls, two typecasts, comparison, return value}
+				\PYG{c+c1}{//Method3Steps+=6;}
+				\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+c1}{//Two Method Calls, Two Typecasts and a comparison}
+			\PYG{c+c1}{//Method3Steps+=5;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//Comparison while loop}
+		\PYG{c+c1}{//Method3Steps+=2;}
+		\PYG{c+c1}{//Return}
+		\PYG{c+c1}{//Method3Steps+=1;}
+		\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{boolean} \PYG{n+nf}{checkPallindromeRecursiveStringReverse}\PYG{p}{(}\PYG{n}{String} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{valReversed} \PYG{o}{=} \PYG{n}{recursiveStringReverse}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+		\PYG{c+c1}{//Method4Steps+=2; //Initialization + method call}
+		\PYG{c+c1}{//Method Call + return value}
+		\PYG{c+c1}{//Method4Steps+=2;}
+		\PYG{k}{return} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{valReversed}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n+nf}{recursiveStringReverse}\PYG{p}{(}\PYG{n}{String} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{val}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{//If/else and Return}
+			\PYG{c+c1}{//Method4Steps+=2;}
+			\PYG{k}{return} \PYG{n}{val}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{//If/else 3 method calls addition and Return}
+		\PYG{c+c1}{//Method4Steps+=5;}
+		\PYG{k}{return} \PYG{n}{recursiveStringReverse}\PYG{p}{(}\PYG{n}{val}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{))} \PYG{o}{+} \PYG{n}{val}\PYG{p}{.}\PYG{n+na}{substring}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n+nf}{intToBinaryString}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+cm}{/*}
+\PYG{c+cm}{			Basically this gets the index of the highest power of two}
+\PYG{c+cm}{			then the next, and so on and pads zeroes in between to make}
+\PYG{c+cm}{			it a binary representation of a number}
+\PYG{c+cm}{		*/}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{val} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{curr} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)(}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{log}\PYG{p}{(}\PYG{n}{val}\PYG{p}{)}\PYG{o}{/}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{log}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{));}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{val} \PYG{o}{\PYGZhy{}=} \PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{pow}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{curr}\PYG{p}{);}
+		\PYG{k+kt}{int} \PYG{n}{prev} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{val} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{prev} \PYG{o}{=} \PYG{n}{curr}\PYG{p}{;}
+			\PYG{n}{curr} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)(}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{log}\PYG{p}{(}\PYG{n}{val}\PYG{p}{)}\PYG{o}{/}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{log}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{));}
+			\PYG{k}{while}\PYG{p}{(}\PYG{n}{prev} \PYG{o}{\PYGZgt{}} \PYG{n}{curr}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{output}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+				\PYG{n}{prev}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{output}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{;}
+			\PYG{n}{val} \PYG{o}{\PYGZhy{}=} \PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{pow}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{curr}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+cm}{/*Adds trailing zeroes*/}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{curr} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{while}\PYG{p}{(}\PYG{n}{curr} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{output}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+				\PYG{n}{curr}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/*This was used to generate the data for the graph values*/}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n+nf}{generateBinaryStringXLength}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{val}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{inpt} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{for}\PYG{p}{(;} \PYG{n}{val} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{val}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{random}\PYG{p}{()}\PYG{o}{\PYGZgt{}}\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{random}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+				\PYG{n}{inpt}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{inpt}\PYG{o}{+=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{inpt}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}length\PYGZbs{}tmethod1\PYGZbs{}tmethod2\PYGZbs{}tmethod3\PYGZbs{}tmethod4\PYGZdq{}}\PYG{p}{);}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1000000}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{String} \PYG{n}{binaryString} \PYG{o}{=} \PYG{n}{intToBinaryString}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+			\PYG{n}{String} \PYG{n}{numstring} \PYG{o}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n+na}{valueOf}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+			\PYG{c+c1}{//String binaryString = intToBinaryString(i);}
+			\PYG{c+c1}{//String numstring = Integer.toString(num);}
+			\PYG{c+c1}{//Method1Time = System.nanoTime();}
+			\PYG{c+c1}{//boolean valid1 = checkPallindromeStackAndQueue(binaryString);}
+			\PYG{c+c1}{//Method1Time = System.nanoTime() \PYGZhy{} Method1Time;}
+			\PYG{c+c1}{//Method2Time = System.nanoTime();}
+			\PYG{k+kt}{boolean} \PYG{n}{valid2} \PYG{o}{=} \PYG{n}{checkPallindromeCompareFirstLast}\PYG{p}{(}\PYG{n}{binaryString}\PYG{p}{);}
+			\PYG{c+c1}{//Method2Time = System.nanoTime() \PYGZhy{} Method2Time;}
+			\PYG{c+c1}{//Method3Time = System.nanoTime();}
+			\PYG{c+c1}{//boolean valid3 = checkPallindromeLinearStringReverse(binaryString);}
+			\PYG{c+c1}{//Method3Time = System.nanoTime() \PYGZhy{} Method3Time;}
+			\PYG{c+c1}{//Method4Time = System.nanoTime();}
+			\PYG{c+c1}{//boolean valid4 = checkPallindromeRecursiveStringReverse(binaryString);}
+			\PYG{c+c1}{//Method4Time = System.nanoTime() \PYGZhy{} Method4Time;}
+			\PYG{c+cm}{/*if(valid1\PYGZam{}\PYGZam{}valid2\PYGZam{}\PYGZam{}valid3\PYGZam{}\PYGZam{}valid4) \PYGZob{}}
+\PYG{c+cm}{				System.out.println(binaryString + \PYGZdq{}Is a pallindrome\PYGZdq{});}
+\PYG{c+cm}{			\PYGZcb{}}
+\PYG{c+cm}{			System.out.println(\PYGZdq{}Times: \PYGZdq{}+Method1Time+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method2Time+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method3Time+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method4Time);*/}
+			\PYG{k+kt}{boolean} \PYG{n}{valid\PYGZus{}num\PYGZus{}string} \PYG{o}{=} \PYG{n}{checkPallindromeCompareFirstLast}\PYG{p}{(}\PYG{n}{numstring}\PYG{p}{);}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{valid\PYGZus{}num\PYGZus{}string} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{valid2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{numstring} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} \PYGZam{} \PYGZdq{}} \PYG{o}{+} \PYG{n}{binaryString} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} Are Both Pallindromes\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{c+cm}{/*if(valid1) \PYGZob{}}
+\PYG{c+cm}{				System.out.println(binaryString + \PYGZdq{} is a pallindrome\PYGZdq{});}
+\PYG{c+cm}{			\PYGZcb{}}
+\PYG{c+cm}{			if(valid\PYGZus{}num\PYGZus{}string) \PYGZob{}}
+\PYG{c+cm}{				System.out.println(numstring + \PYGZdq{} is a pallindrome\PYGZdq{});}
+\PYG{c+cm}{			\PYGZcb{}}
+\PYG{c+cm}{			System.out.println(binaryString.length() + \PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method1Steps+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method2Steps+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method3Steps+\PYGZdq{}\PYGZbs{}t\PYGZdq{}+Method4Steps);}
+\PYG{c+cm}{			Method1Steps = 0;}
+\PYG{c+cm}{			Method2Steps = 0;}
+\PYG{c+cm}{			Method3Steps = 0;}
+\PYG{c+cm}{			Method4Steps = 0;*/}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

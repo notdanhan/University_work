@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function get_num_r100() {
+				num = prompt("Enter an Interger between 1 and 100");
+				num = Number(num);
+				if (!isNaN(num)) {
+					if (!Number.isInteger(num)) {
+						alert("Not an interger!");
+						get_num_r100();
+					}
+					else {
+						if (num < 1 || num > 100) {
+							alert("Out of range!");
+							get_num_r100();
+						}
+						else {
+							alert("You entered... "+ num);
+						}
+					}
+				}
+				else {
+					alert("Not a number!");
+					get_num_r100();
+				}
+			}	
+		</script>
+	</head>
+	<body onload="get_num_r100();"></body>
+</html>

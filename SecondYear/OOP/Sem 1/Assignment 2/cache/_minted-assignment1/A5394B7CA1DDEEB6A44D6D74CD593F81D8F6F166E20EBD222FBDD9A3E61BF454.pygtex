@@ -1,0 +1,111 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.*}\PYG{p}{;}
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Order} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{private} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}} \PYG{n}{OrderItems}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Customer} \PYG{n}{customer}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{ShoppingCart} \PYG{n}{shoppingCart}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Address} \PYG{n}{billingAddress}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{n}{Address} \PYG{n}{deliveryAddress}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{long} \PYG{n}{orderNo}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{boolean} \PYG{n}{isConfirmed}\PYG{p}{;}
+	\PYG{k+kd}{private} \PYG{k+kt}{float} \PYG{n}{totalCost}\PYG{p}{;}
+
+	\PYG{c+cm}{/*Billing/delivery have same address*/}
+	\PYG{n}{Order}\PYG{p}{(}\PYG{n}{Customer} \PYG{n}{customer}\PYG{p}{,} \PYG{n}{ShoppingCart} \PYG{n}{Cart}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{customer}\PYG{o}{=} \PYG{n}{customer}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{shoppingCart} \PYG{o}{=} \PYG{n}{Cart}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{orderNo} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{getCartId}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isConfirmed} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalCost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n}{Order}\PYG{p}{(}\PYG{n}{Customer} \PYG{n}{customer}\PYG{p}{,} \PYG{n}{ShoppingCart} \PYG{n}{Cart}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{address}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{customer}\PYG{o}{=} \PYG{n}{customer}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{shoppingCart} \PYG{o}{=} \PYG{n}{Cart}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress} \PYG{o}{=} \PYG{n}{address}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress} \PYG{o}{=} \PYG{n}{address}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{orderNo} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{getCartId}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isConfirmed} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalCost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+cm}{/*Billing/delivery have different addresses*/}
+	\PYG{n}{Order}\PYG{p}{(}\PYG{n}{Customer} \PYG{n}{customer}\PYG{p}{,} \PYG{n}{ShoppingCart} \PYG{n}{Cart}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{deliveryAddress}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{billingAddress}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{customer}\PYG{o}{=} \PYG{n}{customer}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{shoppingCart} \PYG{o}{=} \PYG{n}{Cart}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress} \PYG{o}{=} \PYG{n}{deliveryAddress}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress} \PYG{o}{=} \PYG{n}{billingAddress}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{orderNo} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{getCartId}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isConfirmed} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalCost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{private} \PYG{n}{String} \PYG{n+nf}{stringifyOrder}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{OrderItems}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{output} \PYG{o}{+=} \PYG{n}{OrderItems}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{n}{i}\PYG{p}{).}\PYG{n+na}{toString}\PYG{p}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{processOrder}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{totalCost} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{getTotalCost}\PYG{p}{();}
+		\PYG{k+kt}{int} \PYG{n}{length} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{getCartSize}\PYG{p}{();}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{length}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Item} \PYG{n}{temp} \PYG{o}{=} \PYG{n}{shoppingCart}\PYG{p}{.}\PYG{n+na}{takeItem}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{temp} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{break}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{confirmOrder}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{processOrder}\PYG{p}{();}
+			\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{OrderItems}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{return}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isConfirmed} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{sendEmail}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Email} \PYG{n}{email} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Email}\PYG{p}{(}\PYG{n}{customer}\PYG{p}{.}\PYG{n+na}{getEmailAddress}\PYG{p}{(),}\PYG{n}{customer}\PYG{p}{.}\PYG{n+na}{getFirstName}\PYG{p}{());}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{isConfirmed}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress}\PYG{o}{!=} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{email}\PYG{p}{.}\PYG{n+na}{SendSuccess}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{orderNo}\PYG{p}{,}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{stringifyOrder}\PYG{p}{(),}
+				\PYG{n}{totalCost}\PYG{p}{,}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress}\PYG{p}{,}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}You forgot to add an address!\PYGZdq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{email}\PYG{p}{.}\PYG{n+na}{SendFailure}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{long} \PYG{n+nf}{getOrderNumber}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{orderNo}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{getStatus}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isConfirmed}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{addAddress}\PYG{p}{(}\PYG{n}{Address} \PYG{n}{address}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress} \PYG{o}{=} \PYG{n}{address}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress} \PYG{o}{=} \PYG{n}{address}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{addAddress}\PYG{p}{(}\PYG{n}{Address} \PYG{n}{delivery}\PYG{p}{,} \PYG{n}{Address} \PYG{n}{billing}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{deliveryAddress} \PYG{o}{=} \PYG{n}{delivery}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{billingAddress} \PYG{o}{=} \PYG{n}{billing}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

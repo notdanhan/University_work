@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var index = 1;
+			function change(num) {
+				var str = "http://www.psychicsoftware.com/ct1113/banner-image-";
+				num += 1;
+				if (num > 6) {
+					num = 1;
+				}
+				str = str + num + ".png";
+				document.getElementById("magic").src = str;
+				return num;
+			}
+		</script>
+	</head>
+	<body>
+		<img id="magic" src="http://www.psychicsoftware.com/ct1113/banner-image-1.png" onclick="index = change(index);">
+	</body>
+</html>

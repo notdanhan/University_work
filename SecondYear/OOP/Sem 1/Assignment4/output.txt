@@ -1,0 +1,455 @@
+Printing all Available trips
+
+Company Name: BusEireann
+Trip ID: 5947
+Origin: Foynes
+Destination: Maynooth
+Departure Date: 18/06/2020
+Departure Time: 11:02
+Arrival Date: 16/02/2020
+Arrival Time: 22:23
+Fare: €44.19 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 3414
+Origin: Moyvane
+Destination: Athenry
+Departure Date: 09/10/2020
+Departure Time: 22:03
+Arrival Date: 22/01/2020
+Arrival Time: 04:03
+Fare: €58.52 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 8540
+Origin: Derry
+Destination: Foynes
+Departure Date: 06/04/2020
+Departure Time: 15:29
+Arrival Date: 02/10/2020
+Arrival Time: 20:20
+Fare: €22.05 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 3231
+Origin: Tarbert
+Destination: Ballyjamesduff
+Departure Date: 23/09/2020
+Departure Time: 15:45
+Arrival Date: 04/01/2020
+Arrival Time: 18:41
+Fare: €19.37 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 2650
+Origin: Moyvane
+Destination: Longford
+Departure Date: 03/02/2020
+Departure Time: 16:10
+Arrival Date: 24/12/2020
+Arrival Time: 00:49
+Fare: €26.58 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 2018
+Origin: Moyvane
+Destination: Castlerea
+Departure Date: 22/05/2020
+Departure Time: 08:50
+Arrival Date: 05/05/2020
+Arrival Time: 20:35
+Fare: €83.17 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 1694
+Origin: Poundtown
+Destination: Wexford
+Departure Date: 13/06/2020
+Departure Time: 07:49
+Arrival Date: 07/06/2020
+Arrival Time: 14:16
+Fare: €28.76 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 1195
+Origin: Letterfrack
+Destination: Tuam
+Departure Date: 18/01/2020
+Departure Time: 21:58
+Arrival Date: 28/02/2020
+Arrival Time: 20:17
+Fare: €12.27 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 9283
+Origin: Foynes
+Destination: Tarbert
+Departure Date: 24/04/2020
+Departure Time: 12:38
+Arrival Date: 01/07/2020
+Arrival Time: 21:51
+Fare: €7.43 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 913
+Origin: Roscommon
+Destination: Foynes
+Departure Date: 19/08/2020
+Departure Time: 01:21
+Arrival Date: 18/06/2020
+Arrival Time: 04:31
+Fare: €91.41 per passenger
+Currently Available Seats: 60
+
+
+Company Name: BusEireann
+Trip ID: 1202
+Origin: Longford
+Destination: Maynooth
+Departure Date: 03/04/2020
+Departure Time: 17:53
+Arrival Date: 14/05/2020
+Arrival Time: 19:07
+Fare: €33.15 per passenger
+Currently Available Seats: 60
+
+
+-----------------------------------
+Company Name: GoBus
+Trip ID: 3656
+Origin: Ballybunion
+Destination: Dublin
+Departure Date: 07/11/2020
+Departure Time: 02:36
+Arrival Date: 09/12/2020
+Arrival Time: 12:17
+Fare: €35.03 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 4921
+Origin: Roscommon
+Destination: Poundtown
+Departure Date: 22/06/2020
+Departure Time: 23:54
+Arrival Date: 23/06/2020
+Arrival Time: 03:07
+Fare: €24.75 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 6783
+Origin: Tullamore
+Destination: Ballybofey
+Departure Date: 10/09/2020
+Departure Time: 14:59
+Arrival Date: 05/08/2020
+Arrival Time: 14:04
+Fare: €75.87 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 6395
+Origin: Tuam
+Destination: Tullamore
+Departure Date: 28/02/2020
+Departure Time: 13:46
+Arrival Date: 04/06/2020
+Arrival Time: 15:48
+Fare: €8.08 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 1180
+Origin: New Ross
+Destination: Longford
+Departure Date: 09/05/2020
+Departure Time: 21:40
+Arrival Date: 10/09/2020
+Arrival Time: 04:17
+Fare: €9.86 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 9402
+Origin: Castlebar
+Destination: Roscommon
+Departure Date: 26/12/2020
+Departure Time: 10:36
+Arrival Date: 09/12/2020
+Arrival Time: 00:32
+Fare: €70.76 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 340
+Origin: New Ross
+Destination: Cork
+Departure Date: 13/10/2020
+Departure Time: 07:21
+Arrival Date: 20/09/2020
+Arrival Time: 03:16
+Fare: €18.88 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 1179
+Origin: Boyle
+Destination: Longford
+Departure Date: 15/07/2020
+Departure Time: 21:43
+Arrival Date: 14/04/2020
+Arrival Time: 23:44
+Fare: €63.95 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 4916
+Origin: Lisdoonvarna
+Destination: Limerick
+Departure Date: 26/09/2020
+Departure Time: 11:18
+Arrival Date: 13/06/2020
+Arrival Time: 17:10
+Fare: €69.8 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 6408
+Origin: Castlebar
+Destination: Athlone
+Departure Date: 11/08/2020
+Departure Time: 22:33
+Arrival Date: 11/05/2020
+Arrival Time: 12:52
+Fare: €70.99 per passenger
+Currently Available Seats: 60
+
+
+Company Name: GoBus
+Trip ID: 2720
+Origin: Athboy
+Destination: Dublin
+Departure Date: 05/08/2020
+Departure Time: 16:02
+Arrival Date: 25/01/2020
+Arrival Time: 04:32
+Fare: €9.17 per passenger
+Currently Available Seats: 60
+
+
+
+-----------------------------------
+Company Name: City Link
+Trip ID: 5927
+Origin: Castlerea
+Destination: Galway
+Departure Date: 28/04/2020
+Departure Time: 07:52
+Arrival Date: 05/05/2020
+Arrival Time: 21:49
+Fare: €17.15 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 436
+Origin: Bunclody
+Destination: Kill
+Departure Date: 11/08/2020
+Departure Time: 15:00
+Arrival Date: 18/01/2020
+Arrival Time: 15:16
+Fare: €42.34 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 1226
+Origin: Tarbert
+Destination: Dublin
+Departure Date: 17/04/2020
+Departure Time: 14:30
+Arrival Date: 07/08/2020
+Arrival Time: 01:07
+Fare: €94.1 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 2816
+Origin: Oughterard
+Destination: Tuam
+Departure Date: 25/03/2020
+Departure Time: 19:17
+Arrival Date: 01/12/2020
+Arrival Time: 09:40
+Fare: €29.84 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 3554
+Origin: Kill
+Destination: Foynes
+Departure Date: 11/09/2020
+Departure Time: 18:26
+Arrival Date: 28/05/2020
+Arrival Time: 14:30
+Fare: €96.46 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 1568
+Origin: Ballybofey
+Destination: Maynooth
+Departure Date: 18/11/2020
+Departure Time: 18:27
+Arrival Date: 12/07/2020
+Arrival Time: 00:09
+Fare: €28.52 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 9662
+Origin: Boyle
+Destination: Dublin
+Departure Date: 04/05/2020
+Departure Time: 19:06
+Arrival Date: 09/04/2020
+Arrival Time: 22:21
+Fare: €40.01 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 2763
+Origin: Garryowen
+Destination: Tullamore
+Departure Date: 07/09/2020
+Departure Time: 22:33
+Arrival Date: 09/11/2020
+Arrival Time: 22:28
+Fare: €73.34 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 7761
+Origin: Longford
+Destination: Ballyjamesduff
+Departure Date: 21/10/2020
+Departure Time: 11:29
+Arrival Date: 02/12/2020
+Arrival Time: 10:34
+Fare: €43.83 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 1629
+Origin: Castlerea
+Destination: Roscommon
+Departure Date: 27/06/2020
+Departure Time: 04:05
+Arrival Date: 24/03/2020
+Arrival Time: 16:59
+Fare: €87.42 per passenger
+Currently Available Seats: 60
+
+
+Company Name: City Link
+Trip ID: 8643
+Origin: Bunclody
+Destination: Garryowen
+Departure Date: 23/11/2020
+Departure Time: 01:53
+Arrival Date: 13/10/2020
+Arrival Time: 10:19
+Fare: €17.47 per passenger
+Currently Available Seats: 60
+
+
+-----------------------------------
+Test Bookings:
+These should all fail
+Invalid Seat Quantities
+Transaction Failed!
+
+Transaction Failed!
+
+Transaction Failed!
+
+Invalid Trip Data
+Transaction Failed!
+
+Transaction Failed!
+
+Transaction Failed!
+
+These Should All Succeed
+Booking Successful!
+Trip ID: 913
+Origin: Roscommon
+Destination: Foynes
+Departure Date: 19/08/2020
+Departure Time: 01:21
+Arrival Date: 18/06/2020
+Arrival Time: 04:31
+Fare: €91.41 per passenger
+Currently Available Seats: 55
+Total Cost: 457.05
+
+Booking Successful!
+Trip ID: 340
+Origin: New Ross
+Destination: Cork
+Departure Date: 13/10/2020
+Departure Time: 07:21
+Arrival Date: 20/09/2020
+Arrival Time: 03:16
+Fare: €18.88 per passenger
+Currently Available Seats: 43
+Total Cost: 320.96
+
+Booking Successful!
+Trip ID: 9662
+Origin: Boyle
+Destination: Dublin
+Departure Date: 04/05/2020
+Departure Time: 19:06
+Arrival Date: 09/04/2020
+Arrival Time: 22:21
+Fare: €40.01 per passenger
+Currently Available Seats: 48
+Total Cost: 480.12
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 6 - 19484286</title>
+		<script>
+			function show_hide(calgen) {
+				let disp = document.getElementById("calendar");
+				if (disp.style.display == "none") disp.style.display = "table";
+				else if (calgen == 1) return;
+				else disp.style.display = "none";
+			}
+
+			function GenerateCalendar() {
+				const day = document.getElementById("days").value;
+				const fday = document.getElementById("fday").value;
+				const calendar_count = day + fday + ((day+fday)%7 );
+				const date = new Date();
+				const day_today = date.getUTCDate();
+				let output_string = "";
+				for (let i = 0; i < calendar_count;i++){
+					if(i % 7 == 0) output_string+="<tr>";
+					if(i < fday || (i - fday) >= day) output_string+="<td></td>";
+					else {
+						if (1 + i - fday == day_today) output_string += "<td class=\"today\">" + (1+i-fday) + "</td>";
+						else output_string+= "<td>" + (1 + i - fday) + "</td>";
+					}
+					if(i%7 == 6) {
+						output_string+= "</tr>";
+						if ((i - fday) >= (day - 1)) break;
+					}
+				}
+				document.getElementById("calendar-days").innerHTML = output_string;
+				show_hide(1);
+			}
+		</script>
+		<style>
+			#calendar-container {
+				width:40%;
+				margin:auto;
+			}
+			#calendar {
+				width:100%;
+				margin: auto;
+				background-color: #DD9966;
+				display: none;
+			}
+			#calendar-days td {
+				text-align: center;
+				border: 2px solid #EEAA77;
+				background-color:#FFBB99;
+			}
+			#calendar thead th {
+				width: 14.297%;
+				border: 2px solid #AA22FF;
+				background-color: #7922FF;
+			}
+			#calendar-days tr td.today {
+				background: #F878FF;
+			}
+		</style>
+	</head>
+	<body onload="show_hide(0);">
+		<div id="calendar-container">
+			<table id="calendar">
+				<thead>
+					<th>Sun</th>
+					<th>Mon</th>
+					<th>Tues</th>
+					<th>Wed</th>
+					<th>Thurs</th>
+					<th>Fri</th>
+					<th>Sat</th>
+				</thead>
+				<tbody id="calendar-days">
+				</tbody>
+			</table>
+		</div>
+		<div id="prompt-area">
+			<p>Number of Days in the Month:<br></p>
+			<textarea id="days"></textarea>
+			<br>
+			<p>First Day Of Month (0 - Sunday, 1 - Monday, etc.)</p>
+			<textarea id="fday"></textarea><br>
+			<button onclick="GenerateCalendar();">Generate Calendar!</button>
+		</div>
+	</body>
+</html>

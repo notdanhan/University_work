@@ -1,0 +1,16 @@
+4 Pin combination Lock
+https://imgaz1.staticbg.com/thumb/large/oaupload/banggood/images/49/0B/29441327-1b24-41cb-8347-c038de8c886e.jpg.webp
+
+FSM Design Tool
+fizzim.com
+
+History of Finite State Machines
+https://cs.stanford.edu/people/eroberts/courses/soco/projects/2004-05/automata-theory/basics.html
+
+Image of McCulloch and Pitts
+https://1.bp.blogspot.com/-u59IVaKus7U/WhIMOtEpHGI/AAAAAAAAr9Q/S8ChBoRRJtoX8jv6T_fiO7ELmOW4PJWAQCLcBGAs/s1600/1.JPG
+
+Mealy and Moore Machines used
+http://www-inst.eecs.berkeley.edu/~cs150/fa05/Lectures/07-SeqLogicIIIx2.pdf
+
+https://www.geeksforgeeks.org/difference-between-mealy-machine-and-moore-machine/

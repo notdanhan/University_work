@@ -1,0 +1,515 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.13)  9 MAY 2021 19:20
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**assignment.tex
+(./assignment.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-12-03> xparse <2020-03-03>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count177
+\c@section=\count178
+\c@subsection=\count179
+\c@subsubsection=\count180
+\c@paragraph=\count181
+\c@subparagraph=\count182
+\c@figure=\count183
+\c@table=\count184
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/share/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen139
+\captionmargin@=\dimen140
+\captionwidth=\dimen141
+\caption@tempdima=\dimen142
+\caption@indent=\dimen143
+\caption@parindent=\dimen144
+\caption@hangindent=\dimen145
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count185
+\c@continuedfloat=\count186
+)
+\c@KVtest=\count187
+\sf@farskip=\skip49
+\sf@captopadj=\dimen146
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
+\c@subfigure=\count188
+\c@subfigure@save=\count189
+\c@lofdepth=\count190
+\c@subtable=\count191
+\c@subtable@save=\count192
+\c@lotdepth=\count193
+\sf@top=\skip52
+\sf@bottom=\skip53
+)
+(/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count194
+)
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+\MT@toks=\toks18
+\MT@count=\count195
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen147
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count196
+
+(/usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
+\MT@outer@space=\skip56
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+))
+(/usr/share/texmf/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texmf/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
+)
+(/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count198
+\FV@InFile=\read2
+\FV@TabBox=\box47
+\c@FancyVerbLine=\count199
+\FV@StepNumber=\count266
+\FV@OutFile=\write3
+)
+(/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count267
+\output=\toks19
+\linenoprevgraf=\count268
+\linenumbersep=\dimen148
+\linenumberwidth=\dimen149
+\c@linenumber=\count269
+\c@pagewiselinenumber=\count270
+\c@LN@truepage=\count271
+\c@internallinenumber=\count272
+\c@internallinenumbers=\count273
+\quotelinenumbersep=\dimen150
+\bframerule=\dimen151
+\bframesep=\dimen152
+\bframebox=\box48
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count274
+\c@FV@TrueTabCounter=\count275
+\FV@TabBox@Group=\box49
+\FV@TmpLength=\skip57
+\c@FV@HighlightLinesStart=\count276
+\c@FV@HighlightLinesStop=\count277
+\FV@LoopCount=\count278
+\FV@NCharsBox=\box50
+\FV@BreakIndent=\dimen153
+\FV@BreakIndentNChars=\count279
+\FV@BreakSymbolSepLeft=\dimen154
+\FV@BreakSymbolSepLeftNChars=\count280
+\FV@BreakSymbolSepRight=\dimen155
+\FV@BreakSymbolSepRightNChars=\count281
+\FV@BreakSymbolIndentLeft=\dimen156
+\FV@BreakSymbolIndentLeftNChars=\count282
+\FV@BreakSymbolIndentRight=\dimen157
+\FV@BreakSymbolIndentRightNChars=\count283
+\c@FancyVerbLineBreakLast=\count284
+\FV@LineBox=\box51
+\FV@LineIndentBox=\box52
+\FV@LineWidth=\dimen158
+)
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count285
+\calc@Bcount=\count286
+\calc@Adimen=\dimen159
+\calc@Bdimen=\dimen160
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count287
+\calc@Cskip=\skip60
+)
+(/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "assignment.w18")...executed.
+
+ (./assignment.w18)
+runsystem(rm -- "assignment.w18")...executed.
+
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count288
+\decimalpart=\count289
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+(/usr/share/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip61
+\fb@frw=\dimen161
+\fb@frh=\dimen162
+\FrameRule=\dimen163
+\FrameSep=\dimen164
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count290
+\float@exts=\toks20
+\float@box=\box53
+\@float@everytoks=\toks21
+\@floatcapt=\box54
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box55
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count291
+\c@minted@pygmentizecounter=\count292
+\@float@every@listing=\toks22
+\c@listing=\count293
+)
+runsystem(mkdir -p cache/_minted-assignment)...executed.
+
+
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count294
+\Gm@cntv=\count295
+\c@Gm@tempcnt=\count296
+\Gm@bindingoffset=\dimen165
+\Gm@wd@mp=\dimen166
+\Gm@odd@mp=\dimen167
+\Gm@even@mp=\dimen168
+\Gm@layoutwidth=\dimen169
+\Gm@layoutheight=\dimen170
+\Gm@layouthoffset=\dimen171
+\Gm@layoutvoffset=\dimen172
+\Gm@dimlist=\toks23
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+(/usr/share/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip62
+\thanksmargin=\skip63
+\droptitle=\skip64
+)
+runsystem(which pygmentize && touch assignment.aex)...executed.
+
+runsystem(rm assignment.aex)...executed.
+
+
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count297
+\l__pdf_internal_box=\box56
+)
+(./assignment.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count298
+\scratchdimen=\dimen175
+\scratchbox=\box57
+\nofMPsegments=\count299
+\nofMParguments=\count300
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count301
+\MPscratchDim=\dimen176
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Info: Redefining \microtypecontext on input line 65.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 65.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
+* v-part:(T,H,B)=(45.52438pt, 731.23582pt, 68.28664pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-63.7456pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 66.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<./images//btree.jpg, id=12, 3131.7pt x 4175.6pt>
+File: ./images//btree.jpg Graphic file (type jpg)
+<use ./images//btree.jpg>
+Package pdftex.def Info: ./images//btree.jpg  used on input line 81.
+(pdftex.def)             Requested size: 193.47577pt x 257.91606pt.
+ [2 <./images//btree.jpg>] (./cache/_minted-assignment/default-pyg-prefix.pygst
+yle)
+(./cache/_minted-assignment/fruity.pygstyle)
+runsystem(pygmentize -l java -f latex -P commandprefix=PYG -F tokenmerge -o cac
+he/_minted-assignment/44B7E71EFDA4ACB7349399DDE9ACEA7F506326F7C40D264B008024956
+849DC80.pygtex TreeNode.java)...executed.
+
+
+(./cache/_minted-assignment/44B7E71EFDA4ACB7349399DDE9ACEA7F506326F7C40D264B008
+024956849DC80.pygtex
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+)
+Overfull \vbox (1.06693pt too high) detected at line 92
+ []
+
+[3]
+runsystem(pygmentize -l java -f latex -P commandprefix=PYG -F tokenmerge -o cac
+he/_minted-assignment/7CCD09A240BF96ABBCDD3DBE5FF39249547F60007BAE692C28725EEF8
+DD7ED7D.pygtex Main.java)...executed.
+
+
+(./cache/_minted-assignment/7CCD09A240BF96ABBCDD3DBE5FF39249547F60007BAE692C287
+25EEF8DD7ED7D.pygtex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 14.
+) [4]
+Underfull \vbox (badness 10000) detected at line 94
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 94
+ []
+
+[5]
+Underfull \vbox (badness 10000) detected at line 94
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 94
+ []
+
+[6]
+<./images//test1.png, id=34, 327.47343pt x 390.70969pt>
+File: ./images//test1.png Graphic file (type png)
+<use ./images//test1.png>
+Package pdftex.def Info: ./images//test1.png  used on input line 98.
+(pdftex.def)             Requested size: 327.47264pt x 390.70872pt.
+ [7]
+No file assignment.bbl.
+[8 <./images//test1.png (PNG copy)>] (./assignment.aux) ) 
+Here is how much of TeX's memory you used:
+ 9307 strings out of 479383
+ 163025 string characters out of 5875830
+ 638099 words of memory out of 5000000
+ 26244 multiletter control sequences out of 15000+600000
+ 410358 words of font info for 67 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 79i,9n,85p,587b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on assignment.pdf (8 pages, 2462955 bytes).
+PDF statistics:
+ 81 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 13835 words of extra memory for PDF output out of 14400 (max. 10000000)
+

@@ -1,0 +1,64 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Ostritch} \PYG{k+kd}{extends} \PYG{n}{Bird}\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{boolean} \PYG{n}{isTall}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{hasLongThinLegs}\PYG{p}{;}
+	\PYG{n}{String} \PYG{n}{name}\PYG{p}{;}
+	
+	\PYG{n}{Ostritch}\PYG{p}{(}\PYG{n}{String} \PYG{n}{name}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name} \PYG{o}{=} \PYG{n}{name}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isTall} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasLongThinLegs} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{flies} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}Ostritch; \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}Name: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Color: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Is Tall: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isTall}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Long Thin Legs: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasLongThinLegs}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Flies: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{flies}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Feathers: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFeathers}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; has wings: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasWings}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Breathes: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{breathes}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Skin: \PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasSkin}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{equals}\PYG{p}{(}\PYG{n}{Object} \PYG{n}{obj}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{obj} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Ostritch}\PYG{p}{)}\PYG{n}{obj}\PYG{p}{;}
+			\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{().}\PYG{n+na}{equals}\PYG{p}{(}\PYG{n}{obj}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{());}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{isTall}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isTall}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{hasLongThinLegs}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasLongThinLegs}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getName}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

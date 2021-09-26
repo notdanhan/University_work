@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>19484286 - Assignment</title>
+		<script>
+			function numgen() {
+				var high = 0;
+				var low = 1000;
+				var nums = [];
+				var total = 0;
+				var outputstring = "";
+				for (var i = 0; i < 100; i++) {
+					nums.push((Math.floor((Math.random() * 999 ) + 0.5)));
+					if (nums[i] > high) { high = nums[i]; }
+					if (nums[i] < low) { low = nums[i];}
+					total += nums[i];
+					outputstring = outputstring + nums[i] + ", ";
+					if (i%10 == 0 && i != 0) { outputstring += "<br>";}
+				}
+				document.getElementById("output").innerHTML = "Sum of Numbers: "+total+" Average Value: "+(total/100)+" Highest Number: "+high+" Lowest Number: "+low;
+				document.getElementById("data").innerHTML = outputstring;
+			}
+		</script>
+	</head>
+	<body onload="numgen();">
+		<p id="output"></p>
+		<p id="data"></p>
+	</body>
+</html>

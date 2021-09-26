@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script>
+			var colours = ['red', 'blue', 'yellow', 'turquoise', 'magenta', 'orange', 'brown'];
+			function change_background(num) {
+				document.getElementById(num).style.background = colours[Math.round(Math.random() * 7)];
+			}
+		</script>
+	</head>
+	<body>
+		<div id="1" style='width:50px; height:50px; background-color:black;' onclick="change_background(1);"></div>
+		<div id="2" style='width:50px; height:50px; background-color:black;' onclick="change_background(2);"></div>
+		<div id="3" style='width:50px; height:50px; background-color:black;' onclick="change_background(3)"></div>
+		<div id="4" style='width:50px; height:50px; background-color:black;' onclick="change_background(4)"></div>
+	</body>
+</html>

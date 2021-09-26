@@ -1,0 +1,12 @@
+An Analysis of HashF1
+
+- It takes in an input of arbitrary size x
+- if x is less than 64, it appends 64-x characters to it.
+- it then sums up the ascii values of every letter within this 64 character string and multiplies 
+  this by four values, 17, 31, 101, and 79 and creates new values, A B C D
+- it then gets these four values and gets the value of them minus mod 255
+- It then merges them into one 32 bit value where A Occupies the leftmost eight bits and B,C,D each occupy
+  each successive quantity of eight bits.
+- It then returns this value
+- As the positioning of the numbers does not matter and it performs a modulo 255 operation, there are only 255
+  potential hashes

@@ -1,0 +1,54 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Shark} \PYG{k+kd}{extends} \PYG{n}{Fish} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{boolean} \PYG{n}{canBite}\PYG{p}{;}
+	\PYG{k+kt}{boolean} \PYG{n}{isDangerous}\PYG{p}{;}
+	\PYG{n}{String} \PYG{n}{name}\PYG{p}{;}
+	
+	\PYG{k+kd}{public} \PYG{n+nf}{Shark}\PYG{p}{(}\PYG{n}{String} \PYG{n}{name}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{p}{();}
+		\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name} \PYG{o}{=} \PYG{n}{name}\PYG{p}{;}
+		\PYG{n}{canBite} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+		\PYG{n}{isDangerous} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{canBite}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canBite}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{isDangerous}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isDangerous}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{getName}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{String} \PYG{n}{output} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Shark\PYGZdq{}}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{} Name: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{name}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Color: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{colour}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Can Bite: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canBite}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Is Dangerous: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isDangerous}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Gills: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasGills}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Has Fins: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{hasFins}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Can Swim: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{canSwim}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}; Breathes: \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{breathes}\PYG{p}{;}
+		\PYG{n}{output} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{equals}\PYG{p}{(}\PYG{n}{Object} \PYG{n}{o}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//Type casted so I could check it}
+		\PYG{c+cm}{/*The way this works is simple, it checks if canBite exists, and catches ClassCastException*/}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Shark} \PYG{n}{shark} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Shark}\PYG{p}{)}\PYG{n}{o}\PYG{p}{;}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{shark}\PYG{p}{.}\PYG{n+na}{canBite}\PYG{p}{())} \PYG{k}{return} \PYG{n}{shark}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{().}\PYG{n+na}{equals}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{toString}\PYG{p}{());}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{Exception} \PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

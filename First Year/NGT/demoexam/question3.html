@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function countLetters() {
+				var txt = prompt("Type some text:");
+				txt = txt.toUpperCase()
+				var letters = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+				for (let i = 0; i < txt.length;i++) {
+					let index = txt.charCodeAt(i) - 65;
+					if (index >= 0 && index <= 25) {
+						letters[index]++;
+					}
+				}
+				output = "<p>You Typed: \""+txt+"\"<br>";
+				for (let i = 0; i < 26; i++) {
+					output += String.fromCharCode(65 + i) + ": "+ letters[i] + "<br>";
+				}
+				document.getElementById("output").innerHTML = output
+			}
+		</script>
+	</head>
+	<body onload="countLetters()">
+		<div id="output">
+		</div>
+	</body>
+</html>

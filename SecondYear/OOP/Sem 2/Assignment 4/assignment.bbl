@@ -1,0 +1,56 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{}{n.d.}{pnpimage}
+  \harvardyearleft n.d.\harvardyearright .
+\newline\harvardurl{https://ict.senecacollege.ca/~gpu621/pages/content/intro_p.html}
+
+\harvarditem{Atkins-Bittner}{2014}{atkins-bittner_2014}
+Atkins-Bittner, T.  \harvardyearleft 2014\harvardyearright , `A quick primer on
+  p and np'.
+\newline\harvardurl{https://www.xanthir.com/b4Zb0}
+
+\harvarditem{Berger \harvardand\ et~al.}{1998}{Berger98proteinfolding}
+Berger, B. \harvardand\ et~al.  \harvardyearleft 1998\harvardyearright ,
+  `Protein folding in the hydrophobic-hydrophilic (hp) model is np-complete'.
+
+\harvarditem{Gasarch}{2020}{gasarch_2020}
+Gasarch, W.~I.  \harvardyearleft 2020\harvardyearright , `Guest column: The
+  third p =? np poll'.
+\newline\harvardurl{https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/pollpaper3.pdf}
+
+\harvarditem{informit}{2014}{informit}
+informit  \harvardyearleft 2014\harvardyearright , `Twenty questions for donald
+  knuth'.
+\newline\harvardurl{https://www.informit.com/articles/article.aspx?p=2213858&WT.rss_f=Article&WT.rss_a=Twenty
+  Questions for Donald Knuth&WT.rss_ev=a}
+
+\harvarditem{Karp}{1972}{karp1972reducibility}
+Karp, R.~M.  \harvardyearleft 1972\harvardyearright , Reducibility among
+  combinatorial problems, {\em in} `Complexity of computer computations',
+  Springer, pp.~85--103.
+
+\harvarditem{Knuth}{1974}{10.1145_1008304.1008305}
+Knuth, D.~E.  \harvardyearleft 1974\harvardyearright , `Postscript about
+  np-hard problems', {\em SIGACT News} {\bf 6}(2),~15–16.
+\newline\harvardurl{https://doi.org/10.1145/1008304.1008305}
+
+\harvarditem{nonogramskatana.blogspot.com}{2016}{10x10mouse_2016}
+nonogramskatana.blogspot.com  \harvardyearleft 2016\harvardyearright , `10x10
+  mouse jpg'.
+
+\harvarditem{Ueda \harvardand\ Nagao}{1996}{ueda1996np}
+Ueda, N. \harvardand\ Nagao, T.  \harvardyearleft 1996\harvardyearright ,
+  `Np-completeness results for nonogram via parsimonious reductions', {\em
+  preprint} .
+
+\harvarditem{Weiss}{2006}{weiss_2006}
+Weiss, M.~A.  \harvardyearleft 2006\harvardyearright , {\em Data structures and
+  algorithm analysis in C}, Pearson Education.
+
+\harvarditem{Weisstein}{n.d.}{weisstein}
+Weisstein, E.~W.  \harvardyearleft n.d.\harvardyearright , `Chromatic number.
+  {From MathWorld---A Wolfram Web Resource}'.
+\newblock Last visited on 15/4/2021.
+\newline\harvardurl{http://mathworld.wolfram.com/ChromaticNumber.html}
+
+\end{thebibliography}

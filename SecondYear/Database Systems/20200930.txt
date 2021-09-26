@@ -1,0 +1,14 @@
+30/09/2020 Database Systems
+
+Exams/Marks
+
+Continuous assessment, worth 20% overall - MCQs
+every two weeks we will get a new problem sheet (no marks)
+
+Book: Fundamentals of Database Systems
+
+flat file: each program "owns" and access its own files, seperate, not cross indexed
+
+Database Schema: The logical Structure of the database
+Database Instance: The actual content of the database at some point in time
+

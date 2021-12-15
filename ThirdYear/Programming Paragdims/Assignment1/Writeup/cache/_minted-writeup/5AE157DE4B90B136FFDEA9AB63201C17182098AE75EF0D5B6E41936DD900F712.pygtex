@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}genericLinkedList.h\PYGZdq{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{runTests}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Tests running...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Create String element}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericListElement}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{l}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{createGEl}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Interesting test string\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericString}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Create Integer Array Element}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{c+c1}{//Make it a pointer so free does not cause a segfault}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{numArray}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{));}
+\PYG{+w}{  }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{o}{*}\PYG{p}{(}\PYG{n}{numArray}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{n}{genericInsertAfter}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{n}{numArray}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{o}{*}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{),}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericInt}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{free}\PYG{p}{(}\PYG{n}{numArray}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Deleting Integer array element}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericDeleteAfter}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Pushing Float and calculating linked list size}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{testNum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{123.456}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{ptestNum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{  }\PYG{o}{\PYGZam{}}\PYG{n}{testNum}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{genericPush}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{n}{ptestNum}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{float}\PYG{p}{),}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericFloat}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Length: \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{genericLength}\PYG{p}{(}\PYG{n}{l}\PYG{p}{));}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Pushing some random rubbish so I can verify pop/dequeue work}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericPush}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}I have no creativity\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericString}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{test1234}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{123456}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{testfloat1234}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{456.789}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{genericPush}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{test1234}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{),}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericInt}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericPush}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{testfloat1234}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{float}\PYG{p}{),}\PYG{o}{\PYGZam{}}\PYG{n}{printGenericFloat}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Testing Pop}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericListElement}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{temp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{genericPop}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{free}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Testing Dequeue}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericListElement}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{temp2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{genericDequeue}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{free}\PYG{p}{(}\PYG{n}{temp2}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{genericTraverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Tests complete.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

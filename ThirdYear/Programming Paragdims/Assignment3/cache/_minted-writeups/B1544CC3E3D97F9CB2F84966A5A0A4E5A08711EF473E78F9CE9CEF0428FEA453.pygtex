@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{reverseList}\PYG{p}{([],[]).}
+\PYG{n+nf}{reverseList}\PYG{p}{([}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{],}\PYG{n+nv}{Y}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+  \PYG{n+nf}{reverseList}\PYG{p}{(}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{A}\PYG{p}{),}
+  \PYG{n+nf}{cons}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,[}\PYG{n+nv}{H}\PYG{p}{],}\PYG{n+nv}{Y}\PYG{p}{).}
+
+\PYG{n+nf}{cons}\PYG{p}{([],}\PYG{n+nv}{L}\PYG{p}{,}\PYG{n+nv}{L}\PYG{p}{).}
+\PYG{n+nf}{cons}\PYG{p}{([}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{],}\PYG{n+nv}{L2}\PYG{p}{,[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{Y}\PYG{p}{]):\PYGZhy{}}
+  \PYG{n+nf}{cons}\PYG{p}{(}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{L2}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{).}
+\end{Verbatim}

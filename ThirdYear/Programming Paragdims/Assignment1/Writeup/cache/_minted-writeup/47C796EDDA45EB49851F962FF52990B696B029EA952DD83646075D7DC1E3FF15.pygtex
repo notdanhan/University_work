@@ -1,0 +1,44 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}tests.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}linkedList.h\PYGZdq{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{runTests}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Tests running...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{listElement}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{l}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{createEl}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Test String (1).\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{30}\PYG{p}{);}
+\PYG{+w}{  }\PYG{c+c1}{//printf(\PYGZdq{}\PYGZpc{}s\PYGZbs{}n\PYGZpc{}p\PYGZbs{}n\PYGZdq{}, l\PYGZhy{}\PYGZgt{}data, l\PYGZhy{}\PYGZgt{}next);}
+\PYG{+w}{  }\PYG{c+c1}{//Test create and traverse}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{//Test insert after}
+\PYG{+w}{  }\PYG{n}{listElement}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{l2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{insertAfter}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}another string (2)\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{30}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{insertAfter}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}a final string (3)\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{30}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{// Test delete after}
+\PYG{+w}{  }\PYG{n}{deleteAfter}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{//Test linkedlist Length}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Length: \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{length}\PYG{p}{(}\PYG{n}{l}\PYG{p}{));}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Testing Push:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{push}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}I was Pushed onto the linked list\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Testing Pop:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{listElement}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{popped}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{pop}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{free}\PYG{p}{(}\PYG{n}{popped}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Testing Enqueue:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{enqueue}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{l}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Hi\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Testing Dequeue:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{listElement}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{last}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dequeue}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{free}\PYG{p}{(}\PYG{n}{last}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{traverse}\PYG{p}{(}\PYG{n}{l}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Tests complete.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

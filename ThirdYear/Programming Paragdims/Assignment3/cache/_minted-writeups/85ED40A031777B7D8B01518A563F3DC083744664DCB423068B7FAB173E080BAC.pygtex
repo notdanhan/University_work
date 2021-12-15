@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{mergeLists}\PYG{p}{([}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{],}\PYG{n+nv}{List2}\PYG{p}{,}\PYG{n+nv}{List3}\PYG{p}{,[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{Output}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+  \PYG{n+nf}{mergeLists}\PYG{p}{(}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{List2}\PYG{p}{,}\PYG{n+nv}{List3}\PYG{p}{,}\PYG{n+nv}{Output}\PYG{p}{).}
+\PYG{n+nf}{mergeLists}\PYG{p}{([],[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{],}\PYG{n+nv}{List3}\PYG{p}{,[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{Output}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+  \PYG{n+nf}{mergeLists}\PYG{p}{([],}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{List3}\PYG{p}{,}\PYG{n+nv}{Output}\PYG{p}{).}
+\PYG{n+nf}{mergeLists}\PYG{p}{([],[],[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{],[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{Output}\PYG{p}{])} \PYG{p}{:\PYGZhy{}}
+  \PYG{n+nf}{mergeLists}\PYG{p}{([],[],}\PYG{n+nv}{T}\PYG{p}{,}\PYG{n+nv}{Output}\PYG{p}{).}
+  \PYG{c+c1}{\PYGZpc{}I Don\PYGZsq{}t know how to get rid of \PYGZsq{}\PYGZus{}\PYGZsq{} from the end of the list, I\PYGZsq{}ve tried several things}
+  \PYG{c+c1}{\PYGZpc{}but nothing worked}
+\PYG{n+nf}{mergeLists}\PYG{p}{([],[],[],[}\PYG{n+nv}{Output}\PYG{p}{]).}
+\end{Verbatim}

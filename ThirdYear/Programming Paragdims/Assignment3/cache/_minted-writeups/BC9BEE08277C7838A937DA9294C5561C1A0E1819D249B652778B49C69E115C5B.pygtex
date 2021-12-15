@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{isNotElementInList}\PYG{p}{(}\PYG{n+nv}{E}\PYG{p}{,}\PYG{n+nv}{List}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+  \PYG{p}{((}\PYG{n+nv}{List} \PYG{o}{=} \PYG{p}{[])} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}
+    \PYG{l+m+mi}{1}\PYG{o}{=}\PYG{l+m+mi}{1}
+    \PYG{p}{;}
+    \PYG{p}{[}\PYG{n+nv}{H}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{]} \PYG{o}{=} \PYG{n+nv}{List}\PYG{p}{,}
+    \PYG{n+nv}{E} \PYG{l+s+sAtom}{=\PYGZbs{}=} \PYG{n+nv}{H}\PYG{p}{,}
+    \PYG{n+nf}{isNotElementInList}\PYG{p}{(}\PYG{n+nv}{E}\PYG{p}{,}\PYG{n+nv}{T}\PYG{p}{)).}
+\end{Verbatim}

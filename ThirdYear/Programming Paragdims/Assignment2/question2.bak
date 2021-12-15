@@ -1,0 +1,3 @@
+#lang scheme
+(define (ins_beg val1 val2)
+  (append '(val1) '(val2)))

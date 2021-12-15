@@ -1,0 +1,148 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{\PYGZsh{}lang }\PYG{n+nn}{scheme}
+\PYG{c+c1}{;;question3.rkt Author \PYGZhy{} Daniel Hannon (19484286)}
+
+\PYG{c+c1}{;;Q3 Part A}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{n}{btree}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n}{btree}\PYG{p}{)}
+      \PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+      \PYG{p}{(}\PYG{k}{begin}
+        \PYG{c+c1}{;;traverse left}
+        \PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{))}
+        \PYG{c+c1}{;;print node value}
+        \PYG{p}{(}\PYG{n+nb}{print} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{))}
+        \PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}, \PYGZdq{}}\PYG{p}{)}
+        \PYG{c+c1}{;;traverse right}
+        \PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{))}
+       \PYG{p}{)}
+  \PYG{p}{)}
+\PYG{p}{)}
+
+\PYG{c+c1}{;;Q3 Part B}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{btree\PYGZus{}search} \PYG{n}{val} \PYG{n}{btree}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n}{btree}\PYG{p}{)}
+      \PYG{n+no}{\PYGZsh{}f}
+      \PYG{p}{(}\PYG{k}{cond}
+        \PYG{c+c1}{;;check if equal to the value stored at the node}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{=} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{n+no}{\PYGZsh{}t}\PYG{p}{]}
+        \PYG{c+c1}{;;Check if less than the value stored at the node,}
+        \PYG{c+c1}{;;as a binary search tree is ordered, only check if it is less than}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZgt{}} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{p}{(}\PYG{n}{btree\PYGZus{}search} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{))]}
+        \PYG{c+c1}{;;Check if greater than the value stored at the node}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZlt{}} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{p}{(}\PYG{n}{btree\PYGZus{}search} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{))]}
+        \PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Q3 Part C}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{btree\PYGZus{}insert} \PYG{n}{val} \PYG{n}{btree}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n}{btree}\PYG{p}{)}
+      \PYG{p}{(}\PYG{n+nb}{list} \PYG{o}{\PYGZsq{}}\PYG{p}{()} \PYG{n}{val} \PYG{o}{\PYGZsq{}}\PYG{p}{())} 
+      \PYG{p}{(}\PYG{k}{cond}
+        \PYG{c+c1}{;;IF GEQ node value \PYGZhy{} Insert Right of node}
+        \PYG{c+c1}{;;IF LT node value \PYGZhy{} Insert Left of node}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZlt{}=} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{list} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n}{btree\PYGZus{}insert} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{)))]}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZgt{}} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{list} \PYG{p}{(}\PYG{n}{btree\PYGZus{}insert} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{))} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{))]}
+        \PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;:Q3 Part D}
+
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree} \PYG{n+nb}{list}\PYG{p}{)}      
+  \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}inner} \PYG{n+nb}{list} \PYG{o}{\PYGZsq{}}\PYG{p}{())}
+  \PYG{p}{)}
+
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}inner} \PYG{n+nb}{list} \PYG{n}{btree}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n+nb}{list}\PYG{p}{)}
+      \PYG{n}{btree}
+      \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}inner} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)} \PYG{p}{(}\PYG{n}{btree\PYGZus{}insert} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n+nb}{list}\PYG{p}{)} \PYG{n}{btree}\PYG{p}{))}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Q3 Part E}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{tree\PYGZus{}sort\PYGZus{}list} \PYG{n+nb}{list}\PYG{p}{)}
+  \PYG{c+c1}{;;Technically The solution to D does this}
+  \PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree} \PYG{n+nb}{list}\PYG{p}{))}
+  \PYG{p}{)}
+
+
+\PYG{c+c1}{;;Discriminator functions for Q3 Part F}
+
+\PYG{c+c1}{;;Sort in Ascending order}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{ascending\PYGZus{}sort} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{cond}
+    \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{=} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)} \PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZgt{}} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)} \PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZlt{}} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)} \PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{]}
+    \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Sort in Descending order}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{descending\PYGZus{}sort} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n}{ascending\PYGZus{}sort} \PYG{n}{y} \PYG{n}{x}\PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Ascending Least Significant Digit}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{ascending\PYGZus{}lsd} \PYG{n}{x} \PYG{n}{y}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n}{ascending\PYGZus{}sort} \PYG{p}{(}\PYG{n+nb}{modulo} \PYG{n}{x} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{modulo} \PYG{n}{y} \PYG{l+m+mi}{10}\PYG{p}{))}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Higher Order Binary Tree Insert Function as per Q3 Part F}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{higher\PYGZus{}order\PYGZus{}btree\PYGZus{}insert} \PYG{n}{val} \PYG{n}{btree} \PYG{n}{discrim}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n}{btree}\PYG{p}{)}
+      \PYG{p}{(}\PYG{n+nb}{list} \PYG{o}{\PYGZsq{}}\PYG{p}{()} \PYG{n}{val} \PYG{o}{\PYGZsq{}}\PYG{p}{())}
+      \PYG{p}{(}\PYG{k}{cond}
+        \PYG{c+c1}{;;Evaluate Discriminator and act in accordance to it}
+        \PYG{c+c1}{;;GEQ insert to the right}
+        \PYG{c+c1}{;;LT insert to the left}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZlt{}=} \PYG{p}{(}\PYG{n}{discrim} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{l+m+mi}{0}\PYG{p}{)}
+         \PYG{p}{(}\PYG{n+nb}{list} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n}{higher\PYGZus{}order\PYGZus{}btree\PYGZus{}insert} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{discrim}\PYG{p}{))}
+         \PYG{p}{]}
+        \PYG{p}{[}\PYG{p}{(}\PYG{n+nb}{\PYGZgt{}} \PYG{p}{(}\PYG{n}{discrim} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{val}\PYG{p}{)} \PYG{l+m+mi}{0}\PYG{p}{)}
+         \PYG{p}{(}\PYG{n+nb}{list} \PYG{p}{(}\PYG{n}{higher\PYGZus{}order\PYGZus{}btree\PYGZus{}insert} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n}{btree}\PYG{p}{)} \PYG{n}{discrim}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{cadr} \PYG{n}{btree}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{caddr} \PYG{n}{btree}\PYG{p}{))}
+         \PYG{p}{]}
+        \PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Companion Functions for Q3 Part F for QOL while testing}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order} \PYG{n+nb}{list} \PYG{n}{discrim}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order\PYGZus{}inner} \PYG{n+nb}{list} \PYG{o}{\PYGZsq{}}\PYG{p}{()} \PYG{n}{discrim}\PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order\PYGZus{}inner} \PYG{n+nb}{list} \PYG{n}{btree} \PYG{n}{discrim}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n+nb}{list}\PYG{p}{)}
+      \PYG{n}{btree}
+      \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order\PYGZus{}inner} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)} \PYG{p}{(}\PYG{n}{higher\PYGZus{}order\PYGZus{}btree\PYGZus{}insert} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n+nb}{list}\PYG{p}{)} \PYG{n}{btree} \PYG{n}{discrim}\PYG{p}{)} \PYG{n}{discrim}\PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Tests}
+\PYG{c+c1}{;;Part A}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing btree traverse}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{1} \PYG{p}{())} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{3} \PYG{p}{()))} \PYG{l+m+mi}{4} \PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{5} \PYG{p}{())} \PYG{l+m+mi}{6} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{7} \PYG{p}{()))))}
+\PYG{c+c1}{;;Part B}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{testing btree search}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{;;Return True}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}search} \PYG{o}{\PYGZsq{}}\PYG{l+m+mi}{4} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{1} \PYG{p}{())} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{3} \PYG{p}{()))} \PYG{l+m+mi}{4} \PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{5} \PYG{p}{())} \PYG{l+m+mi}{6} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{7} \PYG{p}{()))))}
+\PYG{c+c1}{;:Return False}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}search} \PYG{o}{\PYGZsq{}}\PYG{l+m+mi}{8} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{1} \PYG{p}{())} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{3} \PYG{p}{()))} \PYG{l+m+mi}{4} \PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{5} \PYG{p}{())} \PYG{l+m+mi}{6} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{7} \PYG{p}{()))))}
+\PYG{c+c1}{;;Part C}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}testing btree\PYGZus{}insert}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{btree\PYGZus{}insert} \PYG{o}{\PYGZsq{}}\PYG{l+m+mi}{8} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{1} \PYG{p}{())} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{3} \PYG{p}{()))} \PYG{l+m+mi}{4} \PYG{p}{(}\PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{5} \PYG{p}{())} \PYG{l+m+mi}{6} \PYG{p}{(}\PYG{p}{()} \PYG{l+m+mi}{7} \PYG{p}{())))))}
+\PYG{c+c1}{;;Part D}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{testing creating a btree from a list}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{l+m+mi}{6} \PYG{l+m+mi}{7} \PYG{l+m+mi}{3} \PYG{l+m+mi}{5} \PYG{l+m+mi}{2} \PYG{l+m+mi}{4} \PYG{l+m+mi}{5} \PYG{l+m+mi}{11} \PYG{l+m+mi}{23} \PYG{l+m+mi}{45} \PYG{l+m+mi}{67} \PYG{l+m+mi}{13} \PYG{l+m+mi}{9} \PYG{l+m+mi}{1} \PYG{l+m+mi}{0}\PYG{p}{)))}
+\PYG{c+c1}{;;Part E}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Testing Sorting a list using a binary tree}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{tree\PYGZus{}sort\PYGZus{}list} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{l+m+mi}{8} \PYG{l+m+mi}{7} \PYG{l+m+mi}{6} \PYG{l+m+mi}{5} \PYG{l+m+mi}{4} \PYG{l+m+mi}{3} \PYG{l+m+mi}{2} \PYG{l+m+mi}{1}\PYG{p}{))}
+\PYG{c+c1}{;;Part F}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Testing Higher Order btree}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Ascending order}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{l+m+mi}{3} \PYG{l+m+mi}{5} \PYG{l+m+mi}{1} \PYG{l+m+mi}{2} \PYG{l+m+mi}{6} \PYG{l+m+mi}{7}\PYG{p}{)} \PYG{n}{ascending\PYGZus{}sort}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Descending order}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{l+m+mi}{3} \PYG{l+m+mi}{5} \PYG{l+m+mi}{1} \PYG{l+m+mi}{2} \PYG{l+m+mi}{6} \PYG{l+m+mi}{7}\PYG{p}{)} \PYG{n}{descending\PYGZus{}sort}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Ascending Least Significant Digit}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{btree\PYGZus{}traverse} \PYG{p}{(}\PYG{n}{list\PYGZus{}to\PYGZus{}btree\PYGZus{}higher\PYGZus{}order} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{12} \PYG{l+m+mi}{72} \PYG{l+m+mi}{63} \PYG{l+m+mi}{85} \PYG{l+m+mi}{94} \PYG{l+m+mi}{21} \PYG{l+m+mi}{9}\PYG{p}{)} \PYG{n}{ascending\PYGZus{}lsd}\PYG{p}{))}
+\end{Verbatim}

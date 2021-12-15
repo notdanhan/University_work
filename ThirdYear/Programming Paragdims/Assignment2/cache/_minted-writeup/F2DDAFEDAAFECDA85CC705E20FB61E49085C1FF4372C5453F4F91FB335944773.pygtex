@@ -1,0 +1,91 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{\PYGZsh{}lang }\PYG{n+nn}{scheme}
+\PYG{c+c1}{;;question2.rkt \PYGZhy{} Author Daniel Hannon(19484286)}
+\PYG{c+c1}{;;Q2 Part A}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{ins\PYGZus{}beg} \PYG{n}{val\PYGZus{}1} \PYG{n}{val\PYGZus{}2}\PYG{p}{)}
+  \PYG{c+c1}{;;I have to define val\PYGZus{}1 as a list}
+  \PYG{c+c1}{;;within this or it does not work}
+  \PYG{p}{(}\PYG{n+nb}{append} \PYG{p}{(}\PYG{n+nb}{list} \PYG{n}{val\PYGZus{}1}\PYG{p}{)} \PYG{n}{val\PYGZus{}2}\PYG{p}{))}
+\PYG{c+c1}{;;Q2 Part B}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{ins\PYGZus{}end} \PYG{n}{val\PYGZus{}1} \PYG{n}{val\PYGZus{}2}\PYG{p}{)}
+  \PYG{c+c1}{;;I have to define val\PYGZus{}1 as a list}
+  \PYG{c+c1}{;;within this or it does not work}
+  \PYG{p}{(}\PYG{n+nb}{append} \PYG{n}{val\PYGZus{}2} \PYG{p}{(}\PYG{n+nb}{list} \PYG{n}{val\PYGZus{}1}\PYG{p}{)))}
+
+\PYG{c+c1}{;;Q2 Part C}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{cout\PYGZus{}top\PYGZus{}level} \PYG{n}{x}\PYG{p}{)}
+  \PYG{c+c1}{;;Count the number of top levels}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n}{x}\PYG{p}{)}
+      \PYG{l+m+mi}{0}
+      \PYG{p}{(}\PYG{n+nb}{+} \PYG{l+m+mi}{1} \PYG{p}{(}\PYG{n}{cout\PYGZus{}top\PYGZus{}level} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n}{x}\PYG{p}{)))}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Q2 Part D}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances} \PYG{n}{val} \PYG{n+nb}{list}\PYG{p}{)}
+  \PYG{c+c1}{;;count instances}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n+nb}{list}\PYG{p}{)}
+      \PYG{l+m+mi}{0}
+      \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{=} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n+nb}{list}\PYG{p}{))}
+          \PYG{p}{(}\PYG{n+nb}{+} \PYG{l+m+mi}{1} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)))}
+          \PYG{p}{(}\PYG{n+nb}{+} \PYG{l+m+mi}{0} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)))}
+          \PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Q2 Part E}
+\PYG{c+c1}{;;wrapper for the function}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr} \PYG{n}{val} \PYG{n+nb}{list}\PYG{p}{)}
+  \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr\PYGZus{}inner} \PYG{n}{val} \PYG{n+nb}{list} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{p}{)}
+
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr\PYGZus{}inner} \PYG{n}{val} \PYG{n+nb}{list} \PYG{n}{tally}\PYG{p}{)}
+  \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{empty?} \PYG{n+nb}{list}\PYG{p}{)}
+      \PYG{c+c1}{;;returns tally if the list is fully traversed}
+      \PYG{n}{tally}
+      \PYG{p}{(}\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{=} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{car} \PYG{n+nb}{list}\PYG{p}{))}
+          \PYG{c+c1}{;;If it is true the tally is increased by one, otherwise it remains the same}
+          \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr\PYGZus{}inner} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{+} \PYG{n}{tally} \PYG{l+m+mi}{1}\PYG{p}{))}
+          \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr\PYGZus{}inner} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{cdr} \PYG{n+nb}{list}\PYG{p}{)} \PYG{n}{tally}\PYG{p}{)}
+          \PYG{p}{)}
+      \PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Q2 Part F}
+\PYG{p}{(}\PYG{k}{define} \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}deep} \PYG{n}{val} \PYG{n+nb}{list}\PYG{p}{)}
+  \PYG{c+c1}{;;flatten turns any deep list into a flat one :)}
+  \PYG{c+c1}{;;Its a built in function in scheme}
+  \PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr\PYGZus{}inner} \PYG{n}{val} \PYG{p}{(}\PYG{n+nb}{flatten} \PYG{n+nb}{list}\PYG{p}{)} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{p}{)}
+
+\PYG{c+c1}{;;Tests}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing ins\PYGZus{}beg}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{ins\PYGZus{}beg} \PYG{o}{\PYGZsq{}}\PYG{l+s+ss}{a} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{b} \PYG{l+s+ss}{c} \PYG{l+s+ss}{d}\PYG{p}{))}
+\PYG{p}{(}\PYG{n}{ins\PYGZus{}beg} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{a} \PYG{l+s+ss}{b}\PYG{p}{)} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{b} \PYG{l+s+ss}{c} \PYG{l+s+ss}{d}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing ins\PYGZus{}end}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{ins\PYGZus{}end} \PYG{o}{\PYGZsq{}}\PYG{l+s+ss}{a} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{b} \PYG{l+s+ss}{c} \PYG{l+s+ss}{d}\PYG{p}{))}
+\PYG{p}{(}\PYG{n}{ins\PYGZus{}end} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{a} \PYG{l+s+ss}{b}\PYG{p}{)}  \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{b} \PYG{l+s+ss}{c} \PYG{l+s+ss}{d}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing cout\PYGZus{}top\PYGZus{}level}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{;; should return 3}
+\PYG{p}{(}\PYG{n}{cout\PYGZus{}top\PYGZus{}level} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+ss}{a} \PYG{l+s+ss}{b} \PYG{l+s+ss}{c}\PYG{p}{))}
+\PYG{c+c1}{;; should return 4}
+\PYG{p}{(}\PYG{n}{cout\PYGZus{}top\PYGZus{}level} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+s+ss}{a} \PYG{l+s+ss}{b}\PYG{p}{)} \PYG{l+s+ss}{c} \PYG{l+s+ss}{d} \PYG{p}{(}\PYG{p}{(}\PYG{l+s+ss}{e}\PYG{p}{)} \PYG{l+s+ss}{f}\PYG{p}{)))}
+\PYG{c+c1}{;;should return 1}
+\PYG{p}{(}\PYG{n}{cout\PYGZus{}top\PYGZus{}level} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+s+ss}{a}\PYG{p}{(}\PYG{l+s+ss}{b}\PYG{p}{(}\PYG{l+s+ss}{c}\PYG{p}{(}\PYG{l+s+ss}{d}\PYG{p}{))))))}
+
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing count\PYGZus{}instances}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{;;Should return 3}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances} \PYG{l+m+mi}{7} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{l+m+mi}{7} \PYG{l+m+mi}{5} \PYG{l+m+mi}{7}\PYG{p}{))}
+\PYG{c+c1}{;;Should return 2}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances} \PYG{l+m+mi}{2} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{l+m+mi}{0} \PYG{l+m+mi}{0} \PYG{l+m+mi}{2} \PYG{l+m+mi}{0} \PYG{l+m+mi}{0}\PYG{p}{))}
+
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Testing count\PYGZus{}instances\PYGZus{}tr}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{;;Should return 3}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr} \PYG{l+m+mi}{7} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{l+m+mi}{7} \PYG{l+m+mi}{5} \PYG{l+m+mi}{7}\PYG{p}{))}
+\PYG{c+c1}{;;Should return 2}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}tr} \PYG{l+m+mi}{2} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{l+m+mi}{0} \PYG{l+m+mi}{0} \PYG{l+m+mi}{2} \PYG{l+m+mi}{0} \PYG{l+m+mi}{0}\PYG{p}{))}
+
+\PYG{p}{(}\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}testing count\PYGZus{}instances\PYGZus{}deep}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}deep} \PYG{l+m+mi}{7} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{l+m+mi}{7}\PYG{p}{)} \PYG{l+m+mi}{4} \PYG{l+m+mi}{6} \PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{)} \PYG{l+m+mi}{2}\PYG{p}{)))}
+\PYG{p}{(}\PYG{n}{count\PYGZus{}instances\PYGZus{}deep} \PYG{l+m+mi}{7} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{l+m+mi}{7} \PYG{p}{(} \PYG{l+m+mi}{7} \PYG{p}{(}\PYG{l+m+mi}{0} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{l+m+mi}{6} \PYG{l+m+mi}{7}\PYG{p}{))))} \PYG{l+m+mi}{7}\PYG{p}{)))}
+\end{Verbatim}

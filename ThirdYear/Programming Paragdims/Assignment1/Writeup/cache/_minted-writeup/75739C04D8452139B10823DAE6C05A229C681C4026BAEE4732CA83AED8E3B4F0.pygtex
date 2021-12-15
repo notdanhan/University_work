@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}
+\PYG{c+cm}{/* Question 1 Code}
+\PYG{c+cm}{  By Daniel Hannon(19484286)}
+\PYG{c+cm}{*/}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{arg}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{argc}\PYG{p}{[])\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello assignment1.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{c+c1}{//Create required data types and fill it with dummy data}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{myInt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{pInt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{myInt}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{myLong}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{12}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{pDouble}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{double}\PYG{p}{));}
+\PYG{+w}{  }\PYG{o}{*}\PYG{n}{pDouble}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{1.2323423}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{**}\PYG{+w}{ }\PYG{n}{dpChar}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{**}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{));}
+\PYG{+w}{  }\PYG{o}{*}\PYG{p}{(}\PYG{n}{dpChar}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{char}\PYG{p}{));}
+\PYG{+w}{  }\PYG{o}{**}\PYG{n}{dpChar}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{  }\PYG{c+c1}{//Print the data}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Size of Types:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Int: \PYGZpc{}ld}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Int *: \PYGZpc{}ld}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Long: \PYGZpc{}ld}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Double *: \PYGZpc{}ld}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Char **: \PYGZpc{}ld}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{myInt}\PYG{p}{),}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{pInt}\PYG{p}{),}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{myLong}\PYG{p}{),}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{pDouble}\PYG{p}{),}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{dpChar}\PYG{p}{));}
+\PYG{+w}{  }\PYG{c+c1}{//For some reason when I try to free the pointers it SegFaults so I did not do that}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

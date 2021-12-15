@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://www.hibernate.org/dtd/hibernate-mapping.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="assignment3_v2.Student" table="students">  
+    <id name="id" type="int" column="ID">  
+     <generator class="assigned"/>
+    </id>  
+            
+    <property name="firstName" column="FIRST_NAME"></property>  
+    <property name="lastName" column="LAST_NAME"></property>
+    <property name="emailAddress" column="EMAIL_ADDRESS"></property>
+  </class>  
+            
+ </hibernate-mapping>

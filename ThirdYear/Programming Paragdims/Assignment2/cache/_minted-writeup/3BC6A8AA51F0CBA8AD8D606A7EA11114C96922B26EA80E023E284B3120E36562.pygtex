@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{\PYGZsh{}lang }\PYG{n+nn}{scheme}
+\PYG{c+c1}{;;question1.rkt \PYGZhy{} Author Daniel Hannon(19484286)}
+\PYG{p}{(}\PYG{n+nb}{cons} \PYG{l+m+mi}{2} \PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{p}{(}\PYG{n+nb}{cons} \PYG{l+m+mi}{2} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{3} \PYG{l+m+mi}{4}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{cons} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2} \PYG{l+m+mi}{3}\PYG{p}{)))}
+\PYG{p}{(}\PYG{n+nb}{list} \PYG{l+s+s2}{\PYGZdq{}string2\PYGZdq{}} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{l+m+mi}{5} \PYG{l+m+mi}{6}\PYG{p}{))}
+\PYG{p}{(}\PYG{n+nb}{append} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}string3\PYGZdq{}}\PYG{p}{)} \PYG{p}{(}\PYG{n+nb}{append} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{l+m+mi}{8} \PYG{l+m+mi}{9}\PYG{p}{))))}
+\end{Verbatim}
